@@ -2,7 +2,7 @@
    App files: cache first, refreshed when SHELL_VERSION changes.
    Content (content/*.json): network first with a short timeout, falling back
    to the saved copy, so the library always opens offline. */
-var SHELL_VERSION = "shell-v3";
+var SHELL_VERSION = "shell-v4";
 var CONTENT_CACHE = "content";
 var SHELL = [
   "./", "index.html", "app.css", "app.js", "manifest.webmanifest",

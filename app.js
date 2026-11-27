@@ -84,9 +84,16 @@
       onclick: function () { applyTheme(THEMES[(THEMES.indexOf(state.theme) + 1) % 3]); }
     });
   }
+  // In-app history: lets Back return to the exact page and scroll position you came from.
+  var stack = [], scrollPos = {}, goingBack = false;
+  function curHash() { return location.hash || "#/"; }
   function header(title, backHref, backText) {
+    var prev = stack[stack.length - 2];
+    if (backHref && prev && /^#\/manual\//.test(prev)) backText = "Manual";
     return el("div", { class: "bar" },
-      backHref ? el("a", { class: "back", href: backHref, text: "‹ " + (backText || "Back") }) : el("h1", { text: title }),
+      backHref ? el("a", { class: "back", href: backHref, text: "‹ " + (backText || "Back"), onclick: function (e) {
+        if (stack.length > 1) { e.preventDefault(); history.back(); }
+      } }) : el("h1", { text: title }),
       themeButton());
   }
 
@@ -139,7 +146,7 @@
   }
   var SUPPORT_LABEL = {
     ok: ["Steps for your device", "ok"],
-    unavailable: ["Feature unavailable", "no"],
+    unavailable: ["Feature unavailable", "bad"],
     unchecked: ["General steps", "warn"]
   };
 
@@ -163,6 +170,9 @@
 
   // ---------- router ----------
   function route() {
+    var full = curHash();
+    goingBack = stack.length > 1 && stack[stack.length - 2] === full;
+    if (goingBack) stack.pop(); else if (stack[stack.length - 1] !== full) stack.push(full);
     var hash = location.hash.replace(/^#\/?/, "");
     var parts = hash.split("/");
     var page = parts[0] || "home";
@@ -182,12 +192,17 @@
     else if (page === "tools") r = renderTools(parts[1] || "exposure");
     else if (page === "about" || page === "updates") r = renderAbout();
     else r = renderHome();
-    Promise.resolve(r).catch(function (e) {
+    var y = goingBack ? (scrollPos[full] || 0) : 0;
+    window.scrollTo(0, 0);
+    Promise.resolve(r).then(function () {
+      if (y) requestAnimationFrame(function () { window.scrollTo(0, y); });
+    }, function (e) {
       view.innerHTML = "";
       add(view, [header("Field Photo"), el("div", { class: "note warn", text: "Couldn't open this page. " + e.message })]);
     });
-    window.scrollTo(0, 0);
   }
+  // Remember where each page was scrolled to, so Back lands in the same place.
+  window.addEventListener("scroll", function () { scrollPos[curHash()] = window.scrollY; }, { passive: true });
 
   // ---------- Home ----------
   function renderHome() {
@@ -206,15 +221,21 @@
       ["guide", "lesson", "basic"].forEach(function (type) {
         var group = items.filter(function (i) { return i.type === type; });
         if (!group.length) return;
-        add(list, el("div", { class: "lab", text: TYPES[type] }));
+        var openKey = "open:" + type;
+        var isOpen = q ? true : store(openKey) !== false;
+        var box = el("details", { class: "group", open: isOpen },
+          el("summary", null, el("span", { text: TYPES[type] }), el("span", { class: "count", text: String(group.length) })));
+        box.addEventListener("toggle", function () { if (!q) store(openKey, box.open); });
+        add(list, box);
+        var body = el("div"); add(box, body);
         if (type === "lesson") {
-          add(list, group.map(function (i) {
+          add(body, group.map(function (i) {
             return el("a", { class: "row", href: "#/item/" + i.id },
               el("span", null, el("b", { text: i.title }), el("span", { class: "muted", text: i.summary })),
               el("span", { class: "muted rowbtn", text: (i.minutes || 3) + " min" }));
           }));
         } else {
-          add(list, el("div", { class: "tiles" }, group.map(function (i) {
+          add(body, el("div", { class: "tiles" }, group.map(function (i) {
             var s = support(i, deviceFor(i));
             return el("a", { class: "tile", href: "#/item/" + i.id },
               el("b", { text: i.title }),
@@ -308,18 +329,19 @@
     var wrap = el("div");
     if (!kit.length) return el("p", { class: "muted" }, "Add your camera in ", el("a", { href: "#/kit", text: "My kit" }), " to see steps for it.");
     var current = chosenDevice && kit.some(function (d) { return d.id === chosenDevice; }) ? chosenDevice : (deviceFor(meta) || kit[0]).id;
-    var sel = el("select", {
-      id: "dev", onchange: function () { chosenDevice = sel.value; route(); }
-    }, kit.map(function (d) {
-      var s = support(meta, d);
-      var label = d.name + " · " + (s.status === "ok" ? "Available" : s.status === "unavailable" ? "Feature unavailable" : "Not checked yet");
-      return el("option", { value: d.id, selected: d.id === current, text: label });
+    var STATUS_LINE = { ok: "", unchecked: "General steps", unavailable: "Feature unavailable" };
+    var pick = el("div", { class: "devpick", role: "radiogroup", "aria-label": "Steps for" }, kit.map(function (d) {
+      var st = support(meta, d).status;
+      return el("button", {
+        type: "button", class: "devopt" + (d.id === current ? " on" : ""), role: "radio", "aria-checked": String(d.id === current), "data-dev": d.id,
+        onclick: function () { if (d.id !== current) { chosenDevice = d.id; route(); } }
+      }, el("b", { text: d.name }), STATUS_LINE[st] ? el("span", { class: "st " + st, text: STATUS_LINE[st] }) : null);
     }));
-    add(wrap, [el("label", { for: "dev", class: "lab", text: "Steps for" }), sel]);
+    add(wrap, [el("div", { class: "lab", text: "Steps for" }), pick]);
     var s = support(meta, device(current));
     it._status = s.status;
     if (s.status === "unavailable") {
-      add(wrap, el("div", { class: "note no" }, el("strong", { text: "Feature unavailable on " + device(current).name + ". " }), s.note || ""));
+      add(wrap, el("div", { class: "note bad" }, el("strong", { text: "Feature unavailable on " + device(current).name + ". " }), s.note || ""));
       if (s.link && findMeta(s.link)) add(wrap, el("a", { class: "btn", href: "#/item/" + s.link, style: "margin-top:8px", text: "Open " + findMeta(s.link).title }));
       var others = kitDevices().filter(function (d) { return d.id !== current && support(meta, d).status !== "unavailable"; });
       if (others.length) add(wrap, el("p", { class: "muted", text: "Pick " + others.map(function (d) { return d.name; }).join(" or ") + " above to see the guide." }));

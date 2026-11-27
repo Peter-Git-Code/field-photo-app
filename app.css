@@ -4,6 +4,7 @@
   --bg: #ffffff; --fg: #111111; --mut: #45453f; --card: #f0f0eb; --line: #d2d2cb;
   --acc: #b93c0a; --accfg: #ffffff;
   --ok: #14532d; --okbg: #d6f3df; --warn: #8a2f0c; --warnbg: #ffe5cc; --nobg: #e5e4e0; --nofg: #33312e;
+  --bad: #a3141c; --badbg: #fde0df;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
 }
@@ -11,12 +12,14 @@
   --bg: #121418; --fg: #eeeae2; --mut: #a29e96; --card: #1e2026; --line: #30333a;
   --acc: #f2a541; --accfg: #121418;
   --ok: #8fd19e; --okbg: #1c2b20; --warn: #f2a541; --warnbg: #3a2a12; --nobg: #2a2d33; --nofg: #c2beb6;
+  --bad: #ff8a80; --badbg: #3d1717;
   color-scheme: dark;
 }
 :root[data-theme="night"] {
   --bg: #000000; --fg: #ff4136; --mut: #b4281e; --card: #160000; --line: #3a0000;
   --acc: #ff4136; --accfg: #000000;
   --ok: #ff4136; --okbg: #2a0000; --warn: #ff4136; --warnbg: #2a0000; --nobg: #220000; --nofg: #d8382d;
+  --bad: #ff4136; --badbg: #3a0000;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -176,3 +179,32 @@ details > div { padding-bottom: 10px; }
 .scrollrow { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .scrollrow::-webkit-scrollbar { display: none; }
 tr.hl td { background: var(--okbg); }
+
+/* Unavailable: its own red, distinct from the amber "general steps" */
+.bad { background: var(--badbg); color: var(--bad); }
+.note.bad strong { color: var(--bad); }
+
+/* Collapsible groups on the Guides screen */
+details.group { border-bottom: 0; }
+details.group > summary {
+  list-style: none; display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mut);
+  padding: 12px 0 6px;
+}
+details.group > summary::-webkit-details-marker { display: none; }
+details.group > summary::before { content: "▸"; font-size: 14px; transition: transform .15s; }
+details.group[open] > summary::before { transform: rotate(90deg); }
+details.group > summary .count { background: var(--nobg); color: var(--nofg); border-radius: 99px; padding: 1px 7px; letter-spacing: 0; }
+details.group > div { padding-bottom: 4px; }
+
+/* Device picker in guides: name, then status on a second line */
+.devpick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.devopt {
+  text-align: left; background: var(--card); border: 2px solid transparent; border-radius: 10px;
+  padding: 6px 9px; cursor: pointer; min-width: 0;
+}
+.devopt b { display: block; font-size: 14px; line-height: 1.25; }
+.devopt.on { border-color: var(--acc); background: var(--bg); }
+.devopt .st { display: inline-block; margin-top: 3px; font-size: 11.5px; font-weight: 800; padding: 1px 7px; border-radius: 99px; }
+.devopt .st.unavailable { background: var(--badbg); color: var(--bad); }
+.devopt .st.unchecked { background: var(--warnbg); color: var(--warn); }

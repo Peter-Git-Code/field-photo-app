@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27.3",
+  "version": "2026-11-27.4",
   "devices": [
     {
       "id": "canon-r10",
@@ -55,6 +55,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-27",
+      "kind": "updated",
+      "text": "Drone hyperlapse: all four modes, settings, ND filters and editing"
+    },
     {
       "date": "2026-11-27",
       "kind": "new",
@@ -252,11 +257,15 @@
       "type": "guide",
       "mode": "video",
       "title": "Drone hyperlapse",
-      "summary": "A moving time-lapse shot from the air.",
+      "summary": "A moving time-lapse from the air: circle, course lock or waypoints.",
       "tags": [
         "drone",
         "hyperlapse",
-        "timelapse"
+        "timelapse",
+        "circle",
+        "course lock",
+        "waypoints",
+        "nd filter"
       ],
       "appliesTo": [
         "drone"
@@ -265,15 +274,15 @@
         "dji-lito-x1": {
           "status": "ok",
           "steps": [
-            "Run the pre-flight checks (Manuals › DJI LITO X1). In DJI Fly, set Max Altitude, Max Distance and Auto RTH Altitude to suit local rules.",
-            "Flip the remote's flight mode switch to **C (Cine)** for the slowest, smoothest movement.",
-            "Gimbal to **Follow** mode in DJI Fly › Settings › Control, so the horizon stays level.",
-            "Take off, fly to the start point and frame the shot.",
-            "Tap the **Shooting Modes** icon in the camera view and choose **Hyperlapse**. Pick the Hyperlapse type and set its parameters.",
-            "Press the **shutter/record** button to start. The drone shoots and compiles the clip itself.",
-            "To stop early, tap the stop icon or press the remote's **Flight Pause/Stop** button. The drone hovers."
+            "Run the pre-flight checks (Manuals › DJI LITO X1). In DJI Fly set Max Altitude, Max Distance and Auto RTH Altitude for local rules. Fit a full battery.",
+            "Flight mode switch to **C (Cine)** for the smoothest movement, and gimbal to **Follow** mode (DJI Fly › Settings › Control).",
+            "Fly to **50–100 m** above a scene with movement.",
+            "Camera to **Pro** mode: manual white balance about **5600 K**, **ISO 100**, shutter **½ s or slower**, with an ND filter in daylight. On the DJI RC 2, the camera dial can be set to change EV, shutter or ISO.",
+            "Tap the **Shooting Modes** icon in the camera view and choose **Hyperlapse**. Pick the mode (Circle, Course Lock or Waypoints if your DJI Fly shows them) and set interval, duration and speed.",
+            "Press the **shutter/record** button to start. Watch the frame count and battery.",
+            "To stop early, tap stop or press the remote's **Flight Pause** button. The drone hovers and keeps what it has shot."
           ],
-          "note": "The LITO X1 manual doesn't list the Hyperlapse types; DJI Fly shows them. Don't fly in rain, snow or strong wind."
+          "note": "The LITO X1 manual confirms Hyperlapse and Pro mode but doesn't list the Hyperlapse modes or the overexposure warning. Those come from the video, which was shot on a DJI Mini 4 Pro; check DJI Fly shows the same on the LITO X1."
         }
       },
       "file": "guides/drone-hyperlapse.json"

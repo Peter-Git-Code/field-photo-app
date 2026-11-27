@@ -3,11 +3,15 @@
   "type": "guide",
   "mode": "video",
   "title": "Drone hyperlapse",
-  "summary": "A moving time-lapse shot from the air.",
+  "summary": "A moving time-lapse from the air: circle, course lock or waypoints.",
   "tags": [
     "drone",
     "hyperlapse",
-    "timelapse"
+    "timelapse",
+    "circle",
+    "course lock",
+    "waypoints",
+    "nd filter"
   ],
   "appliesTo": [
     "drone"
@@ -17,55 +21,175 @@
       "t": "settings",
       "items": [
         [
+          "Height",
+          "50–100 m"
+        ],
+        [
           "Interval",
-          "2 s"
-        ],
-        [
-          "Length",
-          "10–15 s clip"
-        ],
-        [
-          "Exposure",
-          "Manual"
-        ],
-        [
-          "White bal.",
-          "Fixed"
-        ],
-        [
-          "Filter",
-          "ND in daylight"
+          "2–3 s"
         ],
         [
           "Speed",
-          "Slow"
+          "0.2–0.3 m/s"
+        ],
+        [
+          "Shutter",
+          "½ s or slower"
+        ],
+        [
+          "ISO",
+          "100"
+        ],
+        [
+          "White bal.",
+          "Manual 5600 K"
+        ],
+        [
+          "Filter",
+          "ND256–ND1000"
+        ],
+        [
+          "Format",
+          "JPEG"
         ]
       ],
-      "note": "10 s at 25 fps ≈ 250 frames ≈ 8–9 min of flight."
+      "note": "About 20 min of shooting gives roughly 25 s of clip (video's Mini 4 Pro example)."
     },
     {
       "t": "kit",
       "items": [
-        "Full batteries",
-        "ND filters",
-        "Charged phone or controller"
+        "Fully charged battery",
+        "ND256–ND1000 filters",
+        "A calm day"
       ]
+    },
+    {
+      "t": "h",
+      "text": "Which mode?"
+    },
+    {
+      "t": "table",
+      "head": [
+        "Mode",
+        "What it does",
+        "Good for"
+      ],
+      "rows": [
+        [
+          "Circle",
+          "Orbits a point you tap on screen",
+          "A building, tree, rock or landmark"
+        ],
+        [
+          "Course Lock",
+          "Flies a straight line; can keep facing a chosen point",
+          "Roads, coastlines, reveals"
+        ],
+        [
+          "Waypoints",
+          "Follows a route you plan, with height and gimbal set at each point",
+          "Sunsets (two points), dynamic moves"
+        ],
+        [
+          "Free",
+          "You fly it by hand, speed limited",
+          "Only when the other three can't do the shot"
+        ]
+      ]
+    },
+    {
+      "t": "p",
+      "text": "Why not just speed up a video? Sped-up video looks jerky and softer. A hyperlapse is built from sharp still photos, so it's smoother."
     }
   ],
   "steps": [
-    "Check the weather, wind and local drone rules before you fly.",
-    "Pick a subject with movement: clouds, traffic, water or shadows.",
-    "Plan a slow, simple path: straight line, orbit or pan.",
-    "Set exposure and white balance manually so frames match.",
-    "Use the drone's **hyperlapse mode** if it has one; otherwise fly slowly while shooting at an interval.",
-    "Keep enough battery to return home with margin."
+    "Pick a **calm day**. Wind makes the gimbal twitch and puts jerks in the clip. Golden hour is best: the lower light makes slow shutter speeds easier.",
+    "Choose a scene with **movement**: traffic, people, animals, clouds, shadows.",
+    "Fit a **full, fresh battery**. You can trim a long clip later, but you can't add what you didn't shoot.",
+    "Fly to **50 m or more** (70–100 m is fine). Hovering low over people for 20 minutes worries them.",
+    "In the pro camera settings set **white balance to manual, 5600 K** (6000 K for warmer golden-hour colour), **ISO 100**, and a shutter of **½ s or slower** for natural motion blur. Add an ND filter to get there in daylight.",
+    "Turn on the **overexposure warning** (zebra stripes) to see blown-out areas.",
+    "Leave photos on **JPEG** unless you plan to edit every frame. RAW fills the card, slows processing and forces longer intervals, so the clip ends up shorter.",
+    "Open **Hyperlapse** and pick a mode. Set the **interval** (2–3 s; slower shutters and RAW need longer), the **duration** (the app warns if the battery won't last), the **speed** (0.2–0.3 m/s) and the direction.",
+    "Press the **shutter** button. The screen shows frames taken and the clip length so far.",
+    "Battery running low? Stop it. Everything shot so far is saved."
   ],
   "after": [
     {
+      "t": "more",
+      "title": "Circle, step by step",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Point the drone at the subject and tilt the gimbal down if needed.",
+            "Choose Circle, then tap the point to orbit on the screen.",
+            "Set interval, duration, speed and clockwise or anticlockwise.",
+            "Press the shutter. While it flies, the +1 s button adds a second of clip each tap."
+          ]
+        }
+      ]
+    },
+    {
+      "t": "more",
+      "title": "Course Lock, step by step",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Face the drone the way it should travel and tap the padlock icon.",
+            "Optional: tap a point on the ground for the camera to keep facing.",
+            "Set interval, duration and speed. Check the map: the red dot is where it will finish.",
+            "Press the shutter. +1 s extends it, but the drone keeps flying away from you, so watch the distance."
+          ]
+        }
+      ]
+    },
+    {
+      "t": "more",
+      "title": "Waypoints, step by step",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Choose Waypoints, fly to each spot and tap **+** to save it. Change height and gimbal angle between points for a more dynamic shot.",
+            "The app tells you if the next point is badly placed or the turn is too sharp. Sharp turns cause jerks.",
+            "Two points is the simplest route, and ideal for sunsets.",
+            "Set interval and speed and press the shutter. There's no +1 s button in this mode."
+          ]
+        }
+      ]
+    },
+    {
+      "t": "more",
+      "title": "Edit the frames in DaVinci Resolve",
+      "blocks": [
+        {
+          "t": "p",
+          "text": "The drone saves the finished clip plus every still in a folder called **Hyperlapse**. Copy that folder to your computer."
+        },
+        {
+          "t": "list",
+          "items": [
+            "Optional: batch-edit the stills in your photo editor first.",
+            "In Explorer or Finder select all the stills (Ctrl+A / Cmd+A) and drag them onto a Resolve timeline. Resolve turns them into one clip.",
+            "**Inspector › Stabilization:** push Smoothness to the top and press Stabilize.",
+            "**Retime and Scaling › Scaling: Fill** to turn the 4:3 frames into 16:9.",
+            "**Transform › Y position** to move the frame up or down; the crop gives you room to line up the horizon."
+          ]
+        },
+        {
+          "t": "p",
+          "text": "No computer? The clip the drone makes itself downloads straight to your phone."
+        }
+      ]
+    },
+    {
       "t": "tips",
       "items": [
-        "Slower and longer looks smoother than fast and short.",
-        "Shoot just after sunset when lights come on."
+        "Slower is smoother. Try faster speeds only for fun.",
+        "Shutter longer than about 1 s may force a 3 s interval.",
+        "Over a road or crowd, keep the height up and keep moving."
       ]
     }
   ],
@@ -73,15 +197,20 @@
     "dji-lito-x1": {
       "status": "ok",
       "steps": [
-        "Run the pre-flight checks (Manuals › DJI LITO X1). In DJI Fly, set Max Altitude, Max Distance and Auto RTH Altitude to suit local rules.",
-        "Flip the remote's flight mode switch to **C (Cine)** for the slowest, smoothest movement.",
-        "Gimbal to **Follow** mode in DJI Fly › Settings › Control, so the horizon stays level.",
-        "Take off, fly to the start point and frame the shot.",
-        "Tap the **Shooting Modes** icon in the camera view and choose **Hyperlapse**. Pick the Hyperlapse type and set its parameters.",
-        "Press the **shutter/record** button to start. The drone shoots and compiles the clip itself.",
-        "To stop early, tap the stop icon or press the remote's **Flight Pause/Stop** button. The drone hovers."
+        "Run the pre-flight checks (Manuals › DJI LITO X1). In DJI Fly set Max Altitude, Max Distance and Auto RTH Altitude for local rules. Fit a full battery.",
+        "Flight mode switch to **C (Cine)** for the smoothest movement, and gimbal to **Follow** mode (DJI Fly › Settings › Control).",
+        "Fly to **50–100 m** above a scene with movement.",
+        "Camera to **Pro** mode: manual white balance about **5600 K**, **ISO 100**, shutter **½ s or slower**, with an ND filter in daylight. On the DJI RC 2, the camera dial can be set to change EV, shutter or ISO.",
+        "Tap the **Shooting Modes** icon in the camera view and choose **Hyperlapse**. Pick the mode (Circle, Course Lock or Waypoints if your DJI Fly shows them) and set interval, duration and speed.",
+        "Press the **shutter/record** button to start. Watch the frame count and battery.",
+        "To stop early, tap stop or press the remote's **Flight Pause** button. The drone hovers and keeps what it has shot."
       ],
-      "note": "The LITO X1 manual doesn't list the Hyperlapse types; DJI Fly shows them. Don't fly in rain, snow or strong wind."
+      "note": "The LITO X1 manual confirms Hyperlapse and Pro mode but doesn't list the Hyperlapse modes or the overexposure warning. Those come from the video, which was shot on a DJI Mini 4 Pro; check DJI Fly shows the same on the LITO X1."
     }
+  },
+  "source": {
+    "title": "DJI drone hyperlapse modes explained (YouTube)",
+    "url": "https://youtu.be/pFLchp5zTHI",
+    "note": "Summarised in our own words from the video's transcript, plus the DJI Lito X1 User Manual."
   }
 }

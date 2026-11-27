@@ -2,7 +2,7 @@
    App files: cache first, refreshed when SHELL_VERSION changes.
    Content (content/*.json): network first with a short timeout, falling back
    to the saved copy, so the library always opens offline. */
-var SHELL_VERSION = "shell-v4";
+var SHELL_VERSION = "shell-v5";
 var CONTENT_CACHE = "content";
 var SHELL = [
   "./", "index.html", "app.css", "app.js", "manifest.webmanifest",
@@ -10,7 +10,11 @@ var SHELL = [
 ];
 
 self.addEventListener("install", function (e) {
-  e.waitUntil(caches.open(SHELL_VERSION).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); }));
+  // cache: "reload" skips the browser's HTTP cache, so a new version never
+  // saves an older copy of app.js or app.css that the browser still holds.
+  e.waitUntil(caches.open(SHELL_VERSION).then(function (c) {
+    return c.addAll(SHELL.map(function (u) { return new Request(u, { cache: "reload" }); }));
+  }).then(function () { return self.skipWaiting(); }));
 });
 
 self.addEventListener("activate", function (e) {
@@ -36,7 +40,9 @@ self.addEventListener("fetch", function (e) {
   if (url.pathname.indexOf("/content/") !== -1) {
     var key = url.origin + url.pathname; // ignore query strings
     e.respondWith(caches.open(CONTENT_CACHE).then(function (cache) {
-      var net = fetch(req).then(function (res) {
+      // no-cache: always ask GitHub whether the file changed (cheap when it hasn't),
+      // instead of trusting the browser's 10-minute copy.
+      var net = fetch(new Request(req, { cache: "no-cache" })).then(function (res) {
         if (res.ok) cache.put(key, res.clone());
         return res;
       });

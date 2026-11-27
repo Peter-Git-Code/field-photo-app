@@ -67,7 +67,8 @@ id), `more` (collapsible, holds blocks). Text supports `**bold**` only.
 2. Run `python3 tools/sync_index.py` to rebuild the item and manual lists in `content/index.json`.
 3. Bump `version` in `content/index.json` and add a line to `changes`.
 4. If you changed `index.html`, `app.css`, `app.js` or the icons, bump
-   `SHELL_VERSION` in `sw.js`.
+   `SHELL_VERSION` in `sw.js` and `APP_VERSION` in `app.js` to match. Open phones
+   reload themselves once the new version is installed.
 5. Run `python3 tools/check_content.py`.
 6. Push to `main`. GitHub Pages redeploys; phones pick it up on their next launch with signal.
 

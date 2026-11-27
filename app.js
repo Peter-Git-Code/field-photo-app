@@ -5,6 +5,7 @@
 (function () {
   "use strict";
 
+  var APP_VERSION = "5"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -901,14 +902,27 @@
         "Every phone picks it up the next time the app opens with signal."]),
       el("p", { class: "muted", style: "margin-top:14px" }, "Site: ", el("a", { href: SITE, target: "_blank", rel: "noopener", text: "peter-git-code.github.io/field-photo-app" }),
         el("br"), "Content: ", el("a", { href: REPO, target: "_blank", rel: "noopener", text: "github.com/Peter-Git-Code/field-photo-app" })),
-      el("p", { class: "muted", text: "Library version " + (state.index.version || "–") })
+      el("p", { class: "muted", text: "App version " + APP_VERSION + " · Library version " + (state.index.version || "–") })
     ]);
   }
 
   // ---------- start ----------
   applyTheme(state.theme);
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(function () { /* offline support unavailable */ });
+    var hadController = !!navigator.serviceWorker.controller, reloaded = false;
+    navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then(function (reg) {
+      reg.update().catch(function () {});
+      // Re-check when the app comes back to the front (phones keep apps open for days).
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") reg.update().catch(function () {});
+      });
+    }).catch(function () { /* offline support unavailable */ });
+    // A new version has taken over: reload once so the new screens show straight away.
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      if (!hadController || reloaded) return;
+      reloaded = true;
+      location.reload();
+    });
   }
   loadIndex().then(function (idx) {
     window.addEventListener("hashchange", route);

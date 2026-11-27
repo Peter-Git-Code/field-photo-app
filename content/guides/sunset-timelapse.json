@@ -78,7 +78,28 @@
   ],
   "devices": {
     "canon-r10": {
-      "status": "unchecked"
+      "status": "ok",
+      "steps": [
+        "Tripod down and frame the shot. Focus on the horizon, then switch to **MF** (lens switch, or the AF/MF switch on the front of the camera). AF doesn't run during recording anyway.",
+        "Turn the **Mode dial to movie**.",
+        "**MENU › Shooting 5 › Time-lapse movie › Time-lapse: Enable**.",
+        "**Interval: 00:00:03** and **No. of shots: 0300** (up to 3600). Check the playback time isn't shown in red; red means the card is too small or not exFAT.",
+        "**Movie rec. size:** 4K or Full HD. **Auto exposure: Fixed 1st frame** to stop flicker.",
+        "**Screen auto off: Enable** to save battery, and **Beep: 0**.",
+        "Set exposure in M (1/4000 to 30 s is available) and lock white balance in **Shooting 3 › White balance**.",
+        "Close the menu, read the message and press the shutter for a test shot (saved as a JPEG).",
+        "Press the **movie button** to arm, then press the **shutter fully** to start. Don't zoom or touch the lens.",
+        "It stops by itself after the last frame. Press the shutter fully to stop early; what's shot so far is kept."
+      ],
+      "note": "The R10 builds the MP4 itself at 29.97 or 25 fps. No sound, no image stabilisation, and the flash won't fire. Turning the Mode dial cancels the setup. Want the stills instead? Shooting 7 › Interval timer keeps each frame, but stops at 99 shots unless you set 00 (no limit)."
+    },
+    "dji-osmo-action-5-pro": {
+      "status": "unchecked",
+      "note": "The Osmo Action 5 Pro manual doesn't describe a time-lapse mode. Swipe left or right on the screen to see if your firmware has one. General steps shown."
+    },
+    "dji-lito-x1": {
+      "status": "unavailable",
+      "note": "For the drone, use its Hyperlapse mode instead. Open the Drone hyperlapse guide."
     }
   }
 }

@@ -14,7 +14,7 @@
     items: {},          // id -> loaded item JSON
     manuals: {},        // device id -> loaded manual JSON
     mode: store("mode") || "photo",
-    kit: store("kit") || ["canon-r10", "dji-lito-x1"],
+    kit: store("kit") || ["canon-r10", "dji-lito-x1", "dji-osmo-action-5-pro", "canon-speedlite-420ex"],
     custom: store("customDevices") || [],
     active: store("activeDevice") || "canon-r10",
     theme: store("theme") || "day"
@@ -121,12 +121,21 @@
   // Device support for a guide: ok | unavailable | unchecked
   function support(meta, dev) {
     if (!dev || meta.type !== "guide") return null;
-    if (meta.appliesTo && meta.appliesTo.indexOf(dev.type) === -1) {
-      return { status: "unavailable", note: "This guide is for " + meta.appliesTo.join(" or ") + "s. It doesn't apply to " + dev.name + "." };
-    }
     var d = (meta.devices || {})[dev.id];
-    if (!d) return { status: "unchecked" };
-    return d;
+    if (d) return d;
+    if (meta.appliesTo && meta.appliesTo.indexOf(dev.type) === -1) {
+      return { status: "unavailable", note: "This guide is for " + meta.appliesTo.map(typeName).join(" or ") + ". It doesn't apply to " + dev.name + "." };
+    }
+    return { status: "unchecked" };
+  }
+  var TYPE_NAMES = { camera: "Cameras", drone: "Drones", action: "Action cameras", flash: "Flashes", phone: "Phones" };
+  function typeName(t) { return (TYPE_NAMES[t] || t).toLowerCase(); }
+  // The device a guide should open with: the selected one if the guide fits it,
+  // otherwise the first device in the kit the guide is written for.
+  function deviceFor(meta) {
+    var dev = activeDevice();
+    if (!meta.appliesTo || (dev && meta.appliesTo.indexOf(dev.type) !== -1)) return dev;
+    return kitDevices().filter(function (d) { return meta.appliesTo.indexOf(d.type) !== -1; })[0] || dev;
   }
   var SUPPORT_LABEL = {
     ok: ["Steps for your device", "ok"],
@@ -206,7 +215,7 @@
           }));
         } else {
           add(list, el("div", { class: "tiles" }, group.map(function (i) {
-            var s = support(i, dev);
+            var s = support(i, deviceFor(i));
             return el("a", { class: "tile", href: "#/item/" + i.id },
               el("b", { text: i.title }),
               el("span", { class: "muted", text: i.summary }),
@@ -293,12 +302,13 @@
       el("span", { text: "Placeholder until your own shot is added" }));
   }
 
-  var chosenDevice = null;
+  var chosenDevice = null, chosenFor = null;
   function deviceSection(it, meta) {
+    if (chosenFor !== it.id) { chosenDevice = null; chosenFor = it.id; }
     var kit = kitDevices();
     var wrap = el("div");
     if (!kit.length) return el("p", { class: "muted" }, "Add your camera in ", el("a", { href: "#/kit", text: "My kit" }), " to see steps for it.");
-    var current = chosenDevice && kit.some(function (d) { return d.id === chosenDevice; }) ? chosenDevice : (activeDevice() || kit[0]).id;
+    var current = chosenDevice && kit.some(function (d) { return d.id === chosenDevice; }) ? chosenDevice : (deviceFor(meta) || kit[0]).id;
     var sel = el("select", {
       id: "dev", onchange: function () { chosenDevice = sel.value; route(); }
     }, kit.map(function (d) {
@@ -311,7 +321,7 @@
     if (s.status === "unavailable") {
       add(wrap, el("div", { class: "note no" }, el("strong", { text: "Feature unavailable. " }), s.note || ""));
     } else if (s.status === "unchecked") {
-      add(wrap, el("div", { class: "note warn", text: "Device steps not written yet for " + device(current).name + ". Showing general steps." }));
+      add(wrap, el("div", { class: "note warn", text: s.note || ("Device steps not written yet for " + device(current).name + ". Showing general steps.") }));
     }
     it._device = current;
     return wrap;
@@ -386,7 +396,7 @@
     }
     var byType = {};
     allDevices().forEach(function (d) { (byType[d.type] = byType[d.type] || []).push(d); });
-    var typeNames = { camera: "Cameras", drone: "Drones", phone: "Phones", action: "Action cameras" };
+    var typeNames = TYPE_NAMES;
     add(view, [
       header(null, "#/", "Guides"),
       el("h2", { text: "My kit" }),
@@ -406,7 +416,7 @@
     });
     var nameIn = el("input", { id: "cname", type: "text", placeholder: "e.g. Fujifilm X-T5", oninput: function (e) { custom.name = e.target.value; } });
     var typeIn = el("select", { id: "ctype", onchange: function (e) { custom.type = e.target.value; } },
-      ["camera", "drone", "phone", "action"].map(function (t) { return el("option", { value: t, text: (typeNames[t] || t).replace(/s$/, "") }); }));
+      ["camera", "drone", "action", "flash", "phone"].map(function (t) { return el("option", { value: t, text: (typeNames[t] || t).replace(/s$/, "") }); }));
     add(view, [
       el("div", { class: "lab", text: "Not listed?" }),
       el("div", { class: "card" },

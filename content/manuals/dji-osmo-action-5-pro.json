@@ -1,0 +1,186 @@
+{
+  "device": "dji-osmo-action-5-pro",
+  "status": "ready",
+  "summary": "Buttons, stabilisation, colour, slow motion, underwater",
+  "specs": [
+    [
+      "Waterproof",
+      "20 m bare; 60 m in the waterproof case"
+    ],
+    [
+      "Storage",
+      "microSD or internal"
+    ],
+    [
+      "App",
+      "DJI Mimo"
+    ],
+    [
+      "Full specs",
+      "dji.com/osmo-action-5-pro/specs"
+    ]
+  ],
+  "sections": [
+    {
+      "title": "Buttons and screen",
+      "blocks": [
+        {
+          "t": "table",
+          "head": [
+            "Do this",
+            "Result"
+          ],
+          "rows": [
+            [
+              "Shutter: press",
+              "Photo, or start/stop recording"
+            ],
+            [
+              "Shutter: hold while off",
+              "SnapShot: powers on and records instantly"
+            ],
+            [
+              "Quick Switch: hold",
+              "Power on/off"
+            ],
+            [
+              "Quick Switch: press",
+              "Change mode; while recording, mark a highlight"
+            ],
+            [
+              "Swipe down",
+              "Control menu"
+            ],
+            [
+              "Swipe left/right",
+              "Video, photo and other modes"
+            ],
+            [
+              "Swipe up",
+              "Resolution, frame rate, ratio, timer"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Stabilisation (EIS)",
+      "blocks": [
+        {
+          "t": "table",
+          "head": [
+            "Mode",
+            "Best for"
+          ],
+          "rows": [
+            [
+              "Off",
+              "Widest view; needed for gyro data"
+            ],
+            [
+              "RockSteady",
+              "First-person action, keeps some movement"
+            ],
+            [
+              "RockSteady+",
+              "Stronger, crops edges slightly"
+            ],
+            [
+              "HorizonBalancing",
+              "Levels tilts up to ±45°"
+            ],
+            [
+              "HorizonSteady",
+              "Locks the horizon through full 360° rolls"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Set it from the top-right of the screen in Video or SuperNight mode."
+        }
+      ]
+    },
+    {
+      "title": "Colour and picture",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Tap PRO for pro settings.",
+            "Colour: Normal 8-bit, Normal 10-bit, HLG 10-bit, D-Log M 10-bit.",
+            "**D-Log M** keeps the most dynamic range for grading. Turn on Color Recovery to preview normal colours.",
+            "Lock exposure and white balance for video, same as on any camera."
+          ]
+        },
+        {
+          "t": "link",
+          "id": "shutter-180",
+          "text": "Shutter speed for natural motion →"
+        }
+      ]
+    },
+    {
+      "title": "Recording helpers",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "**Pre-Rec:** keeps the seconds before you press record.",
+            "**Loop recording:** overwrites old footage, like a dashcam.",
+            "**Custom modes** (control menu) save setups.",
+            "**Voice control:** Start Recording, Stop Recording, Take Photo, Shut Down."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Super slow-motion",
+      "usedIn": [
+        "slow-motion"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Record 4K, 2.7K or 1080p 16:9 at 100 fps or more.",
+            "In playback, stop at the moment and tap the slow-motion icon.",
+            "Creates a 1080p clip up to 960 fps with 4× frame interpolation.",
+            "Up to 6 per video; not in the first 1.5 s or last 2 s."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Underwater",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Battery door closed with **no red marks showing**. USB-C cover and lens cover on tight; seals clean.",
+            "Not waterproof with the lens hood fitted.",
+            "Don't jump into water at speed with it; the impact can force water in.",
+            "Afterwards rinse in tap water and let it air-dry. No hair dryer."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sound",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Pairs with up to two DJI wireless mics over Bluetooth.",
+            "**Built-in Mic Audio Backup** saves a separate .wav as a safety copy.",
+            "Wind noise reduction only works on the built-in mic."
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "title": "Osmo Action 5 Pro User Manual v1.0",
+    "url": "https://www.dji.com/osmo-action-5-pro/downloads"
+  }
+}

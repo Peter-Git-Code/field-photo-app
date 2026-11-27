@@ -78,7 +78,18 @@
   ],
   "devices": {
     "canon-r10": {
-      "status": "unchecked"
+      "status": "ok",
+      "steps": [
+        "**Mode dial to M**. ISO 100, f/11.",
+        "Focus without the filter, then switch to **MF** so the camera doesn't hunt in the dark through the ND.",
+        "Turn the shutter until the exposure meter reads 0. Note that shutter speed.",
+        "Screw on the ND filter. Get the new shutter speed from the ND calculator and set it. M goes up to 30 s.",
+        "Longer than 30 s: **Mode dial to B**, then **MENU › Shooting 7 › Bulb timer › Enable** and set the time.",
+        "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or a BR-E1 remote).",
+        "Lens IS off on a tripod: the lens switch, or **Shooting 8 › IS mode: Off**.",
+        "Shoot, then check the histogram. Turn on **Playback 5 › Highlight alert** to see blown highlights blink."
+      ],
+      "note": "Shooting 5 › Long exp. noise reduction › Auto cleans exposures of 1 s or longer, but the camera then needs as long again to process."
     }
   }
 }

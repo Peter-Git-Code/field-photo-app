@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27.1",
+  "version": "2026-11-27.2",
   "devices": [
     {
       "id": "canon-r10",
@@ -14,38 +14,428 @@
       "name": "DJI LITO X1",
       "brand": "DJI",
       "type": "drone"
+    },
+    {
+      "id": "dji-osmo-action-5-pro",
+      "name": "DJI Osmo Action 5 Pro",
+      "brand": "DJI",
+      "type": "action"
+    },
+    {
+      "id": "canon-speedlite-420ex",
+      "name": "Canon Speedlite 420EX",
+      "brand": "Canon",
+      "type": "flash"
     }
   ],
   "manuals": [
     {
       "device": "canon-r10",
-      "status": "pending",
-      "file": "manuals/canon-r10.json"
+      "status": "ready",
+      "file": "manuals/canon-r10.json",
+      "summary": "Menus, time-lapse, bulb, focus bracketing, flash"
+    },
+    {
+      "device": "canon-speedlite-420ex",
+      "status": "ready",
+      "file": "manuals/canon-speedlite-420ex.json",
+      "summary": "Fitting to the R10, bounce, high-speed sync, range"
     },
     {
       "device": "dji-lito-x1",
-      "status": "pending",
-      "file": "manuals/dji-lito-x1.json"
+      "status": "ready",
+      "file": "manuals/dji-lito-x1.json",
+      "summary": "Flight modes, checklist, intelligent modes, RTH"
+    },
+    {
+      "device": "dji-osmo-action-5-pro",
+      "status": "ready",
+      "file": "manuals/dji-osmo-action-5-pro.json",
+      "summary": "Buttons, stabilisation, colour, slow motion, underwater"
     }
   ],
   "changes": [
     {
       "date": "2026-11-27",
       "kind": "new",
+      "text": "Manuals: Canon R10, DJI LITO X1, Osmo Action 5 Pro, Speedlite 420EX"
+    },
+    {
+      "date": "2026-11-27",
+      "kind": "new",
+      "text": "Guides: focus stacking, slow motion, bounce flash, fill flash"
+    },
+    {
+      "date": "2026-11-27",
+      "kind": "updated",
+      "text": "Canon R10 and LITO X1 steps added to existing guides"
+    },
+    {
+      "date": "2026-11-27",
+      "kind": "new",
       "text": "First library: 14 basics, 6 how-to guides, 2 lessons"
-    },
-    {
-      "date": "2026-11-27",
-      "kind": "coming",
-      "text": "Canon EOS R10 manual and device steps"
-    },
-    {
-      "date": "2026-11-27",
-      "kind": "coming",
-      "text": "DJI LITO X1 manual and device steps"
     }
   ],
   "items": [
+    {
+      "id": "sunset-timelapse",
+      "type": "guide",
+      "mode": "video",
+      "title": "Sunset time-lapse",
+      "summary": "Hundreds of stills turned into a short clip.",
+      "tags": [
+        "timelapse",
+        "interval",
+        "sunset"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "Tripod down and frame the shot. Focus on the horizon, then switch to **MF** (lens switch, or the AF/MF switch on the front of the camera). AF doesn't run during recording anyway.",
+            "Turn the **Mode dial to movie**.",
+            "**MENU › Shooting 5 › Time-lapse movie › Time-lapse: Enable**.",
+            "**Interval: 00:00:03** and **No. of shots: 0300** (up to 3600). Check the playback time isn't shown in red; red means the card is too small or not exFAT.",
+            "**Movie rec. size:** 4K or Full HD. **Auto exposure: Fixed 1st frame** to stop flicker.",
+            "**Screen auto off: Enable** to save battery, and **Beep: 0**.",
+            "Set exposure in M (1/4000 to 30 s is available) and lock white balance in **Shooting 3 › White balance**.",
+            "Close the menu, read the message and press the shutter for a test shot (saved as a JPEG).",
+            "Press the **movie button** to arm, then press the **shutter fully** to start. Don't zoom or touch the lens.",
+            "It stops by itself after the last frame. Press the shutter fully to stop early; what's shot so far is kept."
+          ],
+          "note": "The R10 builds the MP4 itself at 29.97 or 25 fps. No sound, no image stabilisation, and the flash won't fire. Turning the Mode dial cancels the setup. Want the stills instead? Shooting 7 › Interval timer keeps each frame, but stops at 99 shots unless you set 00 (no limit)."
+        },
+        "dji-osmo-action-5-pro": {
+          "status": "unchecked",
+          "note": "The Osmo Action 5 Pro manual doesn't describe a time-lapse mode. Swipe left or right on the screen to see if your firmware has one. General steps shown."
+        },
+        "dji-lito-x1": {
+          "status": "unavailable",
+          "note": "For the drone, use its Hyperlapse mode instead. Open the Drone hyperlapse guide."
+        }
+      },
+      "file": "guides/sunset-timelapse.json"
+    },
+    {
+      "id": "long-exposure-water",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Silky water",
+      "summary": "Smooth waterfalls and seas with an ND filter.",
+      "tags": [
+        "long exposure",
+        "nd filter",
+        "waterfall"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. ISO 100, f/11.",
+            "Focus without the filter, then switch to **MF** so the camera doesn't hunt in the dark through the ND.",
+            "Turn the shutter until the exposure meter reads 0. Note that shutter speed.",
+            "Screw on the ND filter. Get the new shutter speed from the ND calculator and set it. M goes up to 30 s.",
+            "Longer than 30 s: **Mode dial to B**, then **MENU › Shooting 7 › Bulb timer › Enable** and set the time.",
+            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or a BR-E1 remote).",
+            "Lens IS off on a tripod: the lens switch, or **Shooting 8 › IS mode: Off**.",
+            "Shoot, then check the histogram. Turn on **Playback 5 › Highlight alert** to see blown highlights blink."
+          ],
+          "note": "Shooting 5 › Long exp. noise reduction › Auto cleans exposures of 1 s or longer, but the camera then needs as long again to process."
+        }
+      },
+      "file": "guides/long-exposure-water.json"
+    },
+    {
+      "id": "milky-way",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Milky Way",
+      "summary": "Sharp stars and a bright core on a dark night.",
+      "tags": [
+        "astro",
+        "stars",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. Aperture wide open, **ISO 3200** (the R10 goes to 32000).",
+            "Switch to **MF**. Magnify the live view on a bright star and turn the focus ring until it's the smallest point. **AF5 › Focus guide** can help on nearer subjects.",
+            "Shutter from the star calculator: at 18 mm on the R10's APS-C sensor, about 17 s.",
+            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec**.",
+            "Lens IS off on the tripod. The R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "**Shooting 5 › Long exp. noise reduction:** Auto for single frames, Disable if you'll stack several.",
+            "Shoot RAW (**Shooting 1 › Image quality**). Check stars are points, not lines.",
+            "Happy with it? Save everything: **Set-up 5 › Custom shooting mode (C1, C2) › Register settings › C1**. Next time, just turn the dial to C1."
+          ],
+          "note": "Need more than 30 s? Use Mode dial B with Shooting 7 › Bulb timer."
+        }
+      },
+      "file": "guides/milky-way.json"
+    },
+    {
+      "id": "panorama",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Panorama",
+      "summary": "Stitch several frames into one wide view.",
+      "tags": [
+        "stitch",
+        "wide",
+        "landscape"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Quick way:** Mode dial to **SCN › Panoramic Shot**. Pick the direction, half-press to focus, then hold the shutter fully and sweep at a steady speed until the bar fills. The camera stitches it.",
+            "Quick mode struggles with moving subjects, close objects, high-contrast scenes and big plain areas like sea or sky. Sweep slower on long lenses or in low light.",
+            "**Best quality:** Mode dial to **M**, f/8, ISO 100, and set exposure for the brightest part.",
+            "Fix white balance in **Shooting 4 › White balance** (not Auto), focus, then switch to **MF**.",
+            "Turn the camera to portrait, shoot left to right with a third to a half overlap, and stitch on a computer."
+          ],
+          "note": "SCN Panoramic Shot saves a JPEG only. Use the manual method if you want RAW."
+        }
+      },
+      "file": "guides/panorama.json"
+    },
+    {
+      "id": "sun-star",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Sun star",
+      "summary": "Turn the sun into a sharp star burst.",
+      "tags": [
+        "sunstar",
+        "backlight",
+        "aperture"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to Av**, aperture **f/16**, ISO 100.",
+            "**Shooting 2 › Expo.comp./AEB:** start at **−1** to keep the sky's colour. AEB (bracketing) is on the same screen.",
+            "Hide about half the sun behind an edge and move a few centimetres until the star is strongest.",
+            "Turn on **Playback 5 › Highlight alert** and check what blinks after each shot.",
+            "Keep it brief: the manual warns that pointing the camera at the sun can damage the sensor. Cap the lens between shots."
+          ],
+          "note": "The R10's viewfinder is electronic, so it's safe for your eye, but the sensor still takes the heat."
+        }
+      },
+      "file": "guides/sun-star.json"
+    },
+    {
+      "id": "drone-hyperlapse",
+      "type": "guide",
+      "mode": "video",
+      "title": "Drone hyperlapse",
+      "summary": "A moving time-lapse shot from the air.",
+      "tags": [
+        "drone",
+        "hyperlapse",
+        "timelapse"
+      ],
+      "appliesTo": [
+        "drone"
+      ],
+      "devices": {
+        "dji-lito-x1": {
+          "status": "ok",
+          "steps": [
+            "Run the pre-flight checks (Manuals › DJI LITO X1). In DJI Fly, set Max Altitude, Max Distance and Auto RTH Altitude to suit local rules.",
+            "Flip the remote's flight mode switch to **C (Cine)** for the slowest, smoothest movement.",
+            "Gimbal to **Follow** mode in DJI Fly › Settings › Control, so the horizon stays level.",
+            "Take off, fly to the start point and frame the shot.",
+            "Tap the **Shooting Modes** icon in the camera view and choose **Hyperlapse**. Pick the Hyperlapse type and set its parameters.",
+            "Press the **shutter/record** button to start. The drone shoots and compiles the clip itself.",
+            "To stop early, tap the stop icon or press the remote's **Flight Pause/Stop** button. The drone hovers."
+          ],
+          "note": "The LITO X1 manual doesn't list the Hyperlapse types; DJI Fly shows them. Don't fly in rain, snow or strong wind."
+        }
+      },
+      "file": "guides/drone-hyperlapse.json"
+    },
+    {
+      "id": "bounce-flash",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Bounce flash",
+      "summary": "Soft, natural light indoors from a ceiling or wall.",
+      "tags": [
+        "speedlite",
+        "flash",
+        "indoors",
+        "portrait"
+      ],
+      "appliesTo": [
+        "flash"
+      ],
+      "devices": {
+        "canon-speedlite-420ex": {
+          "status": "ok",
+          "steps": [
+            "Load **4 AA** batteries of the same type. Slide the foot all the way into the R10's hot shoe and tighten the **locking collar**. The 420EX fits the R10 directly.",
+            "Set the **wireless selector to OFF** and switch it on. The pilot lamp lights when it's ready.",
+            "Camera in **Av or M**. The flash runs E-TTL automatically.",
+            "Hold the bounce release button and tilt the head: **up 60°, 75° or 90°**, **left up to 180°**, **right up to 90°**. The zoom jumps to 50 mm by itself.",
+            "Shoot. The **green confirmation lamp** lights for about 3 s if there was enough light. No green: open the aperture, raise ISO or bounce off something closer.",
+            "Brighter or darker: set flash exposure compensation on the R10 in **Shooting 3 › Flash control** (±2 stops)."
+          ],
+          "note": "Alkaline AAs give about 200–1400 flashes and up to 7.5 s recycling. NiMH recharge about twice as fast but give 70–80% of the flashes."
+        }
+      },
+      "file": "guides/bounce-flash.json"
+    },
+    {
+      "id": "fill-flash",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Fill flash in daylight",
+      "summary": "Lift shadows on a backlit face without killing the background.",
+      "tags": [
+        "speedlite",
+        "high-speed sync",
+        "backlight",
+        "portrait"
+      ],
+      "appliesTo": [
+        "flash"
+      ],
+      "devices": {
+        "canon-speedlite-420ex": {
+          "status": "ok",
+          "steps": [
+            "Mount the 420EX on the R10 and switch it on, wireless selector **OFF**.",
+            "R10 in **Av** with a wide aperture. In sun the shutter will want to go above the R10's sync speed (**1/200 s**, or **1/250 s** with Shooting 7 › Shutter mode: Elec. 1st-curtain).",
+            "Flip the 420EX's **high-speed sync (FP) switch** on. It only kicks in when the shutter is faster than the sync speed.",
+            "Make sure **Shooting 7 › Shutter mode** isn't **Electronic**: the R10 can't fire a flash with the electronic shutter.",
+            "Set flash compensation to **−1** in **Shooting 3 › Flash control**.",
+            "Mind the reach: at 1/1000 s and 50 mm the guide number drops to about 8.5, so at f/2.8 the flash reaches about **3 m**."
+          ],
+          "note": "Guide number ÷ aperture = reach in metres at ISO 100. Doubling ISO adds about 40% reach."
+        }
+      },
+      "file": "guides/fill-flash.json"
+    },
+    {
+      "id": "focus-stacking",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Focus stacking",
+      "summary": "Everything sharp, front to back, from several frames.",
+      "tags": [
+        "macro",
+        "landscape",
+        "focus bracketing",
+        "depth of field"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "Tripod, and keep **AF** on: the R10's focus bracketing doesn't work in MF.",
+            "**MENU › Shooting 6 › Focus bracketing › Enable**.",
+            "**Number of shots:** 10–30 to start (2–999 possible). **Focus increment:** take a test run; bigger steps cover more depth with fewer shots.",
+            "**Exposure smoothing: Enable.** **Depth composite: Enable** to merge in camera, and **Crop depth comp.: Enable**.",
+            "Focus on the **nearest** point, press the shutter fully, then let go. The camera shoots toward infinity and stops by itself.",
+            "Check the merged image. The source frames are saved too, for merging on a computer."
+          ],
+          "note": "Flash doesn't work with focus bracketing. Shoot wide and crop afterwards; compositing trims the edges."
+        }
+      },
+      "file": "guides/focus-stacking.json"
+    },
+    {
+      "id": "slow-motion",
+      "type": "guide",
+      "mode": "video",
+      "title": "Slow motion",
+      "summary": "Shoot at a high frame rate, play it back slowed down.",
+      "tags": [
+        "high frame rate",
+        "120fps",
+        "slow mo"
+      ],
+      "appliesTo": [
+        "camera",
+        "action"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to movie**.",
+            "**MENU › Shooting 1 › High Frame Rate › Enable.** It records Full HD at 119.9 fps (or 100 fps in PAL).",
+            "Set the shutter to **1/250 s** in movie manual exposure. ISO goes to 12800.",
+            "Turn on **Shooting 6 › Zebra settings** to see overexposed areas.",
+            "Record. Clips play back at **1/4 speed** straight from the camera."
+          ],
+          "note": "No sound is recorded, and each clip is limited to 30 minutes."
+        },
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe up from the bottom of the screen and set **4K, 2.7K or 1080p at 16:9 and 100 fps or higher**.",
+            "Record the action.",
+            "Play the clip back and stop at the moment you want.",
+            "Tap the **super slow-motion** icon. The camera makes a 1080p clip slowed down with 4× frame interpolation (up to 960 fps).",
+            "Tap Preview to check it. Add up to 6 slow-motion clips per video."
+          ],
+          "note": "It can't use the first 1.5 s or the last 2 s of a clip, so start recording early and stop late."
+        }
+      },
+      "file": "guides/slow-motion.json"
+    },
+    {
+      "id": "backlit",
+      "type": "lesson",
+      "mode": "photo",
+      "title": "Backlit photography",
+      "summary": "Shoot into the light for rim glow, silhouettes and sun stars.",
+      "tags": [
+        "backlight",
+        "rim light",
+        "silhouette",
+        "golden hour"
+      ],
+      "minutes": 4,
+      "file": "lessons/backlit.json"
+    },
+    {
+      "id": "shutter-180",
+      "type": "lesson",
+      "mode": "video",
+      "title": "The 180° shutter rule",
+      "summary": "The shutter speed that makes video motion look natural.",
+      "tags": [
+        "video",
+        "shutter angle",
+        "frame rate",
+        "nd"
+      ],
+      "minutes": 2,
+      "file": "lessons/shutter-180.json"
+    },
     {
       "id": "exposure-triangle",
       "type": "basic",
@@ -226,162 +616,6 @@
         "bounce"
       ],
       "file": "basics/pop-up-flash.json"
-    },
-    {
-      "id": "sunset-timelapse",
-      "type": "guide",
-      "mode": "video",
-      "title": "Sunset time-lapse",
-      "summary": "Hundreds of stills turned into a short clip.",
-      "tags": [
-        "timelapse",
-        "interval",
-        "sunset"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "unchecked"
-        }
-      },
-      "file": "guides/sunset-timelapse.json"
-    },
-    {
-      "id": "long-exposure-water",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Silky water",
-      "summary": "Smooth waterfalls and seas with an ND filter.",
-      "tags": [
-        "long exposure",
-        "nd filter",
-        "waterfall"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "unchecked"
-        }
-      },
-      "file": "guides/long-exposure-water.json"
-    },
-    {
-      "id": "milky-way",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Milky Way",
-      "summary": "Sharp stars and a bright core on a dark night.",
-      "tags": [
-        "astro",
-        "stars",
-        "night"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "unchecked"
-        }
-      },
-      "file": "guides/milky-way.json"
-    },
-    {
-      "id": "panorama",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Panorama",
-      "summary": "Stitch several frames into one wide view.",
-      "tags": [
-        "stitch",
-        "wide",
-        "landscape"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "unchecked"
-        }
-      },
-      "file": "guides/panorama.json"
-    },
-    {
-      "id": "sun-star",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Sun star",
-      "summary": "Turn the sun into a sharp star burst.",
-      "tags": [
-        "sunstar",
-        "backlight",
-        "aperture"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "unchecked"
-        }
-      },
-      "file": "guides/sun-star.json"
-    },
-    {
-      "id": "drone-hyperlapse",
-      "type": "guide",
-      "mode": "video",
-      "title": "Drone hyperlapse",
-      "summary": "A moving time-lapse shot from the air.",
-      "tags": [
-        "drone",
-        "hyperlapse",
-        "timelapse"
-      ],
-      "appliesTo": [
-        "drone"
-      ],
-      "devices": {
-        "dji-lito-x1": {
-          "status": "unchecked"
-        }
-      },
-      "file": "guides/drone-hyperlapse.json"
-    },
-    {
-      "id": "backlit",
-      "type": "lesson",
-      "mode": "photo",
-      "title": "Backlit photography",
-      "summary": "Shoot into the light for rim glow, silhouettes and sun stars.",
-      "tags": [
-        "backlight",
-        "rim light",
-        "silhouette",
-        "golden hour"
-      ],
-      "minutes": 4,
-      "file": "lessons/backlit.json"
-    },
-    {
-      "id": "shutter-180",
-      "type": "lesson",
-      "mode": "video",
-      "title": "The 180° shutter rule",
-      "summary": "The shutter speed that makes video motion look natural.",
-      "tags": [
-        "video",
-        "shutter angle",
-        "frame rate",
-        "nd"
-      ],
-      "minutes": 2,
-      "file": "lessons/shutter-180.json"
     }
   ]
 }

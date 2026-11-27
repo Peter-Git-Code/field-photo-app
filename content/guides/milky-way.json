@@ -78,7 +78,18 @@
   ],
   "devices": {
     "canon-r10": {
-      "status": "unchecked"
+      "status": "ok",
+      "steps": [
+        "**Mode dial to M**. Aperture wide open, **ISO 3200** (the R10 goes to 32000).",
+        "Switch to **MF**. Magnify the live view on a bright star and turn the focus ring until it's the smallest point. **AF5 › Focus guide** can help on nearer subjects.",
+        "Shutter from the star calculator: at 18 mm on the R10's APS-C sensor, about 17 s.",
+        "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec**.",
+        "Lens IS off on the tripod. The R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+        "**Shooting 5 › Long exp. noise reduction:** Auto for single frames, Disable if you'll stack several.",
+        "Shoot RAW (**Shooting 1 › Image quality**). Check stars are points, not lines.",
+        "Happy with it? Save everything: **Set-up 5 › Custom shooting mode (C1, C2) › Register settings › C1**. Next time, just turn the dial to C1."
+      ],
+      "note": "Need more than 30 s? Use Mode dial B with Shooting 7 › Bulb timer."
     }
   }
 }

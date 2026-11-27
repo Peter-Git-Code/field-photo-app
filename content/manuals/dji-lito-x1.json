@@ -1,11 +1,232 @@
 {
   "device": "dji-lito-x1",
-  "status": "pending",
-  "message": "The DJI LITO X1 manual hasn't been summarised yet.",
-  "planned": [
-    "Controls and flight modes",
-    "Camera settings",
-    "Hyperlapse and intelligent modes",
-    "Batteries and safety"
-  ]
+  "status": "ready",
+  "summary": "Flight modes, checklist, intelligent modes, RTH",
+  "specs": [
+    [
+      "Storage",
+      "microSD, or internal storage without a card"
+    ],
+    [
+      "Photo",
+      "SmartPhoto by default; 48 MP option"
+    ],
+    [
+      "Operating temp.",
+      "−10 to 40 °C"
+    ],
+    [
+      "App",
+      "DJI Fly; log in every 90 days"
+    ],
+    [
+      "Without login",
+      "Limited to 30 m height and 50 m range"
+    ],
+    [
+      "Full specs",
+      "dji.com/lito-x1/specs"
+    ]
+  ],
+  "sections": [
+    {
+      "title": "Pre-flight checklist",
+      "usedIn": [
+        "drone-hyperlapse"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Gimbal protector off. Arms and propellers unfolded and secure.",
+            "Aircraft battery, remote and phone charged.",
+            "Lenses and sensors clean. Nothing blocking the motors.",
+            "DJI Fly connected.",
+            "Obstacle avoidance action set. Max Altitude, Max Distance and Auto RTH Altitude set for local rules.",
+            "Take off from open, flat ground with the rear of the drone facing you."
+          ]
+        },
+        {
+          "t": "note",
+          "tone": "warn",
+          "text": "Never launch from your hand. Don't fly in rain, snow or strong wind."
+        }
+      ]
+    },
+    {
+      "title": "Flight modes (C / N / S switch)",
+      "blocks": [
+        {
+          "t": "table",
+          "head": [
+            "Switch",
+            "Mode",
+            "Use"
+          ],
+          "rows": [
+            [
+              "C",
+              "Cine",
+              "Slow and smooth, best for video"
+            ],
+            [
+              "N",
+              "Normal",
+              "Most flying; intelligent modes work"
+            ],
+            [
+              "S",
+              "Sport",
+              "Fast; obstacle avoidance OFF; needs 40 m to stop"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "With weak GPS and no vision system the drone drops to ATTI mode: it drifts in wind and won't hover by itself. Land soon."
+        }
+      ]
+    },
+    {
+      "title": "Remote controls",
+      "blocks": [
+        {
+          "t": "table",
+          "head": [
+            "Control",
+            "DJI RC 2",
+            "DJI RC-N3"
+          ],
+          "rows": [
+            [
+              "Gimbal tilt",
+              "Gimbal dial",
+              "Gimbal dial"
+            ],
+            [
+              "Photo",
+              "Half-press to focus, full press to shoot",
+              "Shutter/record button"
+            ],
+            [
+              "Video",
+              "Record button",
+              "Same button"
+            ],
+            [
+              "Zoom / settings",
+              "Camera dial: zoom, or EV, shutter, ISO",
+              "Hold custom button + gimbal dial to zoom"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Both remotes have the C/N/S switch and a **Flight Pause/RTH** button."
+        }
+      ]
+    },
+    {
+      "title": "Intelligent flight modes",
+      "usedIn": [
+        "drone-hyperlapse"
+      ],
+      "blocks": [
+        {
+          "t": "table",
+          "head": [
+            "Mode",
+            "What it does"
+          ],
+          "rows": [
+            [
+              "FocusTrack: Spotlight",
+              "Camera stays on the subject while you fly"
+            ],
+            [
+              "FocusTrack: POI",
+              "Circles the subject"
+            ],
+            [
+              "FocusTrack: ActiveTrack",
+              "Follows people (4–20 m) or vehicles and boats (6–100 m)"
+            ],
+            [
+              "MasterShots",
+              "Flies a set of classic shots automatically"
+            ],
+            [
+              "QuickShots",
+              "One preset move, makes a short clip"
+            ],
+            [
+              "Hyperlapse",
+              "Moving time-lapse from the air"
+            ],
+            [
+              "Waypoints",
+              "Repeatable saved route with camera actions"
+            ],
+            [
+              "Cruise Control",
+              "Locks speed for smooth moves"
+            ]
+          ]
+        },
+        {
+          "t": "list",
+          "items": [
+            "Start them from the Shooting Modes icon (right of the camera view) or the FocusTrack icon (left).",
+            "They need decent light (above 5 lux, below 100,000 lux) and fail on snow, sand or subjects that blend in.",
+            "QuickShots space: Boomerang needs 30 m around and 10 m above; Asteroid needs 40 m behind and 50 m above.",
+            "Flight Pause on the remote stops any mode and hovers."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Gimbal and camera",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "**Follow** mode keeps the horizon level. **FPV** mode rolls with the drone. Set in DJI Fly › Control.",
+            "Single Shot uses SmartPhoto (scene detection, HDR). There's no HDR when the drone is moving, in strong wind, or in Pro mode.",
+            "Don't point the camera at the sun for long, or at lasers.",
+            "Focus can struggle with distant dark subjects, repeating patterns, reflections and fast movement."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Return to Home",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Triggered by you, by low battery, or by lost signal.",
+            "The Home Point is recorded at take-off; DJI Fly announces it. Update it in Safety if you move.",
+            "Set the RTH altitude above trees and buildings before you fly."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Getting files off",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "QuickTransfer to your phone.",
+            "USB-C cable to a computer (the drone can stay off).",
+            "Or take out the microSD card. Never remove it while recording."
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "title": "DJI Lito X1 User Manual v1.2",
+    "url": "https://www.dji.com/lito-x1/downloads"
+  }
 }

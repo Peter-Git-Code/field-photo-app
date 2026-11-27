@@ -1,0 +1,191 @@
+{
+  "device": "canon-speedlite-420ex",
+  "status": "ready",
+  "summary": "Fitting to the R10, bounce, high-speed sync, range",
+  "specs": [
+    [
+      "Flash mode",
+      "E-TTL automatic (no manual power)"
+    ],
+    [
+      "Zoom",
+      "24–105 mm, automatic"
+    ],
+    [
+      "Power",
+      "4 × AA (alkaline, NiMH or lithium)"
+    ],
+    [
+      "Flashes",
+      "About 200–1400 on alkaline"
+    ],
+    [
+      "Recycle",
+      "0.1–7.5 s on alkaline"
+    ],
+    [
+      "Sleep",
+      "Off after 90 s idle; tap test button to wake"
+    ],
+    [
+      "Weight",
+      "300 g without batteries"
+    ]
+  ],
+  "sections": [
+    {
+      "title": "On the Canon R10",
+      "usedIn": [
+        "bounce-flash",
+        "fill-flash"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Fits the R10's hot shoe directly; tighten the locking collar.",
+            "Works in E-TTL automatic flash.",
+            "Set flash compensation on the camera: **Shooting 3 › Flash control**.",
+            "The R10 won't fire any flash with the Electronic shutter mode.",
+            "This is a 2002 flash: some newer R10 flash menu options may not be available with it."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bounce angles",
+      "usedIn": [
+        "bounce-flash"
+      ],
+      "blocks": [
+        {
+          "t": "table",
+          "head": [
+            "Direction",
+            "Max",
+            "Click stops"
+          ],
+          "rows": [
+            [
+              "Up",
+              "90°",
+              "60°, 75°, 90°"
+            ],
+            [
+              "Left",
+              "180°",
+              "60°, 75°, 90°, 120°, 150°, 180°"
+            ],
+            [
+              "Right",
+              "90°",
+              "60°, 75°, 90°"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Hold the release button to turn the head. When bounced, coverage sets itself to 50 mm."
+        }
+      ]
+    },
+    {
+      "title": "Reach (guide number, ISO 100)",
+      "usedIn": [
+        "fill-flash"
+      ],
+      "blocks": [
+        {
+          "t": "table",
+          "head": [
+            "Zoom",
+            "Normal",
+            "HSS 1/250",
+            "HSS 1/1000",
+            "HSS 1/4000"
+          ],
+          "rows": [
+            [
+              "24 mm",
+              "23",
+              "11.0",
+              "5.8",
+              "2.9"
+            ],
+            [
+              "50 mm",
+              "34",
+              "16.3",
+              "8.5",
+              "4.3"
+            ],
+            [
+              "105 mm",
+              "42",
+              "20.1",
+              "10.5",
+              "5.3"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Reach in metres = guide number ÷ aperture. Example: 34 ÷ f/4 ≈ 8.5 m."
+        }
+      ]
+    },
+    {
+      "title": "High-speed sync",
+      "usedIn": [
+        "fill-flash"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "text": "Flip the **FP switch** on. It only takes effect when the shutter is faster than the camera's sync speed (R10: 1/200 s mechanical, 1/250 s electronic 1st curtain). Range drops a lot; see the table above."
+        }
+      ]
+    },
+    {
+      "title": "Lamps and checks",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "**Pilot lamp** lit = ready. Press it for a test flash.",
+            "**Green confirmation lamp** for about 3 s after a shot = enough light.",
+            "No green: move closer, open the aperture or raise ISO.",
+            "The red AF-assist beam helps focus in the dark from about 0.7 m."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wireless",
+      "blocks": [
+        {
+          "t": "p",
+          "text": "Set the wireless selector to **SLAVE** to use it off camera. It can't trigger other flashes itself: it needs an E-TTL wireless master on the camera, such as an ST-E2 or a 550EX. Match the channel to the master. Coverage locks at 24 mm as a slave."
+        }
+      ]
+    },
+    {
+      "title": "Batteries",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Use 4 new batteries of the same type and change all 4 together.",
+            "NiMH: about 70–80% of the flashes, but recharges about twice as fast.",
+            "In the cold, keep a spare set warm in a pocket.",
+            "Take the batteries out for long storage."
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "title": "Speedlite 420EX Instructions",
+    "url": "https://www.canon.com"
+  }
+}

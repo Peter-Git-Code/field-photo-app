@@ -65,7 +65,15 @@
   ],
   "devices": {
     "canon-r10": {
-      "status": "unchecked"
+      "status": "ok",
+      "steps": [
+        "**Mode dial to Av**, aperture **f/16**, ISO 100.",
+        "**Shooting 2 › Expo.comp./AEB:** start at **−1** to keep the sky's colour. AEB (bracketing) is on the same screen.",
+        "Hide about half the sun behind an edge and move a few centimetres until the star is strongest.",
+        "Turn on **Playback 5 › Highlight alert** and check what blinks after each shot.",
+        "Keep it brief: the manual warns that pointing the camera at the sun can damage the sensor. Cap the lens between shots."
+      ],
+      "note": "The R10's viewfinder is electronic, so it's safe for your eye, but the sensor still takes the heat."
     }
   },
   "source": {

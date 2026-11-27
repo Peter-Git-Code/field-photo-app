@@ -1,0 +1,81 @@
+{
+  "id": "fill-flash",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Fill flash in daylight",
+  "summary": "Lift shadows on a backlit face without killing the background.",
+  "tags": [
+    "speedlite",
+    "high-speed sync",
+    "backlight",
+    "portrait"
+  ],
+  "appliesTo": [
+    "flash"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "Av"
+        ],
+        [
+          "Aperture",
+          "f/2.8–f/5.6"
+        ],
+        [
+          "ISO",
+          "100"
+        ],
+        [
+          "Flash comp",
+          "−1 to −2"
+        ],
+        [
+          "Sync",
+          "High-speed"
+        ],
+        [
+          "Range",
+          "A few metres"
+        ]
+      ],
+      "note": "Expose for the background; the flash just fills the face."
+    },
+    {
+      "t": "link",
+      "id": "backlit",
+      "text": "Goes with the backlit lesson →"
+    }
+  ],
+  "steps": [
+    "Put the sun behind or beside your subject.",
+    "Use Av and set the aperture you want. Expose for the sky or background.",
+    "Turn on the flash and set flash compensation to −1.",
+    "Shooting faster than the flash sync speed? Turn on high-speed sync.",
+    "Check the face. Adjust flash compensation until it looks natural, not flashed."
+  ],
+  "after": [
+    {
+      "t": "note",
+      "tone": "no",
+      "text": "High-speed sync cuts flash power a lot. Stay close to your subject."
+    }
+  ],
+  "devices": {
+    "canon-speedlite-420ex": {
+      "status": "ok",
+      "steps": [
+        "Mount the 420EX on the R10 and switch it on, wireless selector **OFF**.",
+        "R10 in **Av** with a wide aperture. In sun the shutter will want to go above the R10's sync speed (**1/200 s**, or **1/250 s** with Shooting 7 › Shutter mode: Elec. 1st-curtain).",
+        "Flip the 420EX's **high-speed sync (FP) switch** on. It only kicks in when the shutter is faster than the sync speed.",
+        "Make sure **Shooting 7 › Shutter mode** isn't **Electronic**: the R10 can't fire a flash with the electronic shutter.",
+        "Set flash compensation to **−1** in **Shooting 3 › Flash control**.",
+        "Mind the reach: at 1/1000 s and 50 mm the guide number drops to about 8.5, so at f/2.8 the flash reaches about **3 m**."
+      ],
+      "note": "Guide number ÷ aperture = reach in metres at ISO 100. Doubling ISO adds about 40% reach."
+    }
+  }
+}

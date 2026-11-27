@@ -1,0 +1,92 @@
+{
+  "id": "slow-motion",
+  "type": "guide",
+  "mode": "video",
+  "title": "Slow motion",
+  "summary": "Shoot at a high frame rate, play it back slowed down.",
+  "tags": [
+    "high frame rate",
+    "120fps",
+    "slow mo"
+  ],
+  "appliesTo": [
+    "camera",
+    "action"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Frame rate",
+          "100–120 fps"
+        ],
+        [
+          "Shutter",
+          "1/250 s"
+        ],
+        [
+          "ISO",
+          "Low as light allows"
+        ],
+        [
+          "Light",
+          "Bright"
+        ],
+        [
+          "Focus",
+          "Pre-focused"
+        ],
+        [
+          "Playback",
+          "1/4 speed"
+        ]
+      ],
+      "note": "120 fps played at 30 fps = 4× slower."
+    },
+    {
+      "t": "link",
+      "id": "shutter-180",
+      "text": "Why 1/250 s: the 180° shutter rule →"
+    }
+  ],
+  "steps": [
+    "Pick the highest frame rate your camera offers.",
+    "Set the shutter to about 1/(2 × frame rate).",
+    "Use plenty of light: high frame rates need fast shutters.",
+    "Pre-focus where the action will happen.",
+    "Record a little before and after the moment."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Indoor LED and fluorescent lights can flicker at high frame rates. Daylight is safest."
+      ]
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "**Mode dial to movie**.",
+        "**MENU › Shooting 1 › High Frame Rate › Enable.** It records Full HD at 119.9 fps (or 100 fps in PAL).",
+        "Set the shutter to **1/250 s** in movie manual exposure. ISO goes to 12800.",
+        "Turn on **Shooting 6 › Zebra settings** to see overexposed areas.",
+        "Record. Clips play back at **1/4 speed** straight from the camera."
+      ],
+      "note": "No sound is recorded, and each clip is limited to 30 minutes."
+    },
+    "dji-osmo-action-5-pro": {
+      "status": "ok",
+      "steps": [
+        "Swipe up from the bottom of the screen and set **4K, 2.7K or 1080p at 16:9 and 100 fps or higher**.",
+        "Record the action.",
+        "Play the clip back and stop at the moment you want.",
+        "Tap the **super slow-motion** icon. The camera makes a 1080p clip slowed down with 4× frame interpolation (up to 960 fps).",
+        "Tap Preview to check it. Add up to 6 slow-motion clips per video."
+      ],
+      "note": "It can't use the first 1.5 s or the last 2 s of a clip, so start recording early and stop late."
+    }
+  }
+}

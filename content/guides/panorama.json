@@ -70,7 +70,15 @@
   ],
   "devices": {
     "canon-r10": {
-      "status": "unchecked"
+      "status": "ok",
+      "steps": [
+        "**Quick way:** Mode dial to **SCN › Panoramic Shot**. Pick the direction, half-press to focus, then hold the shutter fully and sweep at a steady speed until the bar fills. The camera stitches it.",
+        "Quick mode struggles with moving subjects, close objects, high-contrast scenes and big plain areas like sea or sky. Sweep slower on long lenses or in low light.",
+        "**Best quality:** Mode dial to **M**, f/8, ISO 100, and set exposure for the brightest part.",
+        "Fix white balance in **Shooting 4 › White balance** (not Auto), focus, then switch to **MF**.",
+        "Turn the camera to portrait, shoot left to right with a third to a half overlap, and stitch on a computer."
+      ],
+      "note": "SCN Panoramic Shot saves a JPEG only. Use the manual method if you want RAW."
     }
   }
 }

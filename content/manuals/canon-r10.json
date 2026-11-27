@@ -1,13 +1,297 @@
 {
   "device": "canon-r10",
-  "status": "pending",
-  "message": "The Canon EOS R10 manual hasn't been summarised yet.",
-  "planned": [
-    "Buttons and dials",
-    "Menu map",
-    "Interval timer and time-lapse movie",
-    "Custom modes (C1, C2)",
-    "Autofocus modes",
-    "Battery and cards"
-  ]
+  "status": "ready",
+  "summary": "Menus, time-lapse, bulb, focus bracketing, flash",
+  "specs": [
+    [
+      "Sensor",
+      "APS-C, 24.2 MP (1.6× crop)"
+    ],
+    [
+      "ISO",
+      "100–32000, H = 51200"
+    ],
+    [
+      "Shutter",
+      "1/4000–30 s and Bulb; up to 1/16000 electronic"
+    ],
+    [
+      "Flash sync",
+      "1/200 s (1/250 s with electronic 1st curtain)"
+    ],
+    [
+      "Burst",
+      "15 fps mechanical, 23 fps electronic"
+    ],
+    [
+      "Stabilisation",
+      "Lens IS only; digital IS for movies"
+    ],
+    [
+      "Battery",
+      "LP-E17: about 260–450 shots"
+    ],
+    [
+      "Card",
+      "1 × SD, UHS-II"
+    ],
+    [
+      "Built-in flash",
+      "Guide no. 6, ±2 stops compensation"
+    ],
+    [
+      "Movies",
+      "4K (60p cropped), Full HD 120 fps"
+    ]
+  ],
+  "sections": [
+    {
+      "title": "Where things are in the menus",
+      "blocks": [
+        {
+          "t": "note",
+          "tone": "no",
+          "text": "Tab numbers are for P, Tv, Av, M and Fv modes. Auto and scene modes show shorter menus."
+        },
+        {
+          "t": "table",
+          "head": [
+            "Tab",
+            "What's there"
+          ],
+          "rows": [
+            [
+              "Shooting 1",
+              "Image quality (RAW/JPEG), aspect ratio"
+            ],
+            [
+              "Shooting 2",
+              "Exposure comp / AEB, ISO, HDR, Highlight tone priority"
+            ],
+            [
+              "Shooting 3",
+              "Flash control, metering mode"
+            ],
+            [
+              "Shooting 4",
+              "White balance, Picture Style, clarity"
+            ],
+            [
+              "Shooting 5",
+              "Lens corrections, long exposure NR, high ISO NR"
+            ],
+            [
+              "Shooting 6",
+              "Multiple exposure, RAW burst, focus bracketing"
+            ],
+            [
+              "Shooting 7",
+              "Drive mode, interval timer, bulb timer, silent shutter, shutter mode"
+            ],
+            [
+              "Shooting 8",
+              "IS mode, Quick Control layout, image review"
+            ],
+            [
+              "AF 5",
+              "MF peaking, focus guide"
+            ],
+            [
+              "Playback 5",
+              "Highlight alert"
+            ],
+            [
+              "Set-up 2",
+              "Power saving"
+            ],
+            [
+              "Set-up 5",
+              "Reset camera, C1/C2 custom modes"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "With the Mode dial on movie the tabs change: **Shooting 1** has High Frame Rate, **Shooting 5** has Time-lapse movie, **Shooting 6** has Zebra."
+        }
+      ]
+    },
+    {
+      "title": "Interval timer (stills)",
+      "usedIn": [
+        "sunset-timelapse"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "**Shooting 7 › Interval timer › Enable**, then set interval and shots.",
+            "Interval: 1 s to 99:59:59. Shots: 1–99, or **00** to run until you stop it.",
+            "The camera gets ready about 5 s before each shot; menus are locked in that window.",
+            "A shot is skipped if the camera is still busy, or if the shutter is longer than the interval.",
+            "In AF mode it won't fire unless focus is found. Focus, then switch to MF.",
+            "Stop it with **Disable**, or by turning the camera off."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Time-lapse movie",
+      "usedIn": [
+        "sunset-timelapse"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Mode dial to movie, then **Shooting 5 › Time-lapse movie**.",
+            "Interval 2 s to 99:59:59 (1 s isn't possible). Shots 2–3600.",
+            "Output: 4K or Full HD MP4 at 29.97 fps (NTSC) or 25 fps (PAL). 3600 shots ≈ 2 minutes.",
+            "Auto exposure: **Fixed 1st frame** (steady) or **Each frame** (follows the light, may flicker).",
+            "No AF, no sound, no image stabilisation, and the flash won't fire during recording.",
+            "Don't zoom while recording. Turning the Mode dial cancels it.",
+            "A card not formatted as exFAT stops at 4 GB; the playback time shows red as a warning."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Long exposures and bulb",
+      "usedIn": [
+        "long-exposure-water",
+        "milky-way"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "M mode goes to 30 s. For longer, turn the Mode dial to **B**.",
+            "**Shooting 7 › Bulb timer** sets the exposure length so you don't hold the button. It only works in B and clears when you change mode.",
+            "Bulb with ISO Auto uses ISO 400.",
+            "**Shooting 5 › Long exp. noise reduction:** Auto or Enable for 1 s and longer. Processing takes as long as the exposure.",
+            "Remote options: RS-60E3 cable, or BR-E1 wireless (press once to start, again to stop)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Drive modes and timers",
+      "blocks": [
+        {
+          "t": "table",
+          "head": [
+            "Mode",
+            "Speed"
+          ],
+          "rows": [
+            [
+              "High-speed +",
+              "15 fps (mech./elec. 1st curtain), 23 fps electronic"
+            ],
+            [
+              "High-speed",
+              "6.3 fps mech., 7.7 elec. 1st curtain, 15 electronic"
+            ],
+            [
+              "Low-speed",
+              "3 fps"
+            ],
+            [
+              "Self-timer",
+              "10 s, 2 s, or 10 s then 2–10 shots"
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Set it with the drive button or **Shooting 7 › Drive mode**. 15 fps needs 1/1000 s or faster and a well-charged battery."
+        }
+      ]
+    },
+    {
+      "title": "Manual focus",
+      "usedIn": [
+        "milky-way",
+        "sunset-timelapse"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Lens with an AF/MF switch: use the lens switch. Lens without one: use the AF/MF switch on the front of the camera.",
+            "Tap the magnify icon to zoom the view, move it with the cross keys, then turn the focus ring.",
+            "**AF 5 › MF peaking settings:** colours in-focus edges. Set level and colour.",
+            "**AF 5 › Focus guide** shows whether to turn nearer or further."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Focus bracketing",
+      "usedIn": [
+        "focus-stacking"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "**Shooting 6 › Focus bracketing**: 2–999 shots, adjustable focus increment.",
+            "Can merge in camera (Depth composite) and crop the edges for you.",
+            "Needs AF (not MF) and a tripod. No flash. Fastest shutter 1/8000 s."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Panoramic Shot mode",
+      "usedIn": [
+        "panorama"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "text": "Mode dial **SCN › Panoramic Shot**. Choose a direction, hold the shutter and sweep steadily. Avoid moving or close subjects and large plain areas."
+        }
+      ]
+    },
+    {
+      "title": "Custom modes C1 and C2",
+      "usedIn": [
+        "milky-way"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Set the camera up how you like, then **Set-up 5 › Custom shooting mode (C1, C2) › Register settings**.",
+            "**Auto update set.: Enable** saves changes you make while in that mode.",
+            "Ideas: C1 = astro, C2 = birds/action."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Flash",
+      "usedIn": [
+        "bounce-flash",
+        "fill-flash"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Built-in flash: raise it by hand. Guide number 6, so it reaches only a few metres. A lens hood can shade the bottom of the frame.",
+            "Flash doesn't work with the **Electronic** shutter mode, during movies, or with AEB.",
+            "Sync: 1/200 s mechanical, 1/250 s electronic 1st curtain.",
+            "EL/EX Speedlites (including the 420EX) fit the hot shoe directly. The 600EX-RT, 600EXII-RT, 580EX II and EL-1 need the AD-E1 adapter.",
+            "Flash exposure compensation: **Shooting 3 › Flash control**. Older EX flashes may not offer every menu setting."
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "title": "Canon EOS R10 Advanced User Guide",
+    "url": "https://cam.start.canon/C006/"
+  }
 }

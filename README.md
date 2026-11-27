@@ -49,8 +49,9 @@ Check for updates** does the same on demand.
 ```
 
 `status` is `ok` (device steps written), `unavailable` (the device can't do it,
-with a workaround in `note`) or `unchecked` (general steps shown). A device
-whose type isn't in `appliesTo` is shown as unavailable automatically. Keep the
+with a workaround in `note`) or `unchecked` (general steps shown, optional
+`note`). A device with no entry whose type isn't in `appliesTo` is shown as
+unavailable automatically. Device types: `camera`, `drone`, `action`, `flash`, `phone`. Keep the
 `devices` and `appliesTo` fields in `content/index.json` in step with the item
 file; the checker enforces it.
 
@@ -62,12 +63,13 @@ id), `more` (collapsible, holds blocks). Text supports `**bold**` only.
 
 ## Publishing a change
 
-1. Edit or add files in `content/`, list new ones in `content/index.json`.
-2. Bump `version` in `content/index.json` and add a line to `changes`.
-3. If you changed `index.html`, `app.css`, `app.js` or the icons, bump
+1. Edit or add files in `content/`.
+2. Run `python3 tools/sync_index.py` to rebuild the item and manual lists in `content/index.json`.
+3. Bump `version` in `content/index.json` and add a line to `changes`.
+4. If you changed `index.html`, `app.css`, `app.js` or the icons, bump
    `SHELL_VERSION` in `sw.js`.
-4. Run `python3 tools/check_content.py`.
-5. Push to `main`. GitHub Pages redeploys; phones pick it up on their next launch with signal.
+5. Run `python3 tools/check_content.py`.
+6. Push to `main`. GitHub Pages redeploys; phones pick it up on their next launch with signal.
 
 ## Sources
 

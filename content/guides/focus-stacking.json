@@ -1,0 +1,85 @@
+{
+  "id": "focus-stacking",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Focus stacking",
+  "summary": "Everything sharp, front to back, from several frames.",
+  "tags": [
+    "macro",
+    "landscape",
+    "focus bracketing",
+    "depth of field"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M or Av"
+        ],
+        [
+          "Aperture",
+          "f/5.6–f/8"
+        ],
+        [
+          "ISO",
+          "100"
+        ],
+        [
+          "Shots",
+          "10–30"
+        ],
+        [
+          "Support",
+          "Tripod"
+        ],
+        [
+          "Subject",
+          "Still"
+        ]
+      ],
+      "note": "More shots and smaller steps for close-ups; fewer for landscapes."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod",
+        "Remote or 2 s timer"
+      ]
+    }
+  ],
+  "steps": [
+    "Set up on a tripod with a subject that won't move.",
+    "Focus on the nearest point you want sharp and take a shot.",
+    "Move focus a little further away and shoot again. Overlap the sharp zones.",
+    "Keep going until you reach the furthest point.",
+    "Merge the frames in Photoshop, Affinity, Helicon or similar."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Wind moving leaves ruins the stack. Wait for a still moment.",
+        "Lock exposure and white balance so frames match."
+      ]
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "Tripod, and keep **AF** on: the R10's focus bracketing doesn't work in MF.",
+        "**MENU › Shooting 6 › Focus bracketing › Enable**.",
+        "**Number of shots:** 10–30 to start (2–999 possible). **Focus increment:** take a test run; bigger steps cover more depth with fewer shots.",
+        "**Exposure smoothing: Enable.** **Depth composite: Enable** to merge in camera, and **Crop depth comp.: Enable**.",
+        "Focus on the **nearest** point, press the shutter fully, then let go. The camera shoots toward infinity and stops by itself.",
+        "Check the merged image. The source frames are saved too, for merging on a computer."
+      ],
+      "note": "Flash doesn't work with focus bracketing. Shoot wide and crop afterwards; compositing trims the edges."
+    }
+  }
+}

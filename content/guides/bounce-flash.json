@@ -1,0 +1,87 @@
+{
+  "id": "bounce-flash",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Bounce flash",
+  "summary": "Soft, natural light indoors from a ceiling or wall.",
+  "tags": [
+    "speedlite",
+    "flash",
+    "indoors",
+    "portrait"
+  ],
+  "appliesTo": [
+    "flash"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "Av or M"
+        ],
+        [
+          "Aperture",
+          "f/4–f/5.6"
+        ],
+        [
+          "ISO",
+          "400–800"
+        ],
+        [
+          "Shutter",
+          "1/60–1/160"
+        ],
+        [
+          "Flash",
+          "E-TTL"
+        ],
+        [
+          "Head",
+          "Up 75–90°"
+        ]
+      ],
+      "note": "Higher ISO lets the flash reach further when bounced."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Flash with tilting head",
+        "Fresh AA batteries",
+        "White ceiling or wall"
+      ]
+    }
+  ],
+  "steps": [
+    "Mount the flash and switch it on.",
+    "Tilt the head toward a white ceiling or wall, not straight at the subject.",
+    "Use Av or M and a moderate aperture.",
+    "Shoot and check. Too dark? Raise ISO, open the aperture or bounce off a closer surface.",
+    "Fine-tune with flash exposure compensation."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Coloured walls tint the light. White or grey is safest.",
+        "High ceilings swallow light. Bounce off a nearby wall instead.",
+        "Bounce behind you for very soft, wide light."
+      ]
+    }
+  ],
+  "devices": {
+    "canon-speedlite-420ex": {
+      "status": "ok",
+      "steps": [
+        "Load **4 AA** batteries of the same type. Slide the foot all the way into the R10's hot shoe and tighten the **locking collar**. The 420EX fits the R10 directly.",
+        "Set the **wireless selector to OFF** and switch it on. The pilot lamp lights when it's ready.",
+        "Camera in **Av or M**. The flash runs E-TTL automatically.",
+        "Hold the bounce release button and tilt the head: **up 60°, 75° or 90°**, **left up to 180°**, **right up to 90°**. The zoom jumps to 50 mm by itself.",
+        "Shoot. The **green confirmation lamp** lights for about 3 s if there was enough light. No green: open the aperture, raise ISO or bounce off something closer.",
+        "Brighter or darker: set flash exposure compensation on the R10 in **Shooting 3 › Flash control** (±2 stops)."
+      ],
+      "note": "Alkaline AAs give about 200–1400 flashes and up to 7.5 s recycling. NiMH recharge about twice as fast but give 70–80% of the flashes."
+    }
+  }
+}

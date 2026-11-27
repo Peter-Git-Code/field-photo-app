@@ -1,0 +1,34 @@
+{
+  "id": "pop-up-flash",
+  "type": "basic",
+  "mode": "photo",
+  "title": "Built-in flash",
+  "summary": "Make the pop-up flash look less harsh.",
+  "tags": [
+    "flash",
+    "fill flash",
+    "bounce"
+  ],
+  "blocks": [
+    {
+      "t": "list",
+      "items": [
+        "**Flash compensation** changes only the flash power. Available in P, Av, Tv and M.",
+        "**Diffuse:** hold or tape tissue paper over the flash to soften it.",
+        "**Bounce:** angle a small white card at 45° in front of the flash to throw light at the ceiling.",
+        "**Fill flash in daylight** lifts shadows on faces and slightly darkens the background."
+      ]
+    },
+    {
+      "t": "note",
+      "tone": "no",
+      "text": "The built-in flash runs off the camera battery, so it's weak and only reaches a few metres."
+    }
+  ],
+  "source": {
+    "title": "In-Camera Flash",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "sharp-photos",
+  "type": "basic",
+  "mode": "photo",
+  "title": "Sharp handheld photos",
+  "summary": "Settings and stance that stop camera shake.",
+  "tags": [
+    "shake",
+    "holding",
+    "stance"
+  ],
+  "blocks": [
+    {
+      "t": "list",
+      "items": [
+        "Aperture around **f/5.6–f/8**.",
+        "Lowest ISO that still gives a safe shutter speed.",
+        "Shutter at least **1/focal length**, or use a tripod."
+      ]
+    },
+    {
+      "t": "table",
+      "head": [
+        "Focal length",
+        "Safe without IS",
+        "Safe with IS"
+      ],
+      "rows": [
+        [
+          "15 mm",
+          "1/60 s",
+          "1/20 s"
+        ],
+        [
+          "28 mm",
+          "1/60 s",
+          "1/60 s"
+        ],
+        [
+          "50 mm",
+          "1/125 s",
+          "1/60 s"
+        ],
+        [
+          "200 mm",
+          "1/1000 s",
+          "1/400 s"
+        ]
+      ]
+    },
+    {
+      "t": "h",
+      "text": "How to hold the camera"
+    },
+    {
+      "t": "list",
+      "items": [
+        "Right hand grips, left hand cradles the lens from below.",
+        "Elbows in against your body.",
+        "Viewfinder against your eyebrow.",
+        "Feet shoulder-width apart, one slightly forward.",
+        "Kneeling: rest your elbow on your knee.",
+        "Lean on a wall, post or tree.",
+        "Breathe out, then press the shutter gently."
+      ]
+    },
+    {
+      "t": "note",
+      "tone": "no",
+      "text": "Rough guide only. Results vary with camera, lens and your hands."
+    }
+  ],
+  "source": {
+    "title": "Taking Sharp Pictures and How to Hold the Camera",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

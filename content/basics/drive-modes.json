@@ -1,0 +1,62 @@
+{
+  "id": "drive-modes",
+  "type": "basic",
+  "mode": "photo",
+  "title": "Drive modes",
+  "summary": "Single, burst, timer and remote.",
+  "tags": [
+    "burst",
+    "self timer",
+    "remote"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Mode",
+        "Use it for"
+      ],
+      "rows": [
+        [
+          "Single",
+          "Most shots, when you have time to compose"
+        ],
+        [
+          "Continuous low",
+          "Kids and moving subjects; easier on slow cards"
+        ],
+        [
+          "Continuous high",
+          "Sport, birds, fast action"
+        ],
+        [
+          "Self-timer 2 s",
+          "Tripod shots without touching the camera"
+        ],
+        [
+          "Self-timer 10 s",
+          "Group photos with you in them"
+        ],
+        [
+          "Remote release",
+          "Long exposures with no bump"
+        ],
+        [
+          "Silent shutter",
+          "Ceremonies, museums, wildlife"
+        ]
+      ]
+    },
+    {
+      "t": "note",
+      "tone": "no",
+      "text": "Mirror lock-up only exists on DSLRs. On a mirrorless camera, use the 2 s timer or a remote."
+    }
+  ],
+  "source": {
+    "title": "Drive Modes",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

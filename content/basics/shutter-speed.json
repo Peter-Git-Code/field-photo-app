@@ -1,0 +1,74 @@
+{
+  "id": "shutter-speed",
+  "type": "basic",
+  "mode": "both",
+  "title": "Shutter speed",
+  "summary": "Freeze motion or blur it on purpose.",
+  "tags": [
+    "motion",
+    "blur",
+    "handheld"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Situation",
+        "Shutter"
+      ],
+      "rows": [
+        [
+          "Birds, very fast action",
+          "1/4000 s"
+        ],
+        [
+          "Sport, cars",
+          "1/1000 s"
+        ],
+        [
+          "People running",
+          "1/500 s"
+        ],
+        [
+          "Walking people, kids",
+          "1/250–1/60 s"
+        ],
+        [
+          "Slowest handheld, standard lens",
+          "about 1/60 s"
+        ],
+        [
+          "Flowing water, city motion (tripod)",
+          "1/30–1/2 s"
+        ],
+        [
+          "Fireworks (tripod)",
+          "about 2 s"
+        ],
+        [
+          "Silky water, light painting, stars (tripod)",
+          "5–30 s"
+        ]
+      ]
+    },
+    {
+      "t": "h",
+      "text": "Handheld rule"
+    },
+    {
+      "t": "p",
+      "text": "Keep the shutter at least **1/focal length**: 200 mm needs 1/200 s. On APS-C cameras such as the Canon R10, multiply the focal length by 1.6 first. Image stabilisation lets you go a few stops slower."
+    },
+    {
+      "t": "note",
+      "tone": "no",
+      "text": "For video, shutter speed follows the frame rate. See the lesson on the 180° shutter rule."
+    }
+  ],
+  "source": {
+    "title": "Shutter Speed",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

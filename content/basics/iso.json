@@ -1,0 +1,69 @@
+{
+  "id": "iso",
+  "type": "basic",
+  "mode": "both",
+  "title": "ISO by light",
+  "summary": "Starting ISO for the light you're in.",
+  "tags": [
+    "noise",
+    "sensitivity"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Light",
+        "Start at"
+      ],
+      "rows": [
+        [
+          "Full sun, no shade",
+          "ISO 100"
+        ],
+        [
+          "Shade, overcast, near a window",
+          "ISO 200"
+        ],
+        [
+          "Deep shade, heavy overcast",
+          "ISO 400"
+        ],
+        [
+          "Sunrise or sunset",
+          "ISO 640–800"
+        ],
+        [
+          "Bright interior",
+          "ISO 800"
+        ],
+        [
+          "Dim light, indoors or out",
+          "ISO 1000"
+        ],
+        [
+          "Low-light interior, after sunset",
+          "ISO 1250"
+        ],
+        [
+          "Very low light",
+          "ISO 1600 and up"
+        ]
+      ]
+    },
+    {
+      "t": "p",
+      "text": "Use the lowest ISO that still gives you the shutter speed you need. Noise grows as ISO rises; how fast depends on the camera."
+    },
+    {
+      "t": "note",
+      "tone": "no",
+      "text": "This table is for natural light, not flash."
+    }
+  ],
+  "source": {
+    "title": "Understanding ISO",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

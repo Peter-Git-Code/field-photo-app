@@ -1,0 +1,84 @@
+{
+  "id": "long-exposure-water",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Silky water",
+  "summary": "Smooth waterfalls and seas with an ND filter.",
+  "tags": [
+    "long exposure",
+    "nd filter",
+    "waterfall"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Aperture",
+          "f/11"
+        ],
+        [
+          "ISO",
+          "100"
+        ],
+        [
+          "Filter",
+          "ND64–ND1000"
+        ],
+        [
+          "Shutter",
+          "1–30 s"
+        ],
+        [
+          "Focus",
+          "Manual"
+        ]
+      ],
+      "note": "Waterfall: 0.5–2 s. Sea flattened to mist: 15–30 s."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod",
+        "ND filter",
+        "Remote or 2 s timer",
+        "Lens cloth"
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "nd",
+      "text": "Work out the shutter with your ND filter"
+    }
+  ],
+  "steps": [
+    "Frame and focus **without** the filter, then switch to manual focus.",
+    "Meter without the filter and note the shutter speed.",
+    "Screw on the ND filter.",
+    "Use the ND calculator to get the new shutter speed and set it.",
+    "Use the 2 s timer or a remote so you don't shake the camera.",
+    "Check the histogram. Adjust the shutter if needed."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Overcast days make it easier: less light and softer contrast.",
+        "Over 30 s, switch to Bulb mode and time it with a remote.",
+        "Wipe spray off the filter between shots."
+      ]
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "unchecked"
+    }
+  }
+}

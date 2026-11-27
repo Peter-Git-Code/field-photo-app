@@ -1,0 +1,135 @@
+{
+  "id": "backlit",
+  "type": "lesson",
+  "mode": "photo",
+  "minutes": 4,
+  "title": "Backlit photography",
+  "summary": "Shoot into the light for rim glow, silhouettes and sun stars.",
+  "tags": [
+    "backlight",
+    "rim light",
+    "silhouette",
+    "golden hour"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "With the light **behind** the subject you get glowing edges (rim light), silhouettes, glowing fur and hair, and sun stars. The challenge is exposure: the camera sees a bright sky and darkens everything."
+    },
+    {
+      "t": "h",
+      "text": "Look for"
+    },
+    {
+      "t": "list",
+      "items": [
+        "A **low sun**: golden hour after sunrise or before sunset.",
+        "Clear or partly cloudy skies. Heavy cloud kills the effect.",
+        "A **dark, clean background** behind the subject so the rim light shows.",
+        "Fuzzy or see-through subjects: fur, hair, leaves, petals, breath on a cold morning.",
+        "Dust, mist or pollen in the air for glowing layers."
+      ]
+    },
+    {
+      "t": "h",
+      "text": "Set up"
+    },
+    {
+      "t": "list",
+      "items": [
+        "Use **M** mode, or Av with exposure compensation.",
+        "Subject detail: start at **+1 EV**. Dark background: start at **−1 EV**.",
+        "**Evaluative** metering keeps the sky; **spot** on the subject exposes it but whites out the sky.",
+        "Shoot **RAW** and bracket ±1 stop when unsure.",
+        "Turn on highlight alerts (blinkies) and watch the rim."
+      ]
+    },
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Shutter",
+          "1/1000–1/2000"
+        ],
+        [
+          "Aperture",
+          "f/5–f/5.6"
+        ],
+        [
+          "ISO",
+          "400–1600"
+        ]
+      ],
+      "note": "Typical settings from the example photos (wildlife, handheld)."
+    },
+    {
+      "t": "tips",
+      "title": "Quick tips",
+      "items": [
+        "Put the sun 15–20° to the side of the subject, still behind it, for the best rim light.",
+        "Get low to clean up the background.",
+        "Silhouettes work when the shape alone tells you what it is.",
+        "It's fine to leave the subject a little dark. Shape matters more than detail.",
+        "Near water, reflections double the light.",
+        "Before sunrise the light is softer and easier to expose."
+      ]
+    },
+    {
+      "t": "more",
+      "title": "Sun stars",
+      "blocks": [
+        {
+          "t": "p",
+          "text": "Close down to f/9–f/18 and hide about half the sun behind an edge. Move a few centimetres until the star is strongest."
+        },
+        {
+          "t": "link",
+          "id": "sun-star",
+          "text": "Step-by-step sun star guide →"
+        }
+      ]
+    },
+    {
+      "t": "more",
+      "title": "Exposure and metering in detail",
+      "blocks": [
+        {
+          "t": "p",
+          "text": "The camera's meter tries to make a bright sky mid-grey, so the subject goes dark. That's fine for a silhouette. For detail you're balancing on a tightrope: a little brighter and the sky blows out, a little darker and the subject goes black."
+        },
+        {
+          "t": "list",
+          "items": [
+            "Evaluative metering is the forgiving choice: it underexposes the subject, but dark areas recover better in editing than blown-out whites.",
+            "Spot metering on a mid-tone of the subject exposes it properly but usually leaves the sky white (a high-key look, which can be the goal).",
+            "A thin rim that's slightly overexposed is fine.",
+            "Fill flash or a reflector adds light to the front of the subject. Use less than you think."
+          ]
+        }
+      ]
+    },
+    {
+      "t": "more",
+      "title": "Fix it after (editing)",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Lower highlights, lift shadows. Keep it natural.",
+            "Add contrast or clarity to the subject only (a subject mask).",
+            "Negative clarity gives a soft, dreamy look.",
+            "Warm the white balance for sunsets; try cool shadows against a warm sun.",
+            "A vignette or graduated filter steers the eye and balances the sky.",
+            "Exposures blended from a bracket (HDR) hold both sun and shadows."
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "title": "Backlit Photography",
+    "author": "Simon d'Entremont",
+    "url": "https://simondentremont.com",
+    "note": "Condensed and rewritten in our own words. The original photos are not copied."
+  }
+}

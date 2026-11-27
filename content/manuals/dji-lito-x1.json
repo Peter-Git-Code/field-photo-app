@@ -1,0 +1,11 @@
+{
+  "device": "dji-lito-x1",
+  "status": "pending",
+  "message": "The DJI LITO X1 manual hasn't been summarised yet.",
+  "planned": [
+    "Controls and flight modes",
+    "Camera settings",
+    "Hyperlapse and intelligent modes",
+    "Batteries and safety"
+  ]
+}

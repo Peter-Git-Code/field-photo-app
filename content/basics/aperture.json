@@ -1,0 +1,81 @@
+{
+  "id": "aperture",
+  "type": "basic",
+  "mode": "both",
+  "title": "Aperture (f-stop)",
+  "summary": "Controls light and how much of the scene is sharp.",
+  "tags": [
+    "f-stop",
+    "depth of field",
+    "bokeh"
+  ],
+  "blocks": [
+    {
+      "t": "scale",
+      "values": [
+        "f/1.4",
+        "f/2",
+        "f/2.8",
+        "f/4",
+        "f/5.6",
+        "f/8",
+        "f/11",
+        "f/16",
+        "f/22"
+      ],
+      "left": "More light, blurred background",
+      "right": "Less light, more in focus"
+    },
+    {
+      "t": "p",
+      "text": "Each step on the scale halves or doubles the light. A small number means a big opening."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Use",
+        "Aperture"
+      ],
+      "rows": [
+        [
+          "Bokeh, low light",
+          "f/1.4–f/2"
+        ],
+        [
+          "Portraits, sport",
+          "f/2.8–f/5.6"
+        ],
+        [
+          "Landscapes",
+          "f/8–f/16"
+        ],
+        [
+          "Long exposure in daylight",
+          "f/16–f/22"
+        ],
+        [
+          "Sun stars",
+          "f/11–f/18"
+        ]
+      ]
+    },
+    {
+      "t": "tips",
+      "items": [
+        "Most lenses are sharpest about two stops down from wide open, around f/5.6–f/8.",
+        "Past f/16 the whole image softens slightly (diffraction). Only go there when you need the slow shutter or the sun star."
+      ]
+    },
+    {
+      "t": "link",
+      "id": "depth-of-field",
+      "text": "More on depth of field →"
+    }
+  ],
+  "source": {
+    "title": "Aperture (f-stop)",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

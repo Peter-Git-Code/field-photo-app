@@ -1,0 +1,84 @@
+{
+  "id": "milky-way",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Milky Way",
+  "summary": "Sharp stars and a bright core on a dark night.",
+  "tags": [
+    "astro",
+    "stars",
+    "night"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Aperture",
+          "Widest (f/2.8)"
+        ],
+        [
+          "ISO",
+          "3200"
+        ],
+        [
+          "Shutter",
+          "500 rule"
+        ],
+        [
+          "White bal.",
+          "3800–4200 K"
+        ],
+        [
+          "Focus",
+          "Manual, ∞"
+        ]
+      ],
+      "note": "APS-C at 18 mm: about 17 s before stars streak."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod",
+        "Wide, fast lens",
+        "Red head torch",
+        "Spare battery"
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "stars",
+      "text": "Work out the longest shutter"
+    }
+  ],
+  "steps": [
+    "Pick a moonless night, away from towns. Switch the app to **Night** theme.",
+    "Set up the tripod and point at the core (south-ish in the northern hemisphere, spring to autumn).",
+    "Manual focus: zoom the live view on a bright star and turn the ring until it's the smallest point.",
+    "Set aperture wide open, ISO 3200 and the shutter from the 500 rule.",
+    "Use the 2 s timer. Take a test shot and check the stars are points, not lines.",
+    "Too dark? Raise ISO. Too noisy? Take several frames to stack later."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Tape the focus ring once it's set.",
+        "Turn off long-exposure noise reduction to save time, or leave it on for cleaner single frames.",
+        "Let your eyes adapt for 20 minutes and only use red light."
+      ]
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "unchecked"
+    }
+  }
+}

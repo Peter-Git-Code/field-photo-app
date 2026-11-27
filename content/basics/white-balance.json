@@ -1,0 +1,82 @@
+{
+  "id": "white-balance",
+  "type": "basic",
+  "mode": "both",
+  "title": "White balance",
+  "summary": "Pick the preset that matches the light.",
+  "tags": [
+    "colour",
+    "kelvin",
+    "awb"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Preset",
+        "Use for",
+        "Effect"
+      ],
+      "rows": [
+        [
+          "Auto (AWB)",
+          "Snapshots",
+          "Can shift between shots"
+        ],
+        [
+          "Daylight",
+          "Direct sun",
+          "Neutral in sun"
+        ],
+        [
+          "Cloudy",
+          "Overcast days",
+          "Warms the image"
+        ],
+        [
+          "Shade",
+          "Open shade",
+          "Warms more than Cloudy"
+        ],
+        [
+          "Tungsten",
+          "Household bulbs, candles",
+          "Cools the image"
+        ],
+        [
+          "Fluorescent",
+          "Tube lights",
+          "Removes the green cast"
+        ],
+        [
+          "Flash",
+          "Flash photos",
+          "Warms skin tones"
+        ],
+        [
+          "Kelvin (K)",
+          "Set by hand, 2500–10000 K",
+          "Full control"
+        ],
+        [
+          "Custom",
+          "Measured off a white or grey card",
+          "Most accurate"
+        ]
+      ]
+    },
+    {
+      "t": "tips",
+      "items": [
+        "For time-lapse and video, never leave it on Auto. Lock a preset so colours don't flicker between frames.",
+        "Shooting RAW? You can change white balance later with no loss."
+      ]
+    }
+  ],
+  "source": {
+    "title": "White Balance",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

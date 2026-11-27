@@ -1,0 +1,97 @@
+{
+  "id": "depth-of-field",
+  "type": "basic",
+  "mode": "photo",
+  "title": "Depth of field and blur",
+  "summary": "What makes the background blurry or sharp.",
+  "tags": [
+    "bokeh",
+    "background blur",
+    "focal length"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "Depth of field is how much of the scene, front to back, looks sharp. Four things change it."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Change",
+        "Blurrier background",
+        "Sharper background"
+      ],
+      "rows": [
+        [
+          "Aperture",
+          "f/1.4–f/2.8",
+          "f/11–f/22"
+        ],
+        [
+          "Focal length",
+          "Long (telephoto)",
+          "Short (wide)"
+        ],
+        [
+          "You to subject",
+          "Closer",
+          "Further"
+        ],
+        [
+          "Subject to background",
+          "Further apart",
+          "Closer together"
+        ]
+      ]
+    },
+    {
+      "t": "h",
+      "text": "Lens classes by sensor"
+    },
+    {
+      "t": "table",
+      "head": [
+        "Sensor",
+        "Telephoto",
+        "Normal",
+        "Wide",
+        "Ultra wide"
+      ],
+      "rows": [
+        [
+          "Full frame",
+          "over 50 mm",
+          "50 mm",
+          "28 mm",
+          "16 mm"
+        ],
+        [
+          "APS-C",
+          "over 30–35 mm",
+          "30–35 mm",
+          "17–18 mm",
+          "10–11 mm"
+        ],
+        [
+          "Micro 4/3",
+          "over 24 mm",
+          "24 mm",
+          "14 mm",
+          "8 mm"
+        ]
+      ]
+    },
+    {
+      "t": "tips",
+      "items": [
+        "Easiest blurred background: longest focal length, widest aperture, step close, and keep the background far behind."
+      ]
+    }
+  ],
+  "source": {
+    "title": "Depth of Field and Background Blur",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "panorama",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Panorama",
+  "summary": "Stitch several frames into one wide view.",
+  "tags": [
+    "stitch",
+    "wide",
+    "landscape"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Aperture",
+          "f/8"
+        ],
+        [
+          "ISO",
+          "100"
+        ],
+        [
+          "White bal.",
+          "Fixed preset"
+        ],
+        [
+          "Focus",
+          "Manual"
+        ],
+        [
+          "Overlap",
+          "30–50%"
+        ]
+      ],
+      "note": "Everything fixed, so every frame matches."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod with level",
+        "Remote or 2 s timer"
+      ]
+    }
+  ],
+  "steps": [
+    "Level the tripod so the horizon stays straight as you turn.",
+    "Turn the camera to **portrait** orientation for a taller result.",
+    "Meter on the brightest part of the scene and set exposure in M.",
+    "Focus, then switch to manual focus.",
+    "Shoot left to right, overlapping each frame by a third to a half.",
+    "Stitch later in Lightroom, Photoshop or a free stitcher."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Avoid close foreground objects: they shift between frames and break the stitch.",
+        "Moving clouds or people? Shoot quickly."
+      ]
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "unchecked"
+    }
+  }
+}

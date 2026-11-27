@@ -1,0 +1,54 @@
+{
+  "id": "focal-length",
+  "type": "basic",
+  "mode": "both",
+  "title": "Focal length",
+  "summary": "How wide the view is and how big things look.",
+  "tags": [
+    "lens",
+    "zoom",
+    "crop factor"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Full-frame mm",
+        "Class",
+        "Good for"
+      ],
+      "rows": [
+        [
+          "10–35",
+          "Wide",
+          "Architecture, landscape"
+        ],
+        [
+          "35–70",
+          "Normal",
+          "Street, portraits, documentary"
+        ],
+        [
+          "70–135",
+          "Medium telephoto",
+          "Nature, portraits"
+        ],
+        [
+          "135–300+",
+          "Telephoto",
+          "Wildlife, sport"
+        ]
+      ]
+    },
+    {
+      "t": "p",
+      "text": "On an APS-C camera like the Canon R10, multiply by **1.6** to get the full-frame view: an 18 mm lens frames like 29 mm."
+    }
+  ],
+  "source": {
+    "title": "Lens Focal Length",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

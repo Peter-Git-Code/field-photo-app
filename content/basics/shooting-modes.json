@@ -1,0 +1,73 @@
+{
+  "id": "shooting-modes",
+  "type": "basic",
+  "mode": "both",
+  "title": "Shooting modes",
+  "summary": "Who sets what: you or the camera.",
+  "tags": [
+    "manual",
+    "av",
+    "tv",
+    "program"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Dial",
+        "You set",
+        "Camera sets"
+      ],
+      "rows": [
+        [
+          "Auto",
+          "Nothing",
+          "Everything"
+        ],
+        [
+          "P",
+          "Exposure comp, ISO",
+          "Aperture and shutter pair"
+        ],
+        [
+          "Av / A",
+          "Aperture",
+          "Shutter"
+        ],
+        [
+          "Tv / S",
+          "Shutter",
+          "Aperture"
+        ],
+        [
+          "M",
+          "Aperture, shutter, ISO",
+          "Only shows the meter"
+        ]
+      ]
+    },
+    {
+      "t": "p",
+      "text": "Scene modes (portrait, landscape, sport, night) are presets of the same three settings. Av or Tv usually gives more predictable results."
+    },
+    {
+      "t": "h",
+      "text": "Manual mode in four steps"
+    },
+    {
+      "t": "list",
+      "items": [
+        "Set **ISO** for the light.",
+        "Set **aperture** for how much you want in focus.",
+        "Turn the **shutter** until the meter reads 0.",
+        "Check the photo. Too dark? Aim the meter at +. Too bright? Aim at −."
+      ]
+    }
+  ],
+  "source": {
+    "title": "Shooting Modes, Manual Mode and Scene Modes",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "sunset-timelapse",
+  "type": "guide",
+  "mode": "video",
+  "title": "Sunset time-lapse",
+  "summary": "Hundreds of stills turned into a short clip.",
+  "tags": [
+    "timelapse",
+    "interval",
+    "sunset"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Shutter",
+          "1/50 s"
+        ],
+        [
+          "Aperture",
+          "f/8"
+        ],
+        [
+          "ISO",
+          "100"
+        ],
+        [
+          "Interval",
+          "3 s"
+        ],
+        [
+          "Shots",
+          "300"
+        ]
+      ],
+      "note": "300 shots × 3 s = 15 min of shooting → 10 s clip at 30 fps"
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod",
+        "ND filter",
+        "Spare battery",
+        "Large, fast card"
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "timelapse",
+      "text": "Change interval or clip length"
+    }
+  ],
+  "steps": [
+    "Set up the tripod and frame the shot. Leave room for the sky to change.",
+    "Focus on the horizon, then switch the lens to **manual focus** so it doesn't hunt between frames.",
+    "Set the exposure in **M**. Lock **white balance** to Daylight and fix the ISO.",
+    "Turn off image stabilisation while on the tripod.",
+    "Open the camera's **interval timer** (or time-lapse movie mode), set 3 s and 300 shots.",
+    "Start, then don't touch the camera until it finishes."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Auto white balance and auto ISO cause flicker. Lock both.",
+        "As the sun drops, the scene darkens. Either accept it, or change shutter in small steps between frames.",
+        "Shoot past the sunset: the best colour often comes 10–20 minutes later."
+      ]
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "unchecked"
+    }
+  }
+}

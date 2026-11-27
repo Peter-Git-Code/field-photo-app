@@ -1,0 +1,13 @@
+{
+  "device": "canon-r10",
+  "status": "pending",
+  "message": "The Canon EOS R10 manual hasn't been summarised yet.",
+  "planned": [
+    "Buttons and dials",
+    "Menu map",
+    "Interval timer and time-lapse movie",
+    "Custom modes (C1, C2)",
+    "Autofocus modes",
+    "Battery and cards"
+  ]
+}

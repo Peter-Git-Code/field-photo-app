@@ -1,0 +1,55 @@
+{
+  "id": "metering-modes",
+  "type": "basic",
+  "mode": "photo",
+  "title": "Metering modes",
+  "summary": "How the camera reads the light.",
+  "tags": [
+    "evaluative",
+    "spot",
+    "matrix"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Mode",
+        "Reads",
+        "Best for"
+      ],
+      "rows": [
+        [
+          "Evaluative / Matrix",
+          "Whole frame, weighted to the focus point",
+          "Even light, quick shots"
+        ],
+        [
+          "Centre-weighted",
+          "Whole frame, centre counts most",
+          "Portraits"
+        ],
+        [
+          "Partial",
+          "Small centre area",
+          "Like spot, but easier"
+        ],
+        [
+          "Spot",
+          "Tiny centre spot",
+          "Strong contrast, backlight, manual mode"
+        ]
+      ]
+    },
+    {
+      "t": "link",
+      "id": "backlit",
+      "text": "Subject in front of the sun? Read the backlit lesson →"
+    }
+  ],
+  "source": {
+    "title": "Metering Modes",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

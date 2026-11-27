@@ -1,0 +1,79 @@
+{
+  "id": "low-light",
+  "type": "basic",
+  "mode": "photo",
+  "title": "Low light",
+  "summary": "Settings for indoors, city lights and stars.",
+  "tags": [
+    "night",
+    "indoors",
+    "tripod"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Scene",
+        "Tripod",
+        "Flash",
+        "ISO",
+        "Aperture",
+        "Shutter"
+      ],
+      "rows": [
+        [
+          "Indoors",
+          "Usually not",
+          "Maybe",
+          "Mid–high",
+          "Wide",
+          "1/60 s or faster"
+        ],
+        [
+          "Handheld outdoors",
+          "No",
+          "Maybe",
+          "Mid–high",
+          "Wide–mid",
+          "1/125 s or faster"
+        ],
+        [
+          "City lights",
+          "Yes",
+          "No",
+          "Low–mid",
+          "Wide–mid",
+          "Slow"
+        ],
+        [
+          "Stars",
+          "Yes",
+          "No",
+          "Mid–high",
+          "Wide–mid",
+          "Slow to very slow"
+        ]
+      ]
+    },
+    {
+      "t": "tips",
+      "items": [
+        "Av mode with the widest aperture lets the most light in.",
+        "In Av, Tv or P, turn exposure compensation to + to brighten.",
+        "High ISO noise cleans up best from RAW files.",
+        "A lens at f/2.8 or wider and image stabilisation help most."
+      ]
+    },
+    {
+      "t": "link",
+      "id": "milky-way",
+      "text": "Shooting stars? Open the Milky Way guide →"
+    }
+  ],
+  "source": {
+    "title": "Photos in Low Light",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

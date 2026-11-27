@@ -1,0 +1,62 @@
+{
+  "id": "raw-vs-jpeg",
+  "type": "basic",
+  "mode": "photo",
+  "title": "RAW or JPEG",
+  "summary": "Which file format to shoot.",
+  "tags": [
+    "file format",
+    "cr3",
+    "editing"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "",
+        "RAW",
+        "JPEG"
+      ],
+      "rows": [
+        [
+          "File size",
+          "Large",
+          "Small"
+        ],
+        [
+          "Editing room",
+          "Most: exposure, colour, white balance",
+          "Limited"
+        ],
+        [
+          "Straight out of camera",
+          "Flat, needs processing",
+          "Ready to share"
+        ],
+        [
+          "Opens in",
+          "An editor (Lightroom etc.)",
+          "Anything"
+        ]
+      ]
+    },
+    {
+      "t": "list",
+      "items": [
+        "Shoot **RAW** for tricky light (backlight, night), heavy editing and big prints.",
+        "Shoot **JPEG** for quick sharing, long bursts and when card space is short.",
+        "**RAW + JPEG** gives you both."
+      ]
+    },
+    {
+      "t": "p",
+      "text": "Current Canon cameras save RAW as **.CR3**."
+    }
+  ],
+  "source": {
+    "title": "RAW vs JPEG",
+    "author": "Urban Rhino Tutorials",
+    "url": "https://www.urbanrhinotutorials.com",
+    "note": "Rewritten in our own words. The original infographic is not copied."
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "version": "2026-11-27.1",
+  "devices": [
+    {
+      "id": "canon-r10",
+      "name": "Canon EOS R10",
+      "brand": "Canon",
+      "type": "camera",
+      "sensor": "APS-C",
+      "crop": 1.6
+    },
+    {
+      "id": "dji-lito-x1",
+      "name": "DJI LITO X1",
+      "brand": "DJI",
+      "type": "drone"
+    }
+  ],
+  "manuals": [
+    {
+      "device": "canon-r10",
+      "status": "pending",
+      "file": "manuals/canon-r10.json"
+    },
+    {
+      "device": "dji-lito-x1",
+      "status": "pending",
+      "file": "manuals/dji-lito-x1.json"
+    }
+  ],
+  "changes": [
+    {
+      "date": "2026-11-27",
+      "kind": "new",
+      "text": "First library: 14 basics, 6 how-to guides, 2 lessons"
+    },
+    {
+      "date": "2026-11-27",
+      "kind": "coming",
+      "text": "Canon EOS R10 manual and device steps"
+    },
+    {
+      "date": "2026-11-27",
+      "kind": "coming",
+      "text": "DJI LITO X1 manual and device steps"
+    }
+  ],
+  "items": [
+    {
+      "id": "exposure-triangle",
+      "type": "basic",
+      "mode": "both",
+      "title": "Exposure triangle",
+      "summary": "Aperture, shutter and ISO trade off against each other.",
+      "tags": [
+        "exposure",
+        "stops"
+      ],
+      "file": "basics/exposure-triangle.json"
+    },
+    {
+      "id": "aperture",
+      "type": "basic",
+      "mode": "both",
+      "title": "Aperture (f-stop)",
+      "summary": "Controls light and how much of the scene is sharp.",
+      "tags": [
+        "f-stop",
+        "depth of field",
+        "bokeh"
+      ],
+      "file": "basics/aperture.json"
+    },
+    {
+      "id": "shutter-speed",
+      "type": "basic",
+      "mode": "both",
+      "title": "Shutter speed",
+      "summary": "Freeze motion or blur it on purpose.",
+      "tags": [
+        "motion",
+        "blur",
+        "handheld"
+      ],
+      "file": "basics/shutter-speed.json"
+    },
+    {
+      "id": "iso",
+      "type": "basic",
+      "mode": "both",
+      "title": "ISO by light",
+      "summary": "Starting ISO for the light you're in.",
+      "tags": [
+        "noise",
+        "sensitivity"
+      ],
+      "file": "basics/iso.json"
+    },
+    {
+      "id": "white-balance",
+      "type": "basic",
+      "mode": "both",
+      "title": "White balance",
+      "summary": "Pick the preset that matches the light.",
+      "tags": [
+        "colour",
+        "kelvin",
+        "awb"
+      ],
+      "file": "basics/white-balance.json"
+    },
+    {
+      "id": "metering-modes",
+      "type": "basic",
+      "mode": "photo",
+      "title": "Metering modes",
+      "summary": "How the camera reads the light.",
+      "tags": [
+        "evaluative",
+        "spot",
+        "matrix"
+      ],
+      "file": "basics/metering-modes.json"
+    },
+    {
+      "id": "shooting-modes",
+      "type": "basic",
+      "mode": "both",
+      "title": "Shooting modes",
+      "summary": "Who sets what: you or the camera.",
+      "tags": [
+        "manual",
+        "av",
+        "tv",
+        "program"
+      ],
+      "file": "basics/shooting-modes.json"
+    },
+    {
+      "id": "drive-modes",
+      "type": "basic",
+      "mode": "photo",
+      "title": "Drive modes",
+      "summary": "Single, burst, timer and remote.",
+      "tags": [
+        "burst",
+        "self timer",
+        "remote"
+      ],
+      "file": "basics/drive-modes.json"
+    },
+    {
+      "id": "depth-of-field",
+      "type": "basic",
+      "mode": "photo",
+      "title": "Depth of field and blur",
+      "summary": "What makes the background blurry or sharp.",
+      "tags": [
+        "bokeh",
+        "background blur",
+        "focal length"
+      ],
+      "file": "basics/depth-of-field.json"
+    },
+    {
+      "id": "focal-length",
+      "type": "basic",
+      "mode": "both",
+      "title": "Focal length",
+      "summary": "How wide the view is and how big things look.",
+      "tags": [
+        "lens",
+        "zoom",
+        "crop factor"
+      ],
+      "file": "basics/focal-length.json"
+    },
+    {
+      "id": "sharp-photos",
+      "type": "basic",
+      "mode": "photo",
+      "title": "Sharp handheld photos",
+      "summary": "Settings and stance that stop camera shake.",
+      "tags": [
+        "shake",
+        "holding",
+        "stance"
+      ],
+      "file": "basics/sharp-photos.json"
+    },
+    {
+      "id": "low-light",
+      "type": "basic",
+      "mode": "photo",
+      "title": "Low light",
+      "summary": "Settings for indoors, city lights and stars.",
+      "tags": [
+        "night",
+        "indoors",
+        "tripod"
+      ],
+      "file": "basics/low-light.json"
+    },
+    {
+      "id": "raw-vs-jpeg",
+      "type": "basic",
+      "mode": "photo",
+      "title": "RAW or JPEG",
+      "summary": "Which file format to shoot.",
+      "tags": [
+        "file format",
+        "cr3",
+        "editing"
+      ],
+      "file": "basics/raw-vs-jpeg.json"
+    },
+    {
+      "id": "pop-up-flash",
+      "type": "basic",
+      "mode": "photo",
+      "title": "Built-in flash",
+      "summary": "Make the pop-up flash look less harsh.",
+      "tags": [
+        "flash",
+        "fill flash",
+        "bounce"
+      ],
+      "file": "basics/pop-up-flash.json"
+    },
+    {
+      "id": "sunset-timelapse",
+      "type": "guide",
+      "mode": "video",
+      "title": "Sunset time-lapse",
+      "summary": "Hundreds of stills turned into a short clip.",
+      "tags": [
+        "timelapse",
+        "interval",
+        "sunset"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "unchecked"
+        }
+      },
+      "file": "guides/sunset-timelapse.json"
+    },
+    {
+      "id": "long-exposure-water",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Silky water",
+      "summary": "Smooth waterfalls and seas with an ND filter.",
+      "tags": [
+        "long exposure",
+        "nd filter",
+        "waterfall"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "unchecked"
+        }
+      },
+      "file": "guides/long-exposure-water.json"
+    },
+    {
+      "id": "milky-way",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Milky Way",
+      "summary": "Sharp stars and a bright core on a dark night.",
+      "tags": [
+        "astro",
+        "stars",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "unchecked"
+        }
+      },
+      "file": "guides/milky-way.json"
+    },
+    {
+      "id": "panorama",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Panorama",
+      "summary": "Stitch several frames into one wide view.",
+      "tags": [
+        "stitch",
+        "wide",
+        "landscape"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "unchecked"
+        }
+      },
+      "file": "guides/panorama.json"
+    },
+    {
+      "id": "sun-star",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Sun star",
+      "summary": "Turn the sun into a sharp star burst.",
+      "tags": [
+        "sunstar",
+        "backlight",
+        "aperture"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "unchecked"
+        }
+      },
+      "file": "guides/sun-star.json"
+    },
+    {
+      "id": "drone-hyperlapse",
+      "type": "guide",
+      "mode": "video",
+      "title": "Drone hyperlapse",
+      "summary": "A moving time-lapse shot from the air.",
+      "tags": [
+        "drone",
+        "hyperlapse",
+        "timelapse"
+      ],
+      "appliesTo": [
+        "drone"
+      ],
+      "devices": {
+        "dji-lito-x1": {
+          "status": "unchecked"
+        }
+      },
+      "file": "guides/drone-hyperlapse.json"
+    },
+    {
+      "id": "backlit",
+      "type": "lesson",
+      "mode": "photo",
+      "title": "Backlit photography",
+      "summary": "Shoot into the light for rim glow, silhouettes and sun stars.",
+      "tags": [
+        "backlight",
+        "rim light",
+        "silhouette",
+        "golden hour"
+      ],
+      "minutes": 4,
+      "file": "lessons/backlit.json"
+    },
+    {
+      "id": "shutter-180",
+      "type": "lesson",
+      "mode": "video",
+      "title": "The 180° shutter rule",
+      "summary": "The shutter speed that makes video motion look natural.",
+      "tags": [
+        "video",
+        "shutter angle",
+        "frame rate",
+        "nd"
+      ],
+      "minutes": 2,
+      "file": "lessons/shutter-180.json"
+    }
+  ]
+}

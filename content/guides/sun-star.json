@@ -1,0 +1,77 @@
+{
+  "id": "sun-star",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Sun star",
+  "summary": "Turn the sun into a sharp star burst.",
+  "tags": [
+    "sunstar",
+    "backlight",
+    "aperture"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "Av or M"
+        ],
+        [
+          "Aperture",
+          "f/11–f/18"
+        ],
+        [
+          "ISO",
+          "100"
+        ],
+        [
+          "Exp. comp",
+          "−1"
+        ],
+        [
+          "Sun",
+          "Half hidden"
+        ],
+        [
+          "Format",
+          "RAW"
+        ]
+      ],
+      "note": "Smaller aperture = sharper, longer spikes."
+    },
+    {
+      "t": "link",
+      "id": "backlit",
+      "text": "Part of the backlit lesson →"
+    }
+  ],
+  "steps": [
+    "Find an edge to hide the sun behind: a tree, building, rock or the horizon.",
+    "Set f/11–f/18.",
+    "Move until the edge covers about **half** the sun.",
+    "Shift a few centimetres back and forth until the star looks strongest.",
+    "Underexpose a little to keep the sky colour. Bracket if unsure."
+  ],
+  "after": [
+    {
+      "t": "note",
+      "tone": "warn",
+      "text": "Don't look at the sun through an optical viewfinder. Use the screen."
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "unchecked"
+    }
+  },
+  "source": {
+    "title": "Backlit Photography",
+    "author": "Simon d'Entremont",
+    "url": "https://simondentremont.com",
+    "note": "Rewritten in our own words."
+  }
+}

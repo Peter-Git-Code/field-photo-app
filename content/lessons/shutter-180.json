@@ -1,0 +1,68 @@
+{
+  "id": "shutter-180",
+  "type": "lesson",
+  "mode": "video",
+  "minutes": 2,
+  "title": "The 180° shutter rule",
+  "summary": "The shutter speed that makes video motion look natural.",
+  "tags": [
+    "video",
+    "shutter angle",
+    "frame rate",
+    "nd"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "For natural-looking motion, set the shutter to about **double the frame rate**: 1/(2 × fps)."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Frame rate",
+        "Shutter"
+      ],
+      "rows": [
+        [
+          "24 fps",
+          "1/50 s"
+        ],
+        [
+          "25 fps",
+          "1/50 s"
+        ],
+        [
+          "30 fps",
+          "1/60 s"
+        ],
+        [
+          "50 fps",
+          "1/100 s"
+        ],
+        [
+          "60 fps",
+          "1/125 s"
+        ],
+        [
+          "120 fps",
+          "1/250 s"
+        ]
+      ]
+    },
+    {
+      "t": "list",
+      "items": [
+        "Much faster shutter: crisp but choppy, stuttering motion.",
+        "Much slower: smeary, dreamy motion.",
+        "In bright sun the fixed shutter overexposes. Use an **ND filter** (a variable ND is easiest) instead of speeding up the shutter."
+      ]
+    },
+    {
+      "t": "tips",
+      "items": [
+        "Lock ISO, white balance and exposure so the image doesn't pulse as you pan.",
+        "Shooting slow motion? Base the shutter on the recording frame rate, not the playback rate."
+      ]
+    }
+  ]
+}

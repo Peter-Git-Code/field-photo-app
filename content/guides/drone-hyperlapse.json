@@ -1,0 +1,77 @@
+{
+  "id": "drone-hyperlapse",
+  "type": "guide",
+  "mode": "video",
+  "title": "Drone hyperlapse",
+  "summary": "A moving time-lapse shot from the air.",
+  "tags": [
+    "drone",
+    "hyperlapse",
+    "timelapse"
+  ],
+  "appliesTo": [
+    "drone"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Interval",
+          "2 s"
+        ],
+        [
+          "Length",
+          "10–15 s clip"
+        ],
+        [
+          "Exposure",
+          "Manual"
+        ],
+        [
+          "White bal.",
+          "Fixed"
+        ],
+        [
+          "Filter",
+          "ND in daylight"
+        ],
+        [
+          "Speed",
+          "Slow"
+        ]
+      ],
+      "note": "10 s at 25 fps ≈ 250 frames ≈ 8–9 min of flight."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Full batteries",
+        "ND filters",
+        "Charged phone or controller"
+      ]
+    }
+  ],
+  "steps": [
+    "Check the weather, wind and local drone rules before you fly.",
+    "Pick a subject with movement: clouds, traffic, water or shadows.",
+    "Plan a slow, simple path: straight line, orbit or pan.",
+    "Set exposure and white balance manually so frames match.",
+    "Use the drone's **hyperlapse mode** if it has one; otherwise fly slowly while shooting at an interval.",
+    "Keep enough battery to return home with margin."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Slower and longer looks smoother than fast and short.",
+        "Shoot just after sunset when lights come on."
+      ]
+    }
+  ],
+  "devices": {
+    "dji-lito-x1": {
+      "status": "unchecked"
+    }
+  }
+}

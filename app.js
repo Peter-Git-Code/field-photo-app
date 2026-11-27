@@ -168,7 +168,7 @@
     var page = parts[0] || "home";
     document.querySelectorAll(".nav a").forEach(function (a) {
       var n = a.getAttribute("data-nav");
-      var on = n === page || (n === "home" && (page === "item" || page === "kit")) || (n === "manuals" && page === "manual");
+      var on = n === page || (n === "home" && (page === "item" || page === "kit")) || (n === "manuals" && page === "manual") || (n === "about" && page === "updates");
       a.classList.toggle("on", on);
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
@@ -180,7 +180,7 @@
     else if (page === "manuals") r = renderManuals();
     else if (page === "manual") r = renderManual(decodeURIComponent(parts[1] || ""));
     else if (page === "tools") r = renderTools(parts[1] || "exposure");
-    else if (page === "updates") r = renderUpdates();
+    else if (page === "about" || page === "updates") r = renderAbout();
     else r = renderHome();
     Promise.resolve(r).catch(function (e) {
       view.innerHTML = "";
@@ -242,23 +242,19 @@
 
     add(view, [
       header("Field Photo"),
-      el("div", { class: "lab", text: "My kit · guides match the selected device" }),
-      el("div", { class: "chips" },
-        kit.map(function (d) {
-          return el("button", {
-            type: "button", class: "chip" + (dev && d.id === dev.id ? " on" : ""), text: d.name,
-            "aria-pressed": String(!!dev && d.id === dev.id),
-            onclick: function () { state.active = d.id; store("activeDevice", d.id); route(); }
-          });
-        }),
-        el("a", { class: "chip", href: "#/kit", text: kit.length ? "Edit kit" : "+ Add a device" })),
-      el("div", { style: "margin-top:14px" },
+      el("label", { for: "devsel", class: "lab", text: "My device · guides match it" }),
+      kit.length ? el("div", { class: "devrow" },
+        el("select", { id: "devsel", onchange: function (e) { state.active = e.target.value; store("activeDevice", e.target.value); route(); } },
+          kit.map(function (d) { return el("option", { value: d.id, selected: !!dev && d.id === dev.id, text: d.name }); })),
+        el("a", { class: "chip", href: "#/kit", text: "Edit kit" }))
+        : el("a", { class: "btn", href: "#/kit", text: "+ Add your camera" }),
+      el("div", { style: "margin-top:10px" },
         el("label", { for: "q", class: "f", text: "Search" }),
         el("input", {
           id: "q", class: "search", type: "search", placeholder: "Star trails, ND filter, white balance…",
           oninput: function (e) { q = e.target.value.trim().toLowerCase(); draw(); }
         })),
-      el("div", { style: "margin-top:12px" }, seg),
+      el("div", { style: "margin-top:10px" }, seg),
       list
     ]);
     draw();
@@ -272,13 +268,16 @@
     return loadItem(id).then(function (it) {
       view.innerHTML = "";
       add(view, header(null, "#/", TYPES[it.type] || "Guides"));
-      if (it.type !== "basic") add(view, mediaSlot(it));
+      var devPart = it.type === "guide" ? deviceSection(it, meta) : null;
+      var unavailable = it._status === "unavailable";
+      if (it.type !== "basic" && !unavailable) add(view, mediaSlot(it));
       add(view, [
         el("div", { class: "muted", text: (TYPES[it.type] || "").replace(/s$/, "") + (it.minutes ? " · " + it.minutes + " min" : "") }),
         el("h2", { text: it.title }),
         it.summary ? el("p", { class: "summary", text: it.summary }) : null
       ]);
-      if (it.type === "guide") add(view, deviceSection(it, meta));
+      if (devPart) add(view, devPart);
+      if (unavailable) return; // nothing on this page applies to the chosen device
       add(view, blocks(it.blocks || []));
       if (it.type === "guide") add(view, stepsSection(it, meta));
       if (it.after) add(view, blocks(it.after));
@@ -318,8 +317,12 @@
     }));
     add(wrap, [el("label", { for: "dev", class: "lab", text: "Steps for" }), sel]);
     var s = support(meta, device(current));
+    it._status = s.status;
     if (s.status === "unavailable") {
-      add(wrap, el("div", { class: "note no" }, el("strong", { text: "Feature unavailable. " }), s.note || ""));
+      add(wrap, el("div", { class: "note no" }, el("strong", { text: "Feature unavailable on " + device(current).name + ". " }), s.note || ""));
+      if (s.link && findMeta(s.link)) add(wrap, el("a", { class: "btn", href: "#/item/" + s.link, style: "margin-top:8px", text: "Open " + findMeta(s.link).title }));
+      var others = kitDevices().filter(function (d) { return d.id !== current && support(meta, d).status !== "unavailable"; });
+      if (others.length) add(wrap, el("p", { class: "muted", text: "Pick " + others.map(function (d) { return d.name; }).join(" or ") + " above to see the guide." }));
     } else if (s.status === "unchecked") {
       add(wrap, el("div", { class: "note warn", text: s.note || ("Device steps not written yet for " + device(current).name + ". Showing general steps.") }));
     }
@@ -504,14 +507,148 @@
   }
 
   function renderTools(tab) {
-    var tabs = [["exposure", "Exposure"], ["nd", "ND filter"], ["timelapse", "Time-lapse"], ["stars", "Stars"]];
+    var tabs = [["exposure", "Exposure"], ["equiv", "Equivalents"], ["dof", "Depth of field"], ["flash", "Flash range"],
+      ["nd", "ND filter"], ["timelapse", "Time-lapse"], ["stars", "Stars"]];
     add(view, [header("Tools"),
-      el("div", { class: "chips", role: "tablist" }, tabs.map(function (t) {
+      el("div", { class: "chips scrollrow", role: "tablist" }, tabs.map(function (t) {
         return el("a", { class: "chip" + (t[0] === tab ? " on" : ""), href: "#/tools/" + t[0], role: "tab", "aria-selected": String(t[0] === tab), text: t[1] });
       }))]);
-    var box = el("div", { style: "margin-top:12px" });
+    var box = el("div", { style: "margin-top:10px" });
     add(view, box);
-    ({ exposure: toolExposure, nd: toolND, timelapse: toolTimelapse, stars: toolStars }[tab] || toolExposure)(box);
+    ({ exposure: toolExposure, equiv: toolEquiv, dof: toolDOF, flash: toolFlash, nd: toolND, timelapse: toolTimelapse, stars: toolStars }[tab] || toolExposure)(box);
+    var on = view.querySelector(".scrollrow .on");
+    if (on && on.scrollIntoView) on.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+
+  var APERTURES = [1.4, 1.8, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
+  var ISOS = [100, 200, 400, 800, 1600, 3200, 6400, 12800];
+  var SHUTTERS = [1 / 4000, 1 / 2000, 1 / 1000, 1 / 500, 1 / 250, 1 / 125, 1 / 60, 1 / 30, 1 / 15, 1 / 8, 1 / 4, 1 / 2, 1, 2, 4, 8, 15, 30];
+  function field(id, label, control) { return el("div", null, el("label", { for: id, class: "f", text: label }), control); }
+
+  // Same brightness, different look: one good exposure in, matching combinations out.
+  function toolEquiv(box) {
+    var sh = el("select", { id: "eqs" }, SHUTTERS.map(function (t) { return el("option", { value: t, selected: t === 1 / 125, text: fmtShutter(t) }); }));
+    var ap = numSelect("eqa", APERTURES, 8, function (v) { return "f/" + v; });
+    var iso = numSelect("eqi", ISOS, 100);
+    var iso2 = numSelect("eqi2", ISOS, 100);
+    var body = el("tbody");
+    function use(t) {
+      if (t < 1 / 4000) return ["Too fast for the shutter", "no"];
+      if (t > 30) return ["Over 30 s: Bulb", "warn"];
+      if (t >= 1) return ["Tripod: silky water, trails", "warn"];
+      if (t > 1 / 30) return ["Tripod", "warn"];
+      if (t > 1 / 125) return ["Handheld, still subjects", "no"];
+      if (t > 1 / 500) return ["People, walking", "ok"];
+      return ["Freezes action", "ok"];
+    }
+    function calc() {
+      var ev = Math.log2((+ap.value * +ap.value) / +sh.value) - Math.log2(+iso.value / 100);
+      body.innerHTML = "";
+      APERTURES.forEach(function (N) {
+        var t = (N * N) / Math.pow(2, ev + Math.log2(+iso2.value / 100));
+        var u = use(t);
+        add(body, el("tr", { class: N === +ap.value && iso.value === iso2.value ? "hl" : "" },
+          el("td", { text: "f/" + N }), el("td", { text: fmtShutter(t) }), el("td", null, el("span", { class: "pill " + u[1], text: u[0] }))));
+      });
+    }
+    [sh, ap, iso, iso2].forEach(function (s) { s.addEventListener("change", calc); });
+    add(box, [
+      el("p", { class: "muted", text: "Enter an exposure that looks right. These give the same brightness." }),
+      el("div", { class: "grid3" }, field("eqs", "Shutter", sh), field("eqa", "Aperture", ap), field("eqi", "ISO", iso)),
+      el("div", { style: "margin-top:8px;max-width:50%" }, field("eqi2", "Show at ISO", iso2)),
+      el("div", { class: "tablewrap" }, el("table", null,
+        el("thead", null, el("tr", null, el("th", { text: "Aperture" }), el("th", { text: "Shutter" }), el("th", { text: "Good for" }))), body))
+    ]);
+    calc();
+  }
+
+  // Depth of field from focal length, aperture, distance and sensor size.
+  var COC = { 1: 0.030, 1.5: 0.020, 1.6: 0.019, 2: 0.015, 2.7: 0.011 };
+  function fmtDist(m) {
+    if (!isFinite(m) || m < 0) return "∞";
+    return m < 1 ? Math.round(m * 100) + " cm" : m < 10 ? m.toFixed(2) + " m" : m.toFixed(1) + " m";
+  }
+  function toolDOF(box) {
+    var dev = activeDevice();
+    var fl = el("input", { id: "dfl", type: "number", min: "4", step: "1", value: "35", inputmode: "numeric" });
+    var ap = numSelect("dap", APERTURES, 8, function (v) { return "f/" + v; });
+    var dist = el("input", { id: "ddist", type: "number", min: "0.1", step: "0.1", value: "3", inputmode: "decimal" });
+    var sensor = numSelect("dsen", [1, 1.5, 1.6, 2, 2.7], dev && dev.crop ? dev.crop : 1, function (v) {
+      return { 1: "Full frame", 1.5: "APS-C (Nikon, Sony, Fuji)", 1.6: "APS-C (Canon)", 2: "Micro 4/3", 2.7: "1-inch" }[v];
+    });
+    var out = el("div", { class: "card", style: "margin-top:10px" });
+    function calc() {
+      var f = +fl.value, N = +ap.value, s = +dist.value * 1000, c = COC[sensor.value];
+      var H = (f * f) / (N * c) + f;
+      var near = s * (H - f) / (H + s - 2 * f);
+      var far = s >= H ? Infinity : s * (H - f) / (H - s);
+      out.innerHTML = "";
+      add(out, [
+        el("div", { class: "settings" },
+          el("div", null, "Sharp from", el("b", { text: fmtDist(near / 1000) })),
+          el("div", null, "Sharp to", el("b", { text: fmtDist(far / 1000) })),
+          el("div", null, "Depth", el("b", { text: far === Infinity ? "∞" : fmtDist((far - near) / 1000) }))),
+        el("div", { class: "calcline", text: "Hyperfocal: focus at " + fmtDist(H / 1000) + " and everything from " + fmtDist(H / 2000) + " to ∞ is sharp." })
+      ]);
+    }
+    [fl, ap, dist, sensor].forEach(function (i) { i.addEventListener("input", calc); i.addEventListener("change", calc); });
+    add(box, [
+      el("div", { class: "grid2" }, field("dfl", "Focal length (mm)", fl), field("dap", "Aperture", ap),
+        field("ddist", "Focus distance (m)", dist), field("dsen", "Sensor", sensor)),
+      out,
+      el("p", { class: "muted", text: "Use the lens's real focal length (what's printed on it), not the full-frame equivalent." })
+    ]);
+    calc();
+  }
+
+  // Flash reach. Guide numbers from the Speedlite 420EX manual and R10 specs (ISO 100, metres).
+  var FLASH_DATA = {
+    "canon-speedlite-420ex": {
+      name: "Speedlite 420EX", zooms: [24, 28, 35, 50, 70, 105], gn: [23, 25, 31, 34, 37, 42],
+      hss: { "1/250": [11.0, 12.0, 14.9, 16.3, 17.7, 20.1], "1/500": [8.1, 8.8, 11.0, 12.0, 13.1, 14.8],
+        "1/1000": [5.8, 6.3, 7.8, 8.5, 9.3, 10.5], "1/2000": [4.1, 4.4, 5.5, 6.0, 6.5, 7.4], "1/4000": [2.9, 3.1, 3.9, 4.3, 4.6, 5.3] }
+    },
+    "r10-builtin": { name: "R10 built-in flash", zooms: null, gn: [6] }
+  };
+  function toolFlash(box) {
+    var flashes = kitDevices().filter(function (d) { return FLASH_DATA[d.id]; }).map(function (d) { return d.id; });
+    if (kitDevices().some(function (d) { return d.id === "canon-r10"; })) flashes.push("r10-builtin");
+    if (!flashes.length) flashes = Object.keys(FLASH_DATA);
+    var which = el("select", { id: "ffl" }, flashes.map(function (k) { return el("option", { value: k, text: FLASH_DATA[k].name }); }));
+    var zoomWrap = el("div"), syncWrap = el("div");
+    var iso = numSelect("fiso", ISOS, 100);
+    var ap = numSelect("fap", APERTURES, 4, function (v) { return "f/" + v; });
+    var out = el("div", { class: "card", style: "margin-top:10px" });
+    var zoom, sync;
+    function build() {
+      var d = FLASH_DATA[which.value];
+      zoomWrap.innerHTML = ""; syncWrap.innerHTML = ""; zoom = null; sync = null;
+      if (d.zooms) {
+        zoom = numSelect("fzoom", d.zooms, 50, function (v) { return v + " mm"; });
+        zoom.addEventListener("change", calc); add(zoomWrap, field("fzoom", "Flash zoom", zoom));
+      }
+      if (d.hss) {
+        sync = el("select", { id: "fsync" }, [el("option", { value: "", text: "Normal" })].concat(
+          Object.keys(d.hss).map(function (k) { return el("option", { value: k, text: "HSS " + k }); })));
+        sync.addEventListener("change", calc); add(syncWrap, field("fsync", "Sync", sync));
+      }
+      calc();
+    }
+    function calc() {
+      var d = FLASH_DATA[which.value];
+      var i = zoom ? d.zooms.indexOf(+zoom.value) : 0;
+      var gn = sync && sync.value ? d.hss[sync.value][i] : d.gn[i];
+      var reach = gn * Math.sqrt(+iso.value / 100) / +ap.value;
+      out.innerHTML = "";
+      add(out, [el("div", { class: "lab", style: "margin-top:0", text: "Direct flash reaches" }),
+        el("div", { class: "big", text: (reach < 10 ? reach.toFixed(1) : Math.round(reach)) + " m" }),
+        el("div", { class: "muted", text: "Guide number " + gn + " at ISO 100. Doubling ISO adds about 40% reach. Bounced flash reaches much less." })]);
+    }
+    [which].forEach(function (s) { s.addEventListener("change", build); });
+    [iso, ap].forEach(function (s) { s.addEventListener("change", calc); });
+    add(box, [field("ffl", "Flash", which), el("div", { class: "grid2", style: "margin-top:8px" }, zoomWrap, syncWrap,
+      field("fiso", "ISO", iso), field("fap", "Aperture", ap)), out]);
+    build();
   }
 
   function toolExposure(box) {
@@ -670,13 +807,15 @@
     calc();
   }
 
-  // ---------- Updates ----------
-  function renderUpdates() {
+  // ---------- About ----------
+  var REPO = "https://github.com/Peter-Git-Code/field-photo-app";
+  var SITE = "https://peter-git-code.github.io/field-photo-app/";
+  function renderAbout() {
     var last = store("lastSync");
     var libV = store("libVersion");
     var count = state.index.items.length;
     var status = el("div", { class: "muted", text: last ? "Last synced " + new Date(last).toLocaleString() : "Not fully downloaded yet." });
-    var btn = el("button", { type: "button", class: "btn", text: "Check for updates", style: "margin-top:12px" });
+    var btn = el("button", { type: "button", class: "btn", text: "Check for updates", style: "margin-top:10px" });
     btn.addEventListener("click", function () {
       if (!navigator.onLine) { toast("No signal. Your saved library still works."); return; }
       btn.disabled = true; btn.textContent = "Checking…";
@@ -694,11 +833,16 @@
       });
     });
     var kinds = { "new": ["New", "ok"], updated: ["Updated", "no"], coming: ["Coming", "warn"] };
+    function how(title, paras) {
+      return el("details", null, el("summary", { text: title }), el("div", null, paras.map(function (x) {
+        return Array.isArray(x) ? el("ul", { class: "list" }, x.map(function (li) { return el("li", null, rich(li)); })) : el("p", null, rich(x));
+      })));
+    }
     add(view, [
-      header("Updates"),
+      header("About"),
       el("div", { class: "card" },
         el("div", { class: "muted", text: "Saved on this phone" }),
-        el("div", { style: "font-size:24px;font-weight:800", text: count + " guides, basics and lessons" }),
+        el("div", { style: "font-size:20px;font-weight:800", text: count + " guides, basics and lessons · " + (state.index.manuals || []).length + " manuals" }),
         status, btn),
       el("div", { class: "lab", text: "What's new" }),
       (state.index.changes || []).map(function (c) {
@@ -711,8 +855,30 @@
           onclick: function () { applyTheme(t); route(); } });
       })),
       el("p", { class: "muted", text: "Day is high contrast for bright sun. Night is red, so your eyes stay adjusted to the dark." }),
-      el("div", { class: "lab", text: "Install" }),
-      el("p", { class: "muted", text: "iPhone: Safari › Share › Add to Home Screen. Android: Chrome menu › Install app. Installing keeps the library saved; a plain browser tab can lose it after a few weeks." }),
+      el("div", { class: "lab", text: "How it works" }),
+      how("Where the content comes from", [
+        "Every guide, lesson and manual is a small file in the **content** folder of the GitHub repository **Peter-Git-Code/field-photo-app**.",
+        "The app itself is hosted free by GitHub Pages at **peter-git-code.github.io/field-photo-app**.",
+        "Guides are written in plain words from manuals and guides you supply. Each one credits its source."]),
+      how("How your phone gets updates", [
+        "Each time you open the app **with signal**, it checks the library version on GitHub.",
+        "If there's a newer version, it downloads every file and keeps them on the phone.",
+        "With no signal it simply uses the saved copy. **Check for updates** above does the same on demand."]),
+      how("How to install the app", [[
+        "**iPhone:** open the link in Safari (or Edge) › Share › Add to Home Screen.",
+        "**Android:** open it in Chrome or Edge › menu › Install app (or Add to phone).",
+        "**Computer:** open it in Edge or Chrome › install icon in the address bar.",
+        "Open it once with signal and wait for “Library saved for offline”. Test it in flight mode."]]),
+      how("How to add new content", [
+        "Start a Claude Code session with the **field-photo-app** repository and send what you have: a manual PDF, a guide or ebook, a video transcript, or your own photos and clips.",
+        "Say what you want, for example: “Add a night-sky guide for the R10” or “Add the Osmo's underwater tips”.",
+        "Claude writes it in short, plain steps, links the device steps to your kit and credits the source."]),
+      how("How to push an update", [
+        "Ask Claude to publish. It checks the content, raises the library version and pushes to the **main** branch on GitHub.",
+        "GitHub Pages updates the site within a couple of minutes.",
+        "Every phone picks it up the next time the app opens with signal."]),
+      el("p", { class: "muted", style: "margin-top:14px" }, "Site: ", el("a", { href: SITE, target: "_blank", rel: "noopener", text: "peter-git-code.github.io/field-photo-app" }),
+        el("br"), "Content: ", el("a", { href: REPO, target: "_blank", rel: "noopener", text: "github.com/Peter-Git-Code/field-photo-app" })),
       el("p", { class: "muted", text: "Library version " + (state.index.version || "–") })
     ]);
   }

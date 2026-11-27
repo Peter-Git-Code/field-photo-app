@@ -99,7 +99,8 @@
     },
     "dji-lito-x1": {
       "status": "unavailable",
-      "note": "For the drone, use its Hyperlapse mode instead. Open the Drone hyperlapse guide."
+      "note": "For the drone, use its Hyperlapse mode instead.",
+      "link": "drone-hyperlapse"
     }
   }
 }

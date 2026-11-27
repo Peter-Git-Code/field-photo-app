@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27.2",
+  "version": "2026-11-27.3",
   "devices": [
     {
       "id": "canon-r10",
@@ -55,6 +55,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-27",
+      "kind": "new",
+      "text": "Tools: depth of field, flash range, exposure equivalents"
+    },
     {
       "date": "2026-11-27",
       "kind": "new",
@@ -114,7 +119,8 @@
         },
         "dji-lito-x1": {
           "status": "unavailable",
-          "note": "For the drone, use its Hyperlapse mode instead. Open the Drone hyperlapse guide."
+          "note": "For the drone, use its Hyperlapse mode instead.",
+          "link": "drone-hyperlapse"
         }
       },
       "file": "guides/sunset-timelapse.json"

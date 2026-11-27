@@ -7,7 +7,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "content"
 BLOCKS = {"p", "h", "list", "note", "tips", "scale", "table", "settings", "kit", "tool", "more", "link"}
-TOOLS = {"exposure", "nd", "timelapse", "stars"}
+TOOLS = {"exposure", "equiv", "dof", "flash", "nd", "timelapse", "stars"}
 errors = []
 
 
@@ -60,6 +60,8 @@ for meta in index["items"]:
             err(f"{meta['id']}: unknown device {dev}")
         if d.get("status") not in ("ok", "unavailable", "unchecked"):
             err(f"{meta['id']}: {dev} has bad status {d.get('status')}")
+        if d.get("link") and d["link"] not in ids:
+            err(f"{meta['id']}: {dev} links to missing item {d['link']}")
         if d.get("status") == "ok" and not d.get("steps"):
             err(f"{meta['id']}: {dev} is ok but has no steps")
     check_blocks(item.get("blocks", []) + item.get("after", []), meta["id"])

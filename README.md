@@ -27,7 +27,7 @@ No build step and no backend. Each person's kit, ticked steps and theme are
 saved on their own phone only.
 
 On first launch, and whenever `content/index.json` has a new `version`, the
-app downloads every content file so the whole library is offline. **Updates ›
+app downloads every content file so the whole library is offline. **About ›
 Check for updates** does the same on demand.
 
 ## Content types

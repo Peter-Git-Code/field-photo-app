@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "11"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "12"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };

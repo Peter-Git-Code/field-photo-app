@@ -87,6 +87,11 @@
         "Over 30 s, switch to Bulb mode and time it with a remote.",
         "Wipe spray off the filter between shots."
       ]
+    },
+    {
+      "t": "link",
+      "id": "bulb-mode",
+      "text": "Need longer than 30 s? Bulb mode guide"
     }
   ],
   "devices": {

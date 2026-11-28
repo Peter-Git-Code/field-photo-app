@@ -150,6 +150,7 @@
     {
       "title": "Long exposures and bulb",
       "usedIn": [
+        "bulb-mode",
         "long-exposure-water",
         "milky-way"
       ],

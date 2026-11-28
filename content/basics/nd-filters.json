@@ -102,6 +102,11 @@
       "t": "link",
       "id": "shutter-180",
       "text": "Lesson: the 180° shutter rule"
+    },
+    {
+      "t": "link",
+      "id": "bulb-mode",
+      "text": "Guide: bulb mode, for minutes-long exposures"
     }
   ]
 }

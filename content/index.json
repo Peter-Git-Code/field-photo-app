@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.10",
+  "version": "2026-11-28.11",
   "devices": [
     {
       "id": "canon-r10",
@@ -85,6 +85,16 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "new",
+      "text": "Guide: bulb mode for exposures over 30 s. Collapsible headers now in the accent colour"
+    },
+    {
+      "date": "2026-11-28",
+      "kind": "updated",
+      "text": "Fixed R10 white balance menu: it's Shooting 4, not 3 (aurora, Moon, white balance)"
+    },
     {
       "date": "2026-11-28",
       "kind": "updated",
@@ -291,7 +301,7 @@
             "**Mode dial to M**. Aperture wide open, **ISO 3200**.",
             "Switch to **MF**. Magnify the live view on a bright star and turn the ring until it's a point.",
             "Shutter **8 s** to start: 1–4 s for fast curtains, up to 15 s for a faint glow.",
-            "**MENU › Shooting 3 › White balance › K** and set about **3500 K**.",
+            "**MENU › Shooting 4 › White balance › K** and set about **3500 K**.",
             "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
             "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
             "Shoot RAW (**Shooting 1 › Image quality**) and check the result. Adjust shutter first, then ISO."
@@ -321,7 +331,7 @@
           "status": "ok",
           "steps": [
             "**Mode dial to M**. f/8, **ISO 100**, 1/125 s.",
-            "**MENU › Shooting 3 › White balance: Daylight**.",
+            "**MENU › Shooting 4 › White balance: Daylight**.",
             "Switch to **MF**. Magnify the live view on the Moon's edge and focus on the craters.",
             "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
             "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
@@ -429,6 +439,39 @@
         }
       },
       "file": "guides/long-exposure-water.json"
+    },
+    {
+      "id": "bulb-mode",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "landscape",
+      "title": "Bulb: over 30 seconds",
+      "summary": "Minutes-long exposures for streaky clouds and empty streets.",
+      "tags": [
+        "bulb",
+        "long exposure",
+        "nd filter",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "Compose and focus, then switch the lens to **MF**. Lens IS off.",
+            "Test shot in M: same aperture, **ISO 6400**, adjust the shutter until it looks right. Multiply that time by 64.",
+            "Turn the **Mode dial to B**. Set the aperture, then **ISO 100**. With Auto ISO the R10 uses ISO 400 in Bulb.",
+            "**MENU › Shooting 7 › Bulb timer › Enable**, and set the exposure time.",
+            "Press the shutter fully once. The exposure runs and stops by itself.",
+            "No bulb timer? Use the BR-E1 wireless remote (press to start, again to stop) or the RS-60E3 cable.",
+            "**Shooting 5 › Long exp. noise reduction:** Auto or Enable for a cleaner single shot. The camera then needs as long again to process."
+          ],
+          "note": "The bulb timer only works in B, and switches off when you change mode."
+        }
+      },
+      "file": "guides/bulb-mode.json"
     },
     {
       "id": "panorama",

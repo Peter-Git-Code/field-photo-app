@@ -1,0 +1,171 @@
+{
+  "id": "bulb-mode",
+  "type": "guide",
+  "mode": "photo",
+  "topic": "landscape",
+  "title": "Bulb: over 30 seconds",
+  "summary": "Minutes-long exposures for streaky clouds and empty streets.",
+  "tags": [
+    "bulb",
+    "long exposure",
+    "nd filter",
+    "night"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "B (Bulb)"
+        ],
+        [
+          "Aperture",
+          "f/8–f/11"
+        ],
+        [
+          "ISO",
+          "100"
+        ],
+        [
+          "Shutter",
+          "30 s to minutes"
+        ],
+        [
+          "Timing",
+          "Bulb timer or remote"
+        ],
+        [
+          "Focus",
+          "Manual"
+        ]
+      ],
+      "note": "M stops at 30 s. Bulb keeps the shutter open as long as you tell it."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod",
+        "Remote or bulb timer",
+        "Strong ND (daytime)",
+        "Spare battery",
+        "Phone timer"
+      ]
+    },
+    {
+      "t": "h",
+      "text": "Work out the time with a test shot"
+    },
+    {
+      "t": "p",
+      "text": "Minutes-long test shots waste time. Shoot a test at **ISO 6400** instead: it's 6 stops brighter than ISO 100, so the real exposure is **64 times** longer."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Test at ISO 6400",
+        "Same at ISO 100"
+      ],
+      "rows": [
+        [
+          "1 s",
+          "1 min"
+        ],
+        [
+          "2 s",
+          "2 min"
+        ],
+        [
+          "4 s",
+          "4 min"
+        ],
+        [
+          "8 s",
+          "8½ min"
+        ],
+        [
+          "15 s",
+          "16 min"
+        ],
+        [
+          "30 s",
+          "32 min"
+        ]
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "nd",
+      "text": "Using an ND filter? Work out the time"
+    }
+  ],
+  "steps": [
+    "Tripod down on firm ground. Compose, autofocus, then switch to **manual focus** so it can't change.",
+    "Turn lens stabilisation off.",
+    "Find the time: a test shot at ISO 6400 and the same aperture, then multiply by 64 (table above). With an ND filter, use the ND calculator.",
+    "Mode dial to **B**. Set the aperture and **ISO 100** by hand (not Auto ISO).",
+    "Set the time on the camera's bulb timer, or use a remote: press once to open, again to close. Start a phone timer as a backup.",
+    "Don't touch the tripod. When it's done, check the histogram and adjust the time: twice as long is one stop brighter."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Long-exposure noise reduction takes a second 'dark' exposure just as long. Keep it on for single long shots, off if you're short of time.",
+        "Cold and long exposures drain batteries. Start with a full one.",
+        "People and cars that keep moving vanish from minutes-long exposures. Only things that stop stay.",
+        "Cars passing with headlights? Hold a dark card over the lens until they've gone; the rest of the exposure is unaffected."
+      ]
+    },
+    {
+      "t": "link",
+      "id": "long-exposure-water",
+      "text": "Guide: silky water"
+    },
+    {
+      "t": "link",
+      "id": "nd-filters",
+      "text": "Basics: ND filters"
+    },
+    {
+      "t": "link",
+      "id": "star-trails",
+      "text": "Star trails: a single long exposure or many 30 s frames"
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "Compose and focus, then switch the lens to **MF**. Lens IS off.",
+        "Test shot in M: same aperture, **ISO 6400**, adjust the shutter until it looks right. Multiply that time by 64.",
+        "Turn the **Mode dial to B**. Set the aperture, then **ISO 100**. With Auto ISO the R10 uses ISO 400 in Bulb.",
+        "**MENU › Shooting 7 › Bulb timer › Enable**, and set the exposure time.",
+        "Press the shutter fully once. The exposure runs and stops by itself.",
+        "No bulb timer? Use the BR-E1 wireless remote (press to start, again to stop) or the RS-60E3 cable.",
+        "**Shooting 5 › Long exp. noise reduction:** Auto or Enable for a cleaner single shot. The camera then needs as long again to process."
+      ],
+      "note": "The bulb timer only works in B, and switches off when you change mode."
+    }
+  },
+  "source": {
+    "title": "Canon EOS R10 manual: long exposures and bulb",
+    "author": "Canon",
+    "note": "Written in our own words from the manual's long-exposure section."
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/bulb-mode.3abf99.jpg",
+    "width": 1280,
+    "height": 853,
+    "alt": "Waterfall at dusk with silky water and streaked clouds from a long exposure",
+    "credit": {
+      "name": "Basile Morin",
+      "url": "https://commons.wikimedia.org/wiki/File:Li_Phi_falls_at_dusk_with_colorful_sky_and_clouds_in_Don_Khon_Laos.jpg",
+      "license": "CC BY-SA 4.0"
+    }
+  }
+}

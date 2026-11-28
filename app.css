@@ -167,7 +167,7 @@ ol.steps li.done::before { content: "✓"; background: var(--ok); color: var(--b
 .tips b { color: var(--warn); }
 .tips ul { margin: 4px 0; padding-left: 18px; }
 details { border-bottom: 2px solid var(--line); }
-details summary { cursor: pointer; font-weight: 800; padding: 9px 0; font-size: 16px; }
+details summary { cursor: pointer; font-weight: 800; padding: 9px 0; font-size: 16px; color: var(--acc); }
 details > div { padding-bottom: 10px; }
 .source { margin-top: 24px; font-size: 13px; color: var(--mut); border-top: 2px solid var(--line); padding-top: 10px; }
 .big { font-size: 34px; font-weight: 800; color: var(--acc); font-variant-numeric: tabular-nums; line-height: 1.1; }
@@ -208,7 +208,7 @@ tr.hl td { background: var(--okbg); }
 details.group { border-bottom: 0; }
 details.group > summary {
   list-style: none; display: flex; align-items: center; gap: 8px; cursor: pointer;
-  font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mut);
+  font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--acc);
   padding: 12px 0 6px;
 }
 details.group > summary::-webkit-details-marker { display: none; }

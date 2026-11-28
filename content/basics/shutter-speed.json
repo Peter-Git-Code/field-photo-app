@@ -73,6 +73,11 @@
       "t": "tool",
       "tool": "nd",
       "text": "Slow it down with an ND filter"
+    },
+    {
+      "t": "link",
+      "id": "bulb-mode",
+      "text": "Longer than 30 s: Bulb mode guide"
     }
   ],
   "source": {

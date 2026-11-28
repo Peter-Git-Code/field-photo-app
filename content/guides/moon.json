@@ -1,0 +1,116 @@
+{
+  "id": "moon",
+  "type": "guide",
+  "mode": "photo",
+  "title": "The Moon",
+  "summary": "A sharp, detailed Moon with a long lens.",
+  "tags": [
+    "moon",
+    "telephoto",
+    "night"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/moon.jpg",
+    "alt": "Full Moon in detail against a black sky",
+    "credit": {
+      "author": "Gregory H. Revera",
+      "license": "CC BY-SA 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:FullMoon2010.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    }
+  },
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Aperture",
+          "f/8–f/11"
+        ],
+        [
+          "ISO",
+          "100–400"
+        ],
+        [
+          "Shutter",
+          "1/125–1/250"
+        ],
+        [
+          "White bal.",
+          "Daylight"
+        ],
+        [
+          "Focus",
+          "Manual"
+        ]
+      ],
+      "note": "Full Moon rule of thumb: f/11 at 1/ISO (ISO 100, 1/125 s)."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Telephoto 200 mm+",
+        "Tripod",
+        "Remote or 2 s timer"
+      ]
+    },
+    {
+      "t": "figure",
+      "src": "figures/moon-phases.svg",
+      "alt": "The eight Moon phases from new to waning crescent",
+      "caption": "The best crater detail is along the shadow line, so crescents and quarters beat a full Moon."
+    }
+  ],
+  "steps": [
+    "Pick a clear night. A crescent or quarter Moon shows craters; a full Moon looks flat but bright.",
+    "Longest lens on a tripod. On an APS-C camera a 250 mm lens frames like 400 mm.",
+    "Manual mode: f/8, ISO 100, 1/125 s. The Moon is lit by the sun, so it needs daytime settings.",
+    "Manual focus: magnify the live view on the Moon's edge and turn the ring until craters are crisp.",
+    "Use the 2 s timer and take a test shot. Check the histogram: the bright side must not touch the right wall.",
+    "Take a burst of 10–20 frames. Air shimmer makes some sharper than others; keep the best."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "A low Moon near the horizon looks big next to buildings or hills, but blurs more through the air.",
+        "Want the Moon and a landscape? Shoot at blue hour, when the sky and the Moon are close in brightness.",
+        "The Moon moves. Above 400 mm keep the shutter at 1/125 s or faster."
+      ]
+    },
+    {
+      "t": "link",
+      "id": "lunar-eclipse",
+      "text": "Next: a lunar eclipse"
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "**Mode dial to M**. f/8, **ISO 100**, 1/125 s.",
+        "**MENU › Shooting 3 › White balance: Daylight**.",
+        "Switch to **MF**. Magnify the live view on the Moon's edge and focus on the craters.",
+        "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
+        "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+        "Take a test shot and check the histogram. Turn on **Playback 5 › Highlight alert** to see blown highlights blink.",
+        "Switch to **continuous shooting** in the drive mode menu and take a burst. Keep the sharpest frame."
+      ],
+      "note": "With a 300 mm lens the R10's crop makes it frame like 480 mm, which fills about a third of the frame height with the Moon."
+    }
+  },
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

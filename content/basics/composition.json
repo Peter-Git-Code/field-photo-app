@@ -1,0 +1,40 @@
+{
+  "id": "composition",
+  "type": "basic",
+  "mode": "both",
+  "title": "Composition",
+  "summary": "Six quick rules for a stronger frame.",
+  "tags": [
+    "composition",
+    "rule of thirds",
+    "landscape"
+  ],
+  "blocks": [
+    {
+      "t": "figure",
+      "src": "figures/composition.svg",
+      "alt": "Six small diagrams: rule of thirds, leading lines, frame in a frame, foreground, horizon on a third, space ahead"
+    },
+    {
+      "t": "list",
+      "items": [
+        "**Rule of thirds:** put the subject on a line or where two lines cross. Turn on the grid in the camera.",
+        "**Leading lines:** roads, rivers and fences that lead the eye to the subject.",
+        "**Frame in a frame:** an arch, branches or a window around the subject.",
+        "**Foreground:** a rock or flowers close to the lens gives depth to a wide shot.",
+        "**Horizon on a third:** low for a great sky, high for a great foreground. Keep it level.",
+        "**Space ahead:** leave room in front of anything moving or looking."
+      ]
+    },
+    {
+      "t": "p",
+      "text": "These are starting points. Break them when the photo is better for it."
+    }
+  ],
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

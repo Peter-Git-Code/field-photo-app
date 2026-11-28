@@ -1,0 +1,100 @@
+{
+  "id": "lunar-eclipse",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Lunar eclipse",
+  "summary": "From bright Moon to red 'blood Moon' and back.",
+  "tags": [
+    "eclipse",
+    "moon",
+    "night"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/lunar-eclipse.jpg",
+    "alt": "Sequence of the Moon moving out of Earth's shadow",
+    "credit": {
+      "author": "Ángel M. Felicísimo",
+      "license": "CC BY 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Eclipse_de_Luna,_26_08_2026_(55493000488).jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "caption": "The Moon leaving Earth's shadow, Spain, August 2026."
+  },
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Phase",
+        "Shutter",
+        "Aperture",
+        "ISO"
+      ],
+      "rows": [
+        [
+          "Before and after",
+          "1/125–1/250 s",
+          "f/8",
+          "100–200"
+        ],
+        [
+          "Partial",
+          "1/60–1/250 s",
+          "f/8",
+          "200–400"
+        ],
+        [
+          "Totality (red)",
+          "1–4 s",
+          "f/4–f/5.6",
+          "800–1600"
+        ]
+      ]
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Telephoto",
+        "Tripod",
+        "Remote or 2 s timer",
+        "Warm clothes"
+      ]
+    },
+    {
+      "t": "note",
+      "tone": "ok",
+      "text": "A lunar eclipse is **safe to look at** with your eyes, binoculars and the camera. No filter needed."
+    }
+  ],
+  "steps": [
+    "Check the date and your local times at timeanddate.com (search 'lunar eclipse'). Totality can last over an hour.",
+    "Find a spot with a clear view of where the Moon will be. Cloud is the main enemy, so check the forecast.",
+    "Set up exactly as for an ordinary Moon: telephoto, tripod, manual focus on the Moon's edge.",
+    "During the partial phase expose for the **bright part**. The shadowed part will look black at first.",
+    "As totality nears, the Moon dims a lot. Lengthen the shutter, then raise ISO. Bracket to be safe.",
+    "In totality, keep the shutter under about 2 s at 300 mm or the Moon smears as it moves."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Shoot every 5 minutes from the same spot to build a sequence later.",
+        "A wide shot with the red Moon over a landscape works well at a shorter focal length and 4–8 s."
+      ]
+    },
+    {
+      "t": "link",
+      "id": "moon",
+      "text": "Moon basics: focus and settings"
+    }
+  ],
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

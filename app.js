@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "6"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "7"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -151,18 +151,42 @@
     unchecked: ["General steps", "warn"]
   };
 
+  // Photos and diagrams an item uses, so they can be saved for offline too.
+  function assetsOf(j) {
+    var out = [];
+    if (j.media && j.media.src) out.push(j.media.src);
+    (function walk(list) {
+      (list || []).forEach(function (b) {
+        if ((b.t === "figure" || b.t === "photo") && b.src) out.push(b.src);
+        if (b.t === "more") walk(b.blocks);
+      });
+    })((j.blocks || []).concat(j.after || []));
+    (j.sections || []).forEach(function (sec) { (sec.blocks || []).forEach(function (b) { if (b.src) out.push(b.src); }); });
+    return out;
+  }
+
   // Download every content file so the whole library works offline.
   function downloadLibrary(fresh) {
     var files = state.index.items.map(function (i) { return i.file; })
       .concat((state.index.manuals || []).map(function (m) { return m.file; }));
-    var done = 0;
+    var done = 0, assets = {};
     return Promise.all(files.map(function (f) {
       return getJSON(CONTENT + f, fresh).then(function (j) {
         done++;
         if (j.id && j.type) state.items[j.id] = j;
         else if (j.device) state.manuals[j.device] = j;
+        assetsOf(j).forEach(function (a) { assets[a] = true; });
       });
     })).then(function () {
+      // The service worker keeps whatever passes through /content/.
+      return Promise.all(Object.keys(assets).map(function (a) {
+        return fetch(CONTENT + a, fresh ? { cache: "no-store" } : undefined).then(function (r) {
+          if (!r.ok) throw new Error(a + " " + r.status);
+          done++;
+          return r.blob();
+        });
+      }));
+    }).then(function () {
       store("libVersion", state.index.version);
       store("lastSync", new Date().toISOString());
       return done;
@@ -317,13 +341,60 @@
 
   function mediaSlot(it) {
     if (it.media && it.media.src) {
-      return it.media.kind === "video"
-        ? el("video", { class: "media", src: it.media.src, controls: true, playsinline: true, preload: "metadata" })
-        : el("img", { class: "media", src: it.media.src, alt: it.media.alt || "" });
+      if (it.media.kind === "video") {
+        return el("video", { class: "media", src: CONTENT + it.media.src, controls: true, playsinline: true, preload: "metadata" });
+      }
+      return photo(it.media);
     }
     return el("div", { class: "media", role: "img", "aria-label": "Sample placeholder" },
       el("b", { text: "▶" }), el("span", { text: "Sample " + (it.mode === "video" ? "clip" : "photo") }),
       el("span", { text: "Placeholder until your own shot is added" }));
+  }
+
+  // A photo with its credit line. Free-licence photos must name the author
+  // and licence, so the credit is part of the photo, not optional.
+  function photo(m) {
+    var fig = el("figure", { class: "photo" });
+    var img = el("img", { src: CONTENT + m.src, alt: m.alt || "", loading: "lazy", decoding: "async",
+      onerror: function () { img.replaceWith(el("div", { class: "media", text: "Photo not downloaded yet. Open the app with signal." })); } });
+    add(fig, img);
+    var c = m.credit;
+    if (c) {
+      add(fig, el("figcaption", null,
+        m.caption ? el("span", null, rich(m.caption), " ") : null,
+        "Photo: ", c.url ? el("a", { href: c.url, target: "_blank", rel: "noopener", text: c.author }) : c.author,
+        c.license ? [" · ", c.licenseUrl ? el("a", { href: c.licenseUrl, target: "_blank", rel: "noopener", text: c.license }) : c.license] : null));
+    }
+    return fig;
+  }
+
+  // Diagrams are our own SVG files in content/figures/. They're put inline
+  // (not <img>) so their colours follow the Day, Dark and Night themes.
+  var svgCache = {};
+  function figure(b) {
+    var box = el("div", { class: "fig-art", role: "img", "aria-label": b.alt || "" });
+    var wrap = el("figure", { class: "fig" }, box, b.caption ? el("figcaption", null, rich(b.caption)) : null);
+    var got = svgCache[b.src] ? Promise.resolve(svgCache[b.src]) : fetch(CONTENT + b.src).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.text();
+    });
+    got.then(function (text) {
+      svgCache[b.src] = text;
+      var doc = new DOMParser().parseFromString(text, "image/svg+xml");
+      var svg = doc.documentElement;
+      if (svg.nodeName !== "svg") throw new Error("not svg");
+      // Our own files, but never let a diagram run code.
+      svg.querySelectorAll("script, foreignObject").forEach(function (n) { n.remove(); });
+      [svg].concat([].slice.call(svg.querySelectorAll("*"))).forEach(function (n) {
+        [].slice.call(n.attributes).forEach(function (a) { if (/^on/i.test(a.name)) n.removeAttribute(a.name); });
+      });
+      svg.setAttribute("aria-hidden", "true");
+      box.appendChild(document.importNode(svg, true));
+    }).catch(function () {
+      box.className = "media";
+      box.textContent = "Diagram not downloaded yet. Open the app with signal.";
+    });
+    return wrap;
   }
 
   var chosenDevice = null, chosenFor = null;
@@ -408,6 +479,8 @@
         case "tool": return el("a", { class: "btn ghost", href: "#/tools/" + b.tool, style: "margin:10px 0", text: b.text || "Open the calculator" });
         case "more": return el("details", null, el("summary", { text: b.title }), el("div", null, blocks(b.blocks)));
         case "link": return el("p", null, el("a", { href: "#/item/" + b.id, text: b.text }));
+        case "figure": return figure(b);
+        case "photo": return photo(b);
         default: return null;
       }
     });

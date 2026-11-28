@@ -117,6 +117,21 @@ label.f { display: block; font-size: 12px; font-weight: 800; text-transform: upp
   color: var(--mut); text-align: center; font-size: 14px; margin: 4px 0 8px;
 }
 .media b { font-size: 26px; color: var(--fg); }
+
+/* Photos (free-licence, credited) and our own SVG diagrams */
+figure { margin: 4px 0 10px; }
+.photo img { display: block; width: 100%; height: auto; border-radius: 14px; background: var(--card); }
+figure figcaption { font-size: 12.5px; color: var(--mut); margin-top: 4px; line-height: 1.35; }
+figure figcaption a { color: var(--mut); }
+.fig-art { background: var(--card); border-radius: 14px; padding: 10px; }
+.fig-art svg { display: block; width: 100%; height: auto; font-family: var(--font); }
+.fig .t { fill: var(--fg); } .fig .m { fill: var(--mut); } .fig .a { fill: var(--acc); }
+.fig .bg { fill: var(--bg); } .fig .ln { fill: var(--line); } .fig .ok { fill: var(--ok); }
+.fig .st { stroke: var(--fg); fill: none; } .fig .sm { stroke: var(--mut); fill: none; }
+.fig .sa { stroke: var(--acc); fill: none; } .fig .sl { stroke: var(--line); fill: none; }
+/* Night keeps everything red so the eyes stay dark-adapted. */
+:root[data-theme="night"] .photo img,
+:root[data-theme="night"] .fig .hue { filter: grayscale(1) sepia(1) saturate(6) hue-rotate(-50deg) brightness(.55); }
 .scale { overflow-x: auto; }
 .scale ol { display: flex; list-style: none; margin: 0; padding: 0; gap: 4px; min-width: max-content; }
 .scale li { background: var(--card); border-radius: 8px; padding: 8px 9px; font-weight: 800; font-variant-numeric: tabular-nums; }

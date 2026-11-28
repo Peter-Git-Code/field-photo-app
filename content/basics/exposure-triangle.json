@@ -14,6 +14,11 @@
       "text": "Three settings decide how bright a photo is. Move one by a stop and you must move another a stop the **opposite** way to keep the same brightness."
     },
     {
+      "t": "figure",
+      "src": "figures/exposure-stops.svg",
+      "alt": "Shutter, aperture and ISO stop scales lined up, brighter to the left, darker to the right"
+    },
+    {
       "t": "table",
       "head": [
         "Setting",

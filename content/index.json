@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.3",
+  "version": "2026-11-28.4",
   "devices": [
     {
       "id": "canon-r10",
@@ -55,6 +55,16 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "new",
+      "text": "Guides: northern lights, the Moon, lunar and solar eclipses, star trails, lightning, meteor showers"
+    },
+    {
+      "date": "2026-11-28",
+      "kind": "new",
+      "text": "Basics: histogram, golden and blue hour, composition, with diagrams; free-licence photos on sky and landscape guides"
+    },
     {
       "date": "2026-11-28",
       "kind": "new",
@@ -724,6 +734,178 @@
       "file": "guides/moving-hyperlapse.json"
     },
     {
+      "id": "aurora",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Northern lights",
+      "summary": "Catch an aurora when the forecast spikes.",
+      "tags": [
+        "aurora",
+        "night",
+        "northern lights"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. Aperture wide open, **ISO 3200**.",
+            "Switch to **MF**. Magnify the live view on a bright star and turn the ring until it's a point.",
+            "Shutter **8 s** to start: 1–4 s for fast curtains, up to 15 s for a faint glow.",
+            "**MENU › Shooting 3 › White balance › K** and set about **3500 K**.",
+            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
+            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "Shoot RAW (**Shooting 1 › Image quality**) and check the result. Adjust shutter first, then ISO."
+          ],
+          "note": "Already saved your Milky Way setup to C1? Turn the dial to C1 and only change the shutter and white balance."
+        }
+      },
+      "file": "guides/aurora.json"
+    },
+    {
+      "id": "lightning",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Lightning",
+      "summary": "Long exposures of a distant storm, safely.",
+      "tags": [
+        "storm",
+        "night",
+        "long exposure"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "file": "guides/lightning.json"
+    },
+    {
+      "id": "lunar-eclipse",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Lunar eclipse",
+      "summary": "From bright Moon to red 'blood Moon' and back.",
+      "tags": [
+        "eclipse",
+        "moon",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "file": "guides/lunar-eclipse.json"
+    },
+    {
+      "id": "meteor-showers",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Meteor showers",
+      "summary": "Hours of frames to catch a few bright streaks.",
+      "tags": [
+        "astro",
+        "stars",
+        "interval",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. Aperture wide open, **ISO 3200**, shutter from the star calculator (about 17 s at 18 mm).",
+            "Switch to **MF** and focus on a bright star in magnified live view.",
+            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "**Shooting 5 › Long exp. noise reduction: Disable**.",
+            "**Shooting 7 › Interval timer › Enable**. Interval 2 s longer than the shutter, shots **00**.",
+            "Press the shutter fully to start. A full battery lasts a few hours in the cold at most: have the spare ready."
+          ]
+        }
+      },
+      "file": "guides/meteor-showers.json"
+    },
+    {
+      "id": "moon",
+      "type": "guide",
+      "mode": "photo",
+      "title": "The Moon",
+      "summary": "A sharp, detailed Moon with a long lens.",
+      "tags": [
+        "moon",
+        "telephoto",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. f/8, **ISO 100**, 1/125 s.",
+            "**MENU › Shooting 3 › White balance: Daylight**.",
+            "Switch to **MF**. Magnify the live view on the Moon's edge and focus on the craters.",
+            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
+            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "Take a test shot and check the histogram. Turn on **Playback 5 › Highlight alert** to see blown highlights blink.",
+            "Switch to **continuous shooting** in the drive mode menu and take a burst. Keep the sharpest frame."
+          ],
+          "note": "With a 300 mm lens the R10's crop makes it frame like 480 mm, which fills about a third of the frame height with the Moon."
+        }
+      },
+      "file": "guides/moon.json"
+    },
+    {
+      "id": "solar-eclipse",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Solar eclipse",
+      "summary": "Shoot the sun safely through a solar filter.",
+      "tags": [
+        "eclipse",
+        "sun",
+        "filter"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "file": "guides/solar-eclipse.json"
+    },
+    {
+      "id": "star-trails",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Star trails",
+      "summary": "Stack many 30 s frames into circling stars.",
+      "tags": [
+        "astro",
+        "stars",
+        "interval",
+        "stacking"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. f/2.8, **ISO 800**, **30 s**.",
+            "Switch to **MF** and focus on a bright star in magnified live view.",
+            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "**Shooting 5 › Long exp. noise reduction: Disable** so there's no gap between frames.",
+            "**Shooting 7 › Interval timer › Enable**. Interval **00:00:32**, shots **00** (runs until you stop it).",
+            "Press the shutter fully to start. Press it again to stop.",
+            "Copy the frames to a computer and stack them in StarStaX (free) or Sequator."
+          ],
+          "note": "A shot is skipped if the shutter is longer than the interval, so keep the interval a couple of seconds over 30 s."
+        }
+      },
+      "file": "guides/star-trails.json"
+    },
+    {
       "id": "backlit",
       "type": "lesson",
       "mode": "photo",
@@ -933,6 +1115,47 @@
         "bounce"
       ],
       "file": "basics/pop-up-flash.json"
+    },
+    {
+      "id": "composition",
+      "type": "basic",
+      "mode": "both",
+      "title": "Composition",
+      "summary": "Six quick rules for a stronger frame.",
+      "tags": [
+        "composition",
+        "rule of thirds",
+        "landscape"
+      ],
+      "file": "basics/composition.json"
+    },
+    {
+      "id": "histogram",
+      "type": "basic",
+      "mode": "both",
+      "title": "Reading the histogram",
+      "summary": "Check exposure by shape, not by the screen.",
+      "tags": [
+        "exposure",
+        "histogram",
+        "highlights"
+      ],
+      "file": "basics/histogram.json"
+    },
+    {
+      "id": "light-phases",
+      "type": "basic",
+      "mode": "both",
+      "title": "Golden and blue hour",
+      "summary": "Which light you get at each sun height.",
+      "tags": [
+        "golden hour",
+        "blue hour",
+        "twilight",
+        "sunset",
+        "sunrise"
+      ],
+      "file": "basics/light-phases.json"
     }
   ]
 }

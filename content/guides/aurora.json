@@ -1,0 +1,116 @@
+{
+  "id": "aurora",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Northern lights",
+  "summary": "Catch an aurora when the forecast spikes.",
+  "tags": [
+    "aurora",
+    "night",
+    "northern lights"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/aurora.jpg",
+    "alt": "Green aurora arching over a snowy field at night",
+    "credit": {
+      "author": "Joshua Strang, US Air Force",
+      "license": "Public domain",
+      "url": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_over_Eielson_Air_Force_Base,_Alaska.jpg"
+    }
+  },
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Aperture",
+          "Widest (f/2.8)"
+        ],
+        [
+          "ISO",
+          "1600–6400"
+        ],
+        [
+          "Shutter",
+          "1–15 s"
+        ],
+        [
+          "White bal.",
+          "3500 K"
+        ],
+        [
+          "Focus",
+          "Manual, ∞"
+        ]
+      ],
+      "note": "Bright, fast-moving curtains: short end (1–4 s). Faint glow: long end."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod",
+        "Wide lens",
+        "Spare battery",
+        "Warm gloves",
+        "Red head torch"
+      ]
+    },
+    {
+      "t": "note",
+      "tone": "warn",
+      "text": "In central Europe an aurora needs a **strong storm (Kp 7 or more)**. Watch an aurora app or the NOAA Kp forecast, then look **north, low on the horizon**. The camera often sees colour your eyes can't."
+    }
+  ],
+  "steps": [
+    "Check the Kp forecast and cloud cover. Go somewhere dark with a clear view north.",
+    "Tripod down. Frame some foreground: trees, a hut, water to reflect the colour.",
+    "Manual focus: magnify the live view on a bright star until it's the smallest point. Tape the ring.",
+    "Widest aperture, ISO 3200, 8 s. White balance about 3500 K.",
+    "Use the 2 s timer. Shoot, then check: streaky curtains mean shorten the shutter; too dark means raise ISO.",
+    "Keep shooting. Displays come in waves, often around midnight, and can fade and return."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Cold drains batteries fast. Keep the spare in an inside pocket.",
+        "Shoot RAW: the colour of an aurora is hard to get right in a JPEG.",
+        "Lens fogging up? A hand warmer held to the lens with a rubber band stops dew."
+      ]
+    },
+    {
+      "t": "link",
+      "id": "milky-way",
+      "text": "Same setup as the Milky Way guide"
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "**Mode dial to M**. Aperture wide open, **ISO 3200**.",
+        "Switch to **MF**. Magnify the live view on a bright star and turn the ring until it's a point.",
+        "Shutter **8 s** to start: 1–4 s for fast curtains, up to 15 s for a faint glow.",
+        "**MENU › Shooting 3 › White balance › K** and set about **3500 K**.",
+        "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
+        "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+        "Shoot RAW (**Shooting 1 › Image quality**) and check the result. Adjust shutter first, then ISO."
+      ],
+      "note": "Already saved your Milky Way setup to C1? Turn the dial to C1 and only change the shutter and white balance."
+    }
+  },
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

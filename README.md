@@ -21,6 +21,8 @@ offline data after a few weeks without use.
 | App shell (HTML, CSS, JS) | `index.html`, `app.css`, `app.js` |
 | Offline caching | `sw.js` |
 | Content library | `content/` (JSON) listed in `content/index.json` |
+| Diagrams | `content/figures/*.svg`, our own drawings, shown inline so they follow the theme |
+| Photos | `content/photos/*.jpg`, free-licence (Wikimedia Commons), 1280 px wide, each with a credit |
 | Content checks | `tools/check_content.py` |
 
 No build step and no backend. Each person's kit, ticked steps and theme are
@@ -29,6 +31,17 @@ saved on their own phone only.
 On first launch, and whenever `content/index.json` has a new `version`, the
 app downloads every content file so the whole library is offline. **About ›
 Check for updates** does the same on demand.
+
+## Photos and diagrams
+
+- **Diagrams** go in a `figure` block: `{"t": "figure", "src": "figures/x.svg", "alt": "…"}`.
+  Colour them with the classes in `app.css` (`t`, `m`, `a`, `st`, `sa`…) so they
+  follow Day, Dark and Night. Fixed colours (sky, Moon) take class `hue`, which Night turns red.
+- **Photos** go in an item's `media`, or in a `photo` block, and **must** carry a
+  `credit` with `author`, `license` and `url` (the Commons file page). Never copy
+  photos or diagrams from paid guides or other sites.
+- Both are saved for offline with the rest of the library. `tools/check_content.py`
+  fails on a missing file, a missing credit, or an unused file.
 
 ## Content types
 

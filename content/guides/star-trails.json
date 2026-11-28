@@ -1,0 +1,112 @@
+{
+  "id": "star-trails",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Star trails",
+  "summary": "Stack many 30 s frames into circling stars.",
+  "tags": [
+    "astro",
+    "stars",
+    "interval",
+    "stacking"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/star-trails.jpg",
+    "alt": "Star trails circling the celestial pole above an observatory",
+    "credit": {
+      "author": "L. Tyas / KPNO / NOIRLab",
+      "license": "CC BY 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Kitt_Peak_National_Observatory_Beneath_Star_Trails_(noirlab2512ae).jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    }
+  },
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Aperture",
+          "f/2.8–f/4"
+        ],
+        [
+          "ISO",
+          "400–800"
+        ],
+        [
+          "Shutter",
+          "30 s"
+        ],
+        [
+          "Shots",
+          "120+"
+        ],
+        [
+          "Focus",
+          "Manual, ∞"
+        ]
+      ],
+      "note": "120 frames of 30 s is an hour of trails. Longer = longer arcs."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod",
+        "Intervalometer or remote",
+        "Spare battery",
+        "Stacking app"
+      ]
+    }
+  ],
+  "steps": [
+    "Moonless, clear night away from towns. Point at **Polaris** (north) for circles; any other direction gives arcs.",
+    "Frame a strong foreground: a tree, a rock, a building.",
+    "Manual focus on a bright star, then tape the ring. Turn off lens IS and long-exposure noise reduction.",
+    "M mode: f/2.8, ISO 800, 30 s. Take one test frame and check the foreground isn't black.",
+    "Set the interval timer just longer than the shutter (about 32 s) and the number of shots to unlimited.",
+    "Leave it for an hour or more. Then stack the frames with StarStaX (computer) or a phone app."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Noise reduction must be off, or the camera leaves a gap after every frame and the trails break up.",
+        "One single long exposure (15–60 min in Bulb) works too, but the sky glow and noise build up.",
+        "Shoot a few frames at the start with the lights of a passing car or a torch to light the foreground."
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "timelapse",
+      "text": "Work out frames and time"
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "**Mode dial to M**. f/2.8, **ISO 800**, **30 s**.",
+        "Switch to **MF** and focus on a bright star in magnified live view.",
+        "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+        "**Shooting 5 › Long exp. noise reduction: Disable** so there's no gap between frames.",
+        "**Shooting 7 › Interval timer › Enable**. Interval **00:00:32**, shots **00** (runs until you stop it).",
+        "Press the shutter fully to start. Press it again to stop.",
+        "Copy the frames to a computer and stack them in StarStaX (free) or Sequator."
+      ],
+      "note": "A shot is skipped if the shutter is longer than the interval, so keep the interval a couple of seconds over 30 s."
+    }
+  },
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

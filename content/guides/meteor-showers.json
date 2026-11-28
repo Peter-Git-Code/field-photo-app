@@ -1,0 +1,135 @@
+{
+  "id": "meteor-showers",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Meteor showers",
+  "summary": "Hours of frames to catch a few bright streaks.",
+  "tags": [
+    "astro",
+    "stars",
+    "interval",
+    "night"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/meteor-showers.jpg",
+    "alt": "A person under the Milky Way during the Perseids, with a meteor streak",
+    "credit": {
+      "author": "Giles Laurent",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:018_Human_looking_at_the_stars_during_Perseids_with_the_Milky_Way_in_the_background_Photo_by_Giles_Laurent.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Aperture",
+          "Widest"
+        ],
+        [
+          "ISO",
+          "3200"
+        ],
+        [
+          "Shutter",
+          "500 rule"
+        ],
+        [
+          "Shots",
+          "Unlimited"
+        ],
+        [
+          "Focus",
+          "Manual, ∞"
+        ]
+      ],
+      "note": "Same as the Milky Way, then shoot non-stop for hours."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Shower",
+        "Peak",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Quadrantids",
+          "3–4 Jan",
+          "Short, sharp peak"
+        ],
+        [
+          "Perseids",
+          "12–13 Aug",
+          "Warm nights, lots of bright ones"
+        ],
+        [
+          "Geminids",
+          "13–14 Dec",
+          "Often the strongest; cold"
+        ]
+      ]
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Wide lens",
+        "Tripod",
+        "Intervalometer",
+        "Spare batteries",
+        "Hand warmer for the lens"
+      ]
+    }
+  ],
+  "steps": [
+    "Check the peak night and the Moon. A bright Moon washes out all but the brightest meteors.",
+    "Go dark, away from towns. Best hours are usually after midnight.",
+    "Wide lens on a tripod. Aim about halfway up the sky, a little to the side of where the shower comes from.",
+    "Milky Way settings: widest aperture, ISO 3200, shutter from the 500 rule. Manual focus on a bright star.",
+    "Interval timer on, unlimited shots, long-exposure noise reduction off.",
+    "Let it run for hours. Then pick the frames with meteors, and stack them over one background if you like."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Meteors are random. The more frames, the more you catch.",
+        "Dew forms on the lens on clear nights. A hand warmer strapped to the barrel keeps it clear."
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "stars",
+      "text": "Work out the longest shutter"
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "**Mode dial to M**. Aperture wide open, **ISO 3200**, shutter from the star calculator (about 17 s at 18 mm).",
+        "Switch to **MF** and focus on a bright star in magnified live view.",
+        "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+        "**Shooting 5 › Long exp. noise reduction: Disable**.",
+        "**Shooting 7 › Interval timer › Enable**. Interval 2 s longer than the shutter, shots **00**.",
+        "Press the shutter fully to start. A full battery lasts a few hours in the cold at most: have the spare ready."
+      ]
+    }
+  },
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

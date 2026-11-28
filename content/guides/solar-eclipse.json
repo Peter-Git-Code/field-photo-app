@@ -1,0 +1,74 @@
+{
+  "id": "solar-eclipse",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Solar eclipse",
+  "summary": "Shoot the sun safely through a solar filter.",
+  "tags": [
+    "eclipse",
+    "sun",
+    "filter"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/solar-eclipse.jpg",
+    "alt": "Total solar eclipse: a black disc ringed by the white corona",
+    "credit": {
+      "author": "Luc Viatour",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Eclipse-totale-2026-couronne-Luc-Viatour.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "caption": "Totality in Spain, 12 August 2026."
+  },
+  "blocks": [
+    {
+      "t": "note",
+      "tone": "bad",
+      "text": "**Eyes and sensor first.** Never look at the sun, or through the viewfinder, without certified eclipse glasses (**ISO 12312-2**). Put a proper **white-light solar filter** over the front of the lens. An ordinary ND filter is not safe."
+    },
+    {
+      "t": "figure",
+      "src": "figures/solar-eclipse.svg",
+      "alt": "Eclipse sequence: filter on for partial phases, off only during totality",
+      "caption": "The filter only comes off during totality, and only if you're inside the path of totality."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Solar filter",
+        "Eclipse glasses",
+        "Telephoto",
+        "Tripod",
+        "Remote"
+      ]
+    }
+  ],
+  "steps": [
+    "Check the eclipse's path and times at timeanddate.com. The next total eclipse near Europe is **2 August 2027** (southern Spain, North Africa).",
+    "Practise on an ordinary sunny day with the filter: framing, focus and exposure all carry over.",
+    "Filter on. Manual mode, ISO 100, f/8, 1/1000 s. Focus manually on the sun's edge or a sunspot.",
+    "Partial phases: shoot every few minutes. Check the histogram, not the screen, for exposure.",
+    "At totality only: take the filter off and bracket from 1/1000 s to 1 s to catch inner and outer corona.",
+    "Filter back on the moment the first bright bead of sun appears."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Partial-only eclipse where you are? The filter stays on the whole time.",
+        "Totality lasts minutes. Bracket with auto exposure bracketing and spend the rest of the time watching.",
+        "Set a phone alarm for the end of totality so you don't forget the filter."
+      ]
+    }
+  ],
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

@@ -6,7 +6,8 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "content"
-BLOCKS = {"p", "h", "list", "note", "tips", "scale", "table", "settings", "kit", "tool", "more", "link"}
+BLOCKS = {"p", "h", "list", "note", "tips", "scale", "table", "settings", "kit", "tool", "more", "link", "figure", "photo"}
+used_assets = set()
 TOOLS = {"exposure", "equiv", "dof", "flash", "nd", "timelapse", "stars"}
 errors = []
 
@@ -37,6 +38,32 @@ def check_blocks(blocks, where):
                     err(f"{where}: table row has {len(r)} cells, header has {n}: {r}")
         if t == "more":
             check_blocks(b.get("blocks", []), where + " > " + b.get("title", "more"))
+        if t == "figure":
+            check_asset(b.get("src"), where, "figures/", ".svg")
+            if not b.get("alt"):
+                err(f"{where}: figure {b.get('src')} has no alt text")
+        if t == "photo":
+            check_photo(b, where)
+
+
+def check_asset(src, where, folder, ext):
+    if not src or not src.startswith(folder) or not src.endswith(ext):
+        err(f"{where}: asset {src!r} should be {folder}*{ext}")
+        return
+    used_assets.add(src)
+    if not (ROOT / src).exists():
+        err(f"{where}: asset {src} missing")
+
+
+def check_photo(m, where):
+    """Free-licence photos must say who took them and under what licence."""
+    check_asset(m.get("src"), where, "photos/", ".jpg")
+    c = m.get("credit") or {}
+    for k in ("author", "license", "url"):
+        if not c.get(k):
+            err(f"{where}: photo {m.get('src')} credit has no {k}")
+    if not m.get("alt"):
+        err(f"{where}: photo {m.get('src')} has no alt text")
 
 
 for meta in index["items"]:
@@ -65,6 +92,9 @@ for meta in index["items"]:
         if d.get("status") == "ok" and not d.get("steps"):
             err(f"{meta['id']}: {dev} is ok but has no steps")
     check_blocks(item.get("blocks", []) + item.get("after", []), meta["id"])
+    if item.get("media"):
+        if item["media"].get("kind") == "photo":
+            check_photo(item["media"], meta["id"] + " media")
 
 for m in index.get("manuals", []):
     listed.add(m["file"])
@@ -87,6 +117,12 @@ for f in ROOT.rglob("*.json"):
     rel = f.relative_to(ROOT).as_posix()
     if rel not in listed:
         err(f"{rel} exists but isn't listed in index.json")
+
+for folder in ("figures", "photos"):
+    for f in (ROOT / folder).glob("*"):
+        rel = f.relative_to(ROOT).as_posix()
+        if rel not in used_assets:
+            err(f"{rel} isn't used by any item")
 
 if errors:
     print("\n".join(errors))

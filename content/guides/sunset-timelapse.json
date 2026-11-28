@@ -13,6 +13,17 @@
     "camera",
     "action"
   ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/sunset-timelapse.jpg",
+    "alt": "Orange sunset reflected in a still lake",
+    "credit": {
+      "author": "Joonas Lyytinen",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:P%C3%A4ij%C3%A4nne_and_p%C3%A4ij%C3%A4tsalo.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
   "blocks": [
     {
       "t": "settings",

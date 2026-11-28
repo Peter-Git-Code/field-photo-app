@@ -1,0 +1,96 @@
+{
+  "id": "lightning",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Lightning",
+  "summary": "Long exposures of a distant storm, safely.",
+  "tags": [
+    "storm",
+    "night",
+    "long exposure"
+  ],
+  "appliesTo": [
+    "camera"
+  ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/lightning.jpg",
+    "alt": "Lightning bolts over a harbour and lighthouse at night",
+    "credit": {
+      "author": "Maxime Raynal",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Port_and_lighthouse_overnight_storm_with_lightning_in_Port-la-Nouvelle.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "blocks": [
+    {
+      "t": "note",
+      "tone": "bad",
+      "text": "**Stay safe.** Shoot from indoors or a car, with the storm well away. If thunder comes less than 30 s after the flash, the storm is close: stop and shelter. Wait 30 minutes after the last thunder before going out."
+    },
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "M"
+        ],
+        [
+          "Aperture",
+          "f/5.6–f/8"
+        ],
+        [
+          "ISO",
+          "100–200"
+        ],
+        [
+          "Shutter",
+          "10–30 s"
+        ],
+        [
+          "Drive",
+          "Continuous"
+        ],
+        [
+          "Focus",
+          "Manual, ∞"
+        ]
+      ],
+      "note": "At night the open shutter waits for the bolt. Brighter town? Shorten the shutter or close the aperture."
+    },
+    {
+      "t": "kit",
+      "items": [
+        "Tripod",
+        "Remote or intervalometer",
+        "Rain cover",
+        "ND filter (day)"
+      ]
+    }
+  ],
+  "steps": [
+    "Find a window or sheltered spot facing the storm, with a clear view of the sky.",
+    "Manual focus on a distant light or the horizon. Lightning is always 'at infinity'.",
+    "M mode: f/8, ISO 100, 15 s. Check a test frame isn't too bright from town lights.",
+    "Point at the part of the sky with the most strikes and shoot frames back to back with the interval timer.",
+    "Keep shooting. Most frames will be empty; that's normal.",
+    "Daytime storms: an exposure long enough to catch a bolt needs a dark ND filter, or record 4K video and pull out the frame."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "A lightning trigger (a sensor on the hot shoe) fires the shutter for you, and is the only easy way to catch bolts by day.",
+        "Wide lens first. Once you know where strikes land, zoom in.",
+        "An action camera recording video from a window catches strikes too."
+      ]
+    }
+  ],
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

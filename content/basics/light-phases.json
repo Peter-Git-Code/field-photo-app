@@ -1,0 +1,73 @@
+{
+  "id": "light-phases",
+  "type": "basic",
+  "mode": "both",
+  "title": "Golden and blue hour",
+  "summary": "Which light you get at each sun height.",
+  "tags": [
+    "golden hour",
+    "blue hour",
+    "twilight",
+    "sunset",
+    "sunrise"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "Light depends on how high the sun is, not on the clock. The phases come in this order every evening, and backwards every morning."
+    },
+    {
+      "t": "figure",
+      "src": "figures/sun-height.svg",
+      "alt": "Chart of sun height from +10 to -18 degrees with golden hour, blue hour and the three twilights"
+    },
+    {
+      "t": "table",
+      "head": [
+        "Phase",
+        "Lasts about",
+        "Good for"
+      ],
+      "rows": [
+        [
+          "Golden hour",
+          "40–60 min",
+          "Portraits, landscapes, long shadows"
+        ],
+        [
+          "Blue hour",
+          "20–30 min",
+          "Cities, lit buildings, Moon"
+        ],
+        [
+          "Nautical",
+          "30–40 min",
+          "Silhouettes, first stars"
+        ],
+        [
+          "Astronomical",
+          "30–40 min",
+          "Wait until it ends for the Milky Way"
+        ]
+      ]
+    },
+    {
+      "t": "note",
+      "tone": "warn",
+      "text": "Times are for central Europe. Phases stretch in summer and the further north you go; near the equator they're much shorter."
+    },
+    {
+      "t": "tips",
+      "items": [
+        "Use an app such as PhotoPills or Sun Surveyor, or timeanddate.com, for exact times where you are.",
+        "Arrive 30 minutes early. The best colour often comes just after the sun has gone."
+      ]
+    }
+  ],
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

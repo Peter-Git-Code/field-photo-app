@@ -12,6 +12,17 @@
   "appliesTo": [
     "camera"
   ],
+  "media": {
+    "kind": "photo",
+    "src": "photos/sun-star.jpg",
+    "alt": "Low sun forming a star of rays over a rocky shore",
+    "credit": {
+      "author": "JJ Harrison",
+      "license": "CC BY-SA 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Honeymoon_Bay_Sunset_2.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    }
+  },
   "blocks": [
     {
       "t": "settings",

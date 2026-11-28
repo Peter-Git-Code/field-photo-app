@@ -1,0 +1,44 @@
+{
+  "id": "histogram",
+  "type": "basic",
+  "mode": "both",
+  "title": "Reading the histogram",
+  "summary": "Check exposure by shape, not by the screen.",
+  "tags": [
+    "exposure",
+    "histogram",
+    "highlights"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "The histogram counts the pixels from black (left) to white (right). The back screen lies in bright sun and in the dark; the histogram doesn't."
+    },
+    {
+      "t": "figure",
+      "src": "figures/histogram.svg",
+      "alt": "Three histograms: piled left is too dark, piled right is too bright, spread out is good"
+    },
+    {
+      "t": "list",
+      "items": [
+        "**Touching the right wall:** highlights are pure white and can't be recovered. Darken by a stop.",
+        "**Touching the left wall:** shadows are pure black. Fine for silhouettes, otherwise brighten.",
+        "Snow, sand or a night sky have their own shapes. A snow scene **should** sit to the right."
+      ]
+    },
+    {
+      "t": "tips",
+      "items": [
+        "On a Canon, press **INFO** in playback until the histogram shows, and turn on the highlight alert.",
+        "Shooting RAW, push exposure right without touching the wall: cleaner shadows."
+      ]
+    }
+  ],
+  "source": {
+    "title": "Photography Cheat Sheets: Adventure Set",
+    "author": "PictureCorrect",
+    "url": "https://www.picturecorrect.com",
+    "note": "Rewritten in our own words. Diagrams redrawn for this app; photos from Wikimedia Commons under the licence shown."
+  }
+}

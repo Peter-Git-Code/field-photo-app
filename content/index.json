@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.4",
+  "version": "2026-11-28.5",
   "devices": [
     {
       "id": "canon-r10",
@@ -64,6 +64,11 @@
       "date": "2026-11-28",
       "kind": "new",
       "text": "Basics: histogram, golden and blue hour, composition, with diagrams; free-licence photos on sky and landscape guides"
+    },
+    {
+      "date": "2026-11-28",
+      "kind": "new",
+      "text": "Drone hyperlapse: sample clip"
     },
     {
       "date": "2026-11-28",

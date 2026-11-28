@@ -15,13 +15,14 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/star-trails.jpg",
+    "src": "media/star-trails.f418f1.jpg",
+    "width": 1280,
+    "height": 855,
     "alt": "Star trails circling the celestial pole above an observatory",
     "credit": {
-      "author": "L. Tyas / KPNO / NOIRLab",
-      "license": "CC BY 4.0",
+      "name": "L. Tyas / KPNO / NOIRLab",
       "url": "https://commons.wikimedia.org/wiki/File:Kitt_Peak_National_Observatory_Beneath_Star_Trails_(noirlab2512ae).jpg",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      "license": "CC BY 4.0"
     }
   },
   "blocks": [

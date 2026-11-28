@@ -14,13 +14,14 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/moon.jpg",
+    "src": "media/moon.59edc2.jpg",
+    "width": 1280,
+    "height": 1216,
     "alt": "Full Moon in detail against a black sky",
     "credit": {
-      "author": "Gregory H. Revera",
-      "license": "CC BY-SA 3.0",
+      "name": "Gregory H. Revera",
       "url": "https://commons.wikimedia.org/wiki/File:FullMoon2010.jpg",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      "license": "CC BY-SA 3.0"
     }
   },
   "blocks": [

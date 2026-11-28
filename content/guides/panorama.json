@@ -16,13 +16,14 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/panorama.jpg",
+    "src": "media/panorama.dbb0c8.jpg",
+    "width": 1280,
+    "height": 488,
     "alt": "Wide panorama of a snowy mountain range",
     "credit": {
-      "author": "Ali Sabbagh",
-      "license": "CC0",
+      "name": "Ali Sabbagh",
       "url": "https://commons.wikimedia.org/wiki/File:Snowy_Annapurna_Range_-_panorama.jpg",
-      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0"
+      "license": "CC0"
     }
   },
   "blocks": [

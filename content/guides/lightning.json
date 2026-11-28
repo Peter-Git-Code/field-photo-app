@@ -14,13 +14,14 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/lightning.jpg",
+    "src": "media/lightning.4f7c2e.jpg",
+    "width": 1280,
+    "height": 720,
     "alt": "Lightning bolts over a harbour and lighthouse at night",
     "credit": {
-      "author": "Maxime Raynal",
-      "license": "CC BY 2.0",
+      "name": "Maxime Raynal",
       "url": "https://commons.wikimedia.org/wiki/File:Port_and_lighthouse_overnight_storm_with_lightning_in_Port-la-Nouvelle.jpg",
-      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      "license": "CC BY 2.0"
     }
   },
   "blocks": [

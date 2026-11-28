@@ -212,5 +212,18 @@
     "title": "DJI drone hyperlapse modes explained (YouTube)",
     "url": "https://youtu.be/pFLchp5zTHI",
     "note": "Summarised in our own words from the video's transcript, plus the DJI Lito X1 User Manual."
+  },
+  "media": {
+    "kind": "video",
+    "src": "media/drone-hyperlapse.50ca7c.mp4",
+    "poster": "media/drone-hyperlapse.50ca7c.jpg",
+    "width": 1280,
+    "height": 720,
+    "alt": "Drone hyperlapses: sea stacks at sunset, a city shore under fast clouds, a roundabout from above and a road junction at night",
+    "credit": {
+      "name": "Pexels",
+      "url": "https://www.pexels.com/license/",
+      "license": "Pexels License"
+    }
   }
 }

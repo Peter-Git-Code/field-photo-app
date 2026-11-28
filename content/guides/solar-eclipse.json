@@ -14,15 +14,15 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/solar-eclipse.jpg",
+    "src": "media/solar-eclipse.3fa4f9.jpg",
+    "width": 1280,
+    "height": 947,
     "alt": "Total solar eclipse: a black disc ringed by the white corona",
     "credit": {
-      "author": "Luc Viatour",
-      "license": "CC BY-SA 4.0",
+      "name": "Luc Viatour",
       "url": "https://commons.wikimedia.org/wiki/File:Eclipse-totale-2026-couronne-Luc-Viatour.jpg",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
-    },
-    "caption": "Totality in Spain, 12 August 2026."
+      "license": "CC BY-SA 4.0"
+    }
   },
   "blocks": [
     {

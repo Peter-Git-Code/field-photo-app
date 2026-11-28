@@ -5,9 +5,13 @@ import json
 import pathlib
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent / "content"
-BLOCKS = {"p", "h", "list", "note", "tips", "scale", "table", "settings", "kit", "tool", "more", "link", "figure", "photo"}
-used_assets = set()
+REPO = pathlib.Path(__file__).resolve().parent.parent
+ROOT = REPO / "content"
+MEDIA = REPO / "media"
+# Size limits for files in media/ (tools/prep_media.py keeps under these).
+MEDIA_MAX = {"photo": 500_000, "video": 8_000_000, "poster": 300_000}
+BLOCKS = {"p", "h", "list", "note", "tips", "scale", "table", "settings", "kit", "tool", "more", "link", "figure"}
+used_figures = set()
 TOOLS = {"exposure", "equiv", "dof", "flash", "nd", "timelapse", "stars"}
 errors = []
 
@@ -20,6 +24,34 @@ index = json.loads((ROOT / "index.json").read_text())
 ids = {i["id"] for i in index["items"]}
 device_ids = {d["id"] for d in index["devices"]}
 listed = {"index.json"}
+used_media = set()
+
+
+def check_media(m, where):
+    if not isinstance(m, dict):
+        return err(f"{where}: media must be an object")
+    kind = m.get("kind")
+    if kind not in ("photo", "video"):
+        err(f"{where}: media kind must be photo or video, not {kind!r}")
+    if not m.get("alt"):
+        err(f"{where}: media needs alt text")
+    if "credit" in m and not (m["credit"] or {}).get("name"):
+        err(f"{where}: media credit needs a name")
+    for field, limit in (("src", MEDIA_MAX.get(kind, 0)), ("poster", MEDIA_MAX["poster"])):
+        src = m.get(field)
+        if not src:
+            if field == "src":
+                err(f"{where}: media has no src")
+            continue
+        if not src.startswith("media/"):
+            err(f"{where}: media {field} {src!r} must be a file in media/")
+            continue
+        f = REPO / src
+        used_media.add(src)
+        if not f.is_file():
+            err(f"{where}: media file {src} missing")
+        elif f.stat().st_size > limit:
+            err(f"{where}: {src} is {f.stat().st_size // 1000} KB, limit {limit // 1000} KB. Run tools/prep_media.py on it.")
 
 
 def check_blocks(blocks, where):
@@ -39,31 +71,14 @@ def check_blocks(blocks, where):
         if t == "more":
             check_blocks(b.get("blocks", []), where + " > " + b.get("title", "more"))
         if t == "figure":
-            check_asset(b.get("src"), where, "figures/", ".svg")
+            src = b.get("src") or ""
+            if not (src.startswith("figures/") and src.endswith(".svg")):
+                err(f"{where}: figure {src!r} should be figures/*.svg")
+            elif not (ROOT / src).is_file():
+                err(f"{where}: figure {src} missing")
+            used_figures.add(src)
             if not b.get("alt"):
-                err(f"{where}: figure {b.get('src')} has no alt text")
-        if t == "photo":
-            check_photo(b, where)
-
-
-def check_asset(src, where, folder, ext):
-    if not src or not src.startswith(folder) or not src.endswith(ext):
-        err(f"{where}: asset {src!r} should be {folder}*{ext}")
-        return
-    used_assets.add(src)
-    if not (ROOT / src).exists():
-        err(f"{where}: asset {src} missing")
-
-
-def check_photo(m, where):
-    """Free-licence photos must say who took them and under what licence."""
-    check_asset(m.get("src"), where, "photos/", ".jpg")
-    c = m.get("credit") or {}
-    for k in ("author", "license", "url"):
-        if not c.get(k):
-            err(f"{where}: photo {m.get('src')} credit has no {k}")
-    if not m.get("alt"):
-        err(f"{where}: photo {m.get('src')} has no alt text")
+                err(f"{where}: figure {src} has no alt text")
 
 
 for meta in index["items"]:
@@ -92,9 +107,8 @@ for meta in index["items"]:
         if d.get("status") == "ok" and not d.get("steps"):
             err(f"{meta['id']}: {dev} is ok but has no steps")
     check_blocks(item.get("blocks", []) + item.get("after", []), meta["id"])
-    if item.get("media"):
-        if item["media"].get("kind") == "photo":
-            check_photo(item["media"], meta["id"] + " media")
+    if "media" in item:
+        check_media(item["media"], meta["id"])
 
 for m in index.get("manuals", []):
     listed.add(m["file"])
@@ -118,13 +132,19 @@ for f in ROOT.rglob("*.json"):
     if rel not in listed:
         err(f"{rel} exists but isn't listed in index.json")
 
-for folder in ("figures", "photos"):
-    for f in (ROOT / folder).glob("*"):
-        rel = f.relative_to(ROOT).as_posix()
-        if rel not in used_assets:
-            err(f"{rel} isn't used by any item")
+if MEDIA.exists():
+    for f in MEDIA.iterdir():
+        rel = "media/" + f.name
+        if f.is_file() and f.name != "README.md" and rel not in used_media:
+            err(f"{rel} isn't used by any item. Delete it or add it to an item's media.")
+
+for f in (ROOT / "figures").glob("*.svg"):
+    rel = "figures/" + f.name
+    if rel not in used_figures:
+        err(f"content/{rel} isn't used by any item")
 
 if errors:
     print("\n".join(errors))
     sys.exit(1)
-print(f"OK: {len(index['items'])} items, {len(index.get('manuals', []))} manuals, version {index['version']}")
+print(f"OK: {len(index['items'])} items, {len(index.get('manuals', []))} manuals, "
+      f"{len(used_media)} media files, version {index['version']}")

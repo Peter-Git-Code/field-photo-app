@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "7"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "8"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -151,17 +151,17 @@
     unchecked: ["General steps", "warn"]
   };
 
-  // Photos and diagrams an item uses, so they can be saved for offline too.
-  function assetsOf(j) {
+  // Diagrams an item uses (content/figures/), saved for offline with the library.
+  function figuresOf(j) {
     var out = [];
-    if (j.media && j.media.src) out.push(j.media.src);
     (function walk(list) {
       (list || []).forEach(function (b) {
-        if ((b.t === "figure" || b.t === "photo") && b.src) out.push(b.src);
+        if (b.t === "figure" && b.src) out.push(b.src);
         if (b.t === "more") walk(b.blocks);
       });
     })((j.blocks || []).concat(j.after || []));
-    (j.sections || []).forEach(function (sec) { (sec.blocks || []).forEach(function (b) { if (b.src) out.push(b.src); }); });
+    (j.sections || []).forEach(function (sec) { walk2(sec.blocks); });
+    function walk2(list) { (list || []).forEach(function (b) { if (b.t === "figure" && b.src) out.push(b.src); }); }
     return out;
   }
 
@@ -169,21 +169,21 @@
   function downloadLibrary(fresh) {
     var files = state.index.items.map(function (i) { return i.file; })
       .concat((state.index.manuals || []).map(function (m) { return m.file; }));
-    var done = 0, assets = {};
+    var done = 0, figs = {};
     return Promise.all(files.map(function (f) {
       return getJSON(CONTENT + f, fresh).then(function (j) {
         done++;
         if (j.id && j.type) state.items[j.id] = j;
         else if (j.device) state.manuals[j.device] = j;
-        assetsOf(j).forEach(function (a) { assets[a] = true; });
+        figuresOf(j).forEach(function (a) { figs[a] = true; });
       });
     })).then(function () {
       // The service worker keeps whatever passes through /content/.
-      return Promise.all(Object.keys(assets).map(function (a) {
+      return Promise.all(Object.keys(figs).map(function (a) {
         return fetch(CONTENT + a, fresh ? { cache: "no-store" } : undefined).then(function (r) {
           if (!r.ok) throw new Error(a + " " + r.status);
           done++;
-          return r.blob();
+          return r.text();
         });
       }));
     }).then(function () {
@@ -339,33 +339,34 @@
     });
   }
 
+  // Sample photo or clip from media/. Saved on the phone once viewed with
+  // signal; before that it shows a placeholder offline.
   function mediaSlot(it) {
-    if (it.media && it.media.src) {
-      if (it.media.kind === "video") {
-        return el("video", { class: "media", src: CONTENT + it.media.src, controls: true, playsinline: true, preload: "metadata" });
-      }
-      return photo(it.media);
+    var m = it.media;
+    if (!m || !m.src) return mediaPlaceholder(it.mode === "video" ? "clip" : "photo", "Placeholder until a sample shot is added");
+    var video = m.kind === "video";
+    var fig = el("figure", { class: "shot" });
+    var size = m.width && m.height ? { width: m.width, height: m.height } : {};
+    function failed() {
+      fig.replaceWith(mediaPlaceholder(video ? "clip" : "photo", "Needs signal the first time it's shown"));
     }
-    return el("div", { class: "media", role: "img", "aria-label": "Sample placeholder" },
-      el("b", { text: "▶" }), el("span", { text: "Sample " + (it.mode === "video" ? "clip" : "photo") }),
-      el("span", { text: "Placeholder until your own shot is added" }));
-  }
-
-  // A photo with its credit line. Free-licence photos must name the author
-  // and licence, so the credit is part of the photo, not optional.
-  function photo(m) {
-    var fig = el("figure", { class: "photo" });
-    var img = el("img", { src: CONTENT + m.src, alt: m.alt || "", loading: "lazy", decoding: "async",
-      onerror: function () { img.replaceWith(el("div", { class: "media", text: "Photo not downloaded yet. Open the app with signal." })); } });
-    add(fig, img);
+    var node = video
+      ? el("video", Object.assign({ src: m.src, poster: m.poster, controls: true, playsinline: true, muted: true,
+          loop: true, preload: "metadata", "aria-label": m.alt, onerror: failed }, size))
+      : el("img", Object.assign({ src: m.src, alt: m.alt || "", decoding: "async", onerror: failed }, size));
+    if (video) node.muted = true; // the attribute alone isn't enough on some browsers
+    add(fig, node);
     var c = m.credit;
-    if (c) {
-      add(fig, el("figcaption", null,
-        m.caption ? el("span", null, rich(m.caption), " ") : null,
-        "Photo: ", c.url ? el("a", { href: c.url, target: "_blank", rel: "noopener", text: c.author }) : c.author,
-        c.license ? [" · ", c.licenseUrl ? el("a", { href: c.licenseUrl, target: "_blank", rel: "noopener", text: c.license }) : c.license] : null));
+    if (c && c.name) {
+      add(fig, el("figcaption", null, (video ? "Clip: " : "Photo: "),
+        c.url ? el("a", { href: c.url, target: "_blank", rel: "noopener", text: c.name }) : c.name,
+        c.license ? " · " + c.license : ""));
     }
     return fig;
+  }
+  function mediaPlaceholder(kind, line) {
+    return el("div", { class: "media", role: "img", "aria-label": "Sample " + kind + " placeholder" },
+      el("b", { text: "▶" }), el("span", { text: "Sample " + kind }), el("span", { text: line }));
   }
 
   // Diagrams are our own SVG files in content/figures/. They're put inline
@@ -380,8 +381,7 @@
     });
     got.then(function (text) {
       svgCache[b.src] = text;
-      var doc = new DOMParser().parseFromString(text, "image/svg+xml");
-      var svg = doc.documentElement;
+      var svg = new DOMParser().parseFromString(text, "image/svg+xml").documentElement;
       if (svg.nodeName !== "svg") throw new Error("not svg");
       // Our own files, but never let a diagram run code.
       svg.querySelectorAll("script, foreignObject").forEach(function (n) { n.remove(); });
@@ -480,7 +480,6 @@
         case "more": return el("details", null, el("summary", { text: b.title }), el("div", null, blocks(b.blocks)));
         case "link": return el("p", null, el("a", { href: "#/item/" + b.id, text: b.text }));
         case "figure": return figure(b);
-        case "photo": return photo(b);
         default: return null;
       }
     });
@@ -969,7 +968,7 @@
         "**Computer:** open it in Edge or Chrome › install icon in the address bar.",
         "Open it once with signal and wait for “Library saved for offline”. Test it in flight mode."]]),
       how("How to add new content", [
-        "Start a Claude Code session with the **field-photo-app** repository and send what you have: a manual PDF, a guide or ebook, a video transcript, or your own photos and clips.",
+        "Start a Claude Code session with the **field-photo-app** repository and send what you have: a manual PDF, a guide or ebook, a video transcript, or photos and clips (your own, or someone else's with their permission and a credit).",
         "Say what you want, for example: “Add a night-sky guide for the R10” or “Add the Osmo's underwater tips”.",
         "Claude writes it in short, plain steps, links the device steps to your kit and credits the source."]),
       how("How to push an update", [

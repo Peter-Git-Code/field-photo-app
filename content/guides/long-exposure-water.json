@@ -14,13 +14,14 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/long-exposure-water.jpg",
+    "src": "media/long-exposure-water.01f4fb.jpg",
+    "width": 1280,
+    "height": 914,
     "alt": "Silky waterfall in a mossy forest",
     "credit": {
-      "author": "Frank Schulenburg",
-      "license": "CC BY-SA 4.0",
+      "name": "Frank Schulenburg",
       "url": "https://commons.wikimedia.org/wiki/File:Waterfall_in_Russian_Gulch_State_Park.jpg",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "license": "CC BY-SA 4.0"
     }
   },
   "blocks": [

@@ -14,13 +14,14 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/milky-way.jpg",
+    "src": "media/milky-way.e8c4d3.jpg",
+    "width": 1280,
+    "height": 562,
     "alt": "Milky Way over a calm sea at night",
     "credit": {
-      "author": "Kristian Pikner",
-      "license": "CC BY-SA 4.0",
+      "name": "Kristian Pikner",
       "url": "https://commons.wikimedia.org/wiki/File:Linnutee_-_Milky_Way_(9)_copy.jpg",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "license": "CC BY-SA 4.0"
     }
   },
   "blocks": [

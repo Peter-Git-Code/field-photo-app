@@ -14,12 +14,14 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/aurora.jpg",
+    "src": "media/aurora.4a71b4.jpg",
+    "width": 1280,
+    "height": 834,
     "alt": "Green aurora arching over a snowy field at night",
     "credit": {
-      "author": "Joshua Strang, US Air Force",
-      "license": "Public domain",
-      "url": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_over_Eielson_Air_Force_Base,_Alaska.jpg"
+      "name": "Joshua Strang, US Air Force",
+      "url": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_over_Eielson_Air_Force_Base,_Alaska.jpg",
+      "license": "Public domain"
     }
   },
   "blocks": [

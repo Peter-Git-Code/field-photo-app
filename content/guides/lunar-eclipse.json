@@ -14,15 +14,15 @@
   ],
   "media": {
     "kind": "photo",
-    "src": "photos/lunar-eclipse.jpg",
+    "src": "media/lunar-eclipse.3c925f.jpg",
+    "width": 1280,
+    "height": 791,
     "alt": "Sequence of the Moon moving out of Earth's shadow",
     "credit": {
-      "author": "Ángel M. Felicísimo",
-      "license": "CC BY 4.0",
+      "name": "Ángel M. Felicísimo",
       "url": "https://commons.wikimedia.org/wiki/File:Eclipse_de_Luna,_26_08_2026_(55493000488).jpg",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
-    },
-    "caption": "The Moon leaving Earth's shadow, Spain, August 2026."
+      "license": "CC BY 4.0"
+    }
   },
   "blocks": [
     {

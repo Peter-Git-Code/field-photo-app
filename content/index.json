@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.3",
+  "version": "2026-11-28.4",
   "devices": [
     {
       "id": "canon-r10",
@@ -55,6 +55,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "new",
+      "text": "Drone hyperlapse: sample clip"
+    },
     {
       "date": "2026-11-28",
       "kind": "new",

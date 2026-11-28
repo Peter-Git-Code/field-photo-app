@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "13"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "14"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -305,13 +305,23 @@
     });
   }
 
+  // A collapsible section in the style of the home screen groups. Remembers open/closed.
+  function fold(key, title, count, openByDefault, content) {
+    var saved = store("open:" + key);
+    var box = el("details", { class: "group", open: saved == null ? openByDefault : saved },
+      el("summary", null, el("span", { text: title }), count != null ? el("span", { class: "count", text: String(count) }) : null),
+      el("div", null, content));
+    box.addEventListener("toggle", function () { store("open:" + key, box.open); });
+    return box;
+  }
+
   // The "My notes" block on the About page.
   function notesSection() {
     var list = notes();
-    var out = [el("div", { class: "lab", id: "notes", text: "My notes" + (list.length ? " (" + list.length + ")" : "") })];
+    var out = [];
     if (!list.length) {
       out.push(el("p", { class: "muted", text: "Tap ✎ Note on any screen to jot down a fix, change or idea. They collect here, ready to copy and hand over." }));
-      return out;
+      return fold("notes", "My notes", 0, true, out);
     }
     out.push(list.map(function (n) {
       return el("div", { class: "row", style: "align-items:flex-start" },
@@ -335,7 +345,7 @@
       } }));
     out.push(actions);
     out.push(el("p", { class: "muted", text: "Notes are saved on this phone only. Copy them before clearing the browser's data." }));
-    return out;
+    return fold("notes", "My notes", list.length, true, out);
   }
 
   // ---------- router ----------
@@ -1132,11 +1142,10 @@
         el("div", { style: "font-size:20px;font-weight:800", text: count + " guides, basics and lessons · " + (state.index.manuals || []).length + " manuals" }),
         status, btn),
       notesSection(),
-      el("div", { class: "lab", text: "What's new" }),
-      (state.index.changes || []).map(function (c) {
+      fold("whatsnew", "What's new", (state.index.changes || []).length, false, (state.index.changes || []).map(function (c) {
         var k = kinds[c.kind] || kinds.updated;
         return el("div", { class: "row" }, el("span", null, c.text, el("span", { class: "muted", text: " · " + c.date })), el("span", { class: "pill " + k[1], text: k[0] }));
-      }),
+      })),
       el("div", { class: "lab", text: "Theme" }),
       el("div", { class: "seg", role: "group", "aria-label": "Theme" }, THEMES.map(function (t) {
         return el("button", { type: "button", class: state.theme === t ? "on" : "", "aria-pressed": String(state.theme === t), text: THEME_LABEL[t],

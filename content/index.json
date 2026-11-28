@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.12",
+  "version": "2026-11-28.13",
   "devices": [
     {
       "id": "canon-r10",
@@ -85,6 +85,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "updated",
+      "text": "About: My notes and What's new fold open and closed, and remember how you left them"
+    },
     {
       "date": "2026-11-28",
       "kind": "new",

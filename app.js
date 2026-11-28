@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "7"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "8"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -327,11 +327,32 @@
       fig.replaceWith(mediaPlaceholder(video ? "clip" : "photo", "Needs signal the first time it's shown"));
     }
     var node = video
-      ? el("video", Object.assign({ src: m.src, poster: m.poster, controls: true, playsinline: true, muted: true,
-          loop: true, preload: "metadata", "aria-label": m.alt, onerror: failed }, size))
+      ? el("video", Object.assign({ src: m.src, poster: m.poster, playsinline: true, muted: true,
+          loop: true, preload: "auto", onerror: failed }, size))
       : el("img", Object.assign({ src: m.src, alt: m.alt || "", decoding: "async", onerror: failed }, size));
-    if (video) node.muted = true; // the attribute alone isn't enough on some browsers
-    add(fig, node);
+    if (video) {
+      // Clips play on their own, silent and looping. Tap (or Enter/Space) to pause and play again.
+      // With "reduce motion" switched on in the phone's settings they start paused.
+      node.muted = true; // the attribute alone isn't enough on some browsers
+      var box = el("div", { class: "clip", role: "button", tabindex: "0" }, node, el("span", { class: "clip-icon", "aria-hidden": "true" }));
+      var label = function () {
+        box.classList.toggle("paused", node.paused);
+        box.setAttribute("aria-label", (node.paused ? "Play: " : "Pause: ") + (m.alt || "sample clip"));
+      };
+      var toggle = function () {
+        if (node.paused) node.play().catch(function () {}); else node.pause();
+      };
+      node.addEventListener("play", label);
+      node.addEventListener("pause", label);
+      box.addEventListener("click", toggle);
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+      });
+      label();
+      var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!still) node.play().catch(label); // a blocked autoplay just shows the play button
+      add(fig, box);
+    } else add(fig, node);
     var c = m.credit;
     if (c && c.name) {
       add(fig, el("figcaption", null, (video ? "Clip: " : "Photo: "),

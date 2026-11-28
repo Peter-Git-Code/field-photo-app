@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "10"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "11"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -236,6 +236,17 @@
     var q = "";
     var list = el("div");
 
+    function tile(i) {
+      var fit = deviceFor(i), s = support(i, fit);
+      // Guide written for another device in the kit: say which one, not "your device".
+      var other = s && dev && fit && fit.id !== dev.id;
+      var label = !s ? null : other ? ["For " + fit.name, "no"] : SUPPORT_LABEL[s.status];
+      return el("a", { class: "tile", href: "#/item/" + i.id },
+        el("b", { text: i.title }),
+        el("span", { class: "muted", text: i.summary }),
+        label ? el("span", { class: "pill " + label[1], text: label[0] }) : null);
+    }
+
     function draw() {
       list.innerHTML = "";
       var items = state.index.items.filter(function (i) {
@@ -259,17 +270,17 @@
               el("span", null, el("b", { text: i.title }), el("span", { class: "muted", text: i.summary })),
               el("span", { class: "muted rowbtn", text: (i.minutes || 3) + " min" }));
           }));
+        } else if (type === "guide") {
+          // Guides sit under topic headings (topics in index.json), in that order.
+          var topics = state.index.topics || [];
+          var known = topics.map(function (t) { return t.id; });
+          topics.concat([{ id: null, name: "More" }]).forEach(function (t) {
+            var inTopic = group.filter(function (i) { return t.id ? i.topic === t.id : known.indexOf(i.topic) === -1; });
+            if (!inTopic.length) return;
+            add(body, [el("h3", { class: "topic", text: t.name }), el("div", { class: "tiles" }, inTopic.map(tile))]);
+          });
         } else {
-          add(body, el("div", { class: "tiles" }, group.map(function (i) {
-            var fit = deviceFor(i), s = support(i, fit);
-            // Guide written for another device in the kit: say which one, not "your device".
-            var other = s && dev && fit && fit.id !== dev.id;
-            var label = !s ? null : other ? ["For " + fit.name, "no"] : SUPPORT_LABEL[s.status];
-            return el("a", { class: "tile", href: "#/item/" + i.id },
-              el("b", { text: i.title }),
-              el("span", { class: "muted", text: i.summary }),
-              label ? el("span", { class: "pill " + label[1], text: label[0] }) : null);
-          })));
+          add(body, el("div", { class: "tiles" }, group.map(tile)));
         }
       });
     }

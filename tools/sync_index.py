@@ -7,7 +7,7 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "content"
 ORDER = {"basics": 2, "guides": 0, "lessons": 1}
-META = ("id", "type", "mode", "title", "summary", "tags", "minutes", "appliesTo", "devices")
+META = ("id", "type", "mode", "topic", "title", "summary", "tags", "minutes", "appliesTo", "devices")
 
 index_path = ROOT / "index.json"
 index = json.loads(index_path.read_text())

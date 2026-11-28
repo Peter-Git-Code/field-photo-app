@@ -2,6 +2,7 @@
   "id": "panorama",
   "type": "guide",
   "mode": "photo",
+  "topic": "landscape",
   "title": "Panorama",
   "summary": "Stitch several frames into one wide view.",
   "tags": [

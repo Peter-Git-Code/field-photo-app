@@ -2,6 +2,7 @@
   "id": "star-trails",
   "type": "guide",
   "mode": "photo",
+  "topic": "night-sky",
   "title": "Star trails",
   "summary": "Stack many 30 s frames into circling stars.",
   "tags": [

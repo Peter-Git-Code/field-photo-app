@@ -2,6 +2,7 @@
   "id": "fill-flash",
   "type": "guide",
   "mode": "photo",
+  "topic": "flash",
   "title": "Fill flash in daylight",
   "summary": "Lift shadows on a backlit face without killing the background.",
   "tags": [

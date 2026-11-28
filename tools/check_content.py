@@ -24,6 +24,7 @@ index = json.loads((ROOT / "index.json").read_text())
 ids = {i["id"] for i in index["items"]}
 device_ids = {d["id"] for d in index["devices"]}
 listed = {"index.json"}
+topic_ids = {t["id"] for t in index.get("topics", [])}
 used_media = set()
 
 
@@ -88,13 +89,15 @@ for meta in index["items"]:
         err(f"{meta['id']}: file {meta['file']} missing")
         continue
     item = json.loads(path.read_text())
-    for key in ("id", "type", "mode", "title", "summary", "appliesTo", "devices", "minutes"):
+    for key in ("id", "type", "mode", "topic", "title", "summary", "appliesTo", "devices", "minutes"):
         if item.get(key) != meta.get(key):
             err(f"{meta['id']}: index {key}={meta.get(key)!r} but file has {item.get(key)!r}")
     if item["type"] not in ("basic", "guide", "lesson"):
         err(f"{meta['id']}: bad type {item['type']}")
     if item["mode"] not in ("photo", "video", "both"):
         err(f"{meta['id']}: bad mode {item['mode']}")
+    if item["type"] == "guide" and item.get("topic") not in topic_ids:
+        err(f"{meta['id']}: guide topic {item.get('topic')!r} isn't one of the topics in index.json")
     if item["type"] == "guide" and not item.get("steps"):
         err(f"{meta['id']}: guide has no general steps")
     for dev, d in (item.get("devices") or {}).items():

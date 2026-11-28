@@ -2,6 +2,7 @@
   "id": "underwater-video",
   "type": "guide",
   "mode": "video",
+  "topic": "action",
   "title": "Underwater video",
   "summary": "Seal checks before, controls during, rinse after.",
   "tags": [

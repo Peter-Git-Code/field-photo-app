@@ -2,6 +2,7 @@
   "id": "drone-hyperlapse",
   "type": "guide",
   "mode": "video",
+  "topic": "timelapse",
   "title": "Drone hyperlapse",
   "summary": "A moving time-lapse from the air: circle, course lock or waypoints.",
   "tags": [

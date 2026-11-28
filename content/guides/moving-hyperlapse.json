@@ -2,6 +2,7 @@
   "id": "moving-hyperlapse",
   "type": "guide",
   "mode": "video",
+  "topic": "timelapse",
   "title": "Hyperlapse on the move",
   "summary": "A sped-up clip from a car, bike or walk.",
   "tags": [

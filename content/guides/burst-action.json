@@ -2,6 +2,7 @@
   "id": "burst-action",
   "type": "guide",
   "mode": "photo",
+  "topic": "action",
   "title": "Burst for fast action",
   "summary": "Fire a fast sequence and keep the sharpest frame.",
   "tags": [

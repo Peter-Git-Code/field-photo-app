@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.9",
+  "version": "2026-11-28.10",
   "devices": [
     {
       "id": "canon-r10",
@@ -26,6 +26,36 @@
       "name": "Canon Speedlite 420EX",
       "brand": "Canon",
       "type": "flash"
+    }
+  ],
+  "topics": [
+    {
+      "id": "night-sky",
+      "name": "Night sky"
+    },
+    {
+      "id": "moon-sun",
+      "name": "Moon and sun"
+    },
+    {
+      "id": "landscape",
+      "name": "Landscape"
+    },
+    {
+      "id": "flash",
+      "name": "Flash"
+    },
+    {
+      "id": "action",
+      "name": "Action"
+    },
+    {
+      "id": "timelapse",
+      "name": "Time-lapse"
+    },
+    {
+      "id": "colour",
+      "name": "Colour"
     }
   ],
   "manuals": [
@@ -55,6 +85,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "updated",
+      "text": "Guides grouped by topic: night sky, Moon and sun, landscape, flash, action, time-lapse, colour"
+    },
     {
       "date": "2026-11-28",
       "kind": "updated",
@@ -138,9 +173,656 @@
   ],
   "items": [
     {
+      "id": "milky-way",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "night-sky",
+      "title": "Milky Way",
+      "summary": "Sharp stars and a bright core on a dark night.",
+      "tags": [
+        "astro",
+        "stars",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. Aperture wide open, **ISO 3200** (the R10 goes to 32000).",
+            "Switch to **MF**. Magnify the live view on a bright star and turn the focus ring until it's the smallest point. **AF5 › Focus guide** can help on nearer subjects.",
+            "Shutter from the star calculator: at 18 mm on the R10's APS-C sensor, about 17 s.",
+            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec**.",
+            "Lens IS off on the tripod. The R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "**Shooting 5 › Long exp. noise reduction:** Auto for single frames, Disable if you'll stack several.",
+            "Shoot RAW (**Shooting 1 › Image quality**). Check stars are points, not lines.",
+            "Happy with it? Save everything: **Set-up 5 › Custom shooting mode (C1, C2) › Register settings › C1**. Next time, just turn the dial to C1."
+          ],
+          "note": "Need more than 30 s? Use Mode dial B with Shooting 7 › Bulb timer."
+        }
+      },
+      "file": "guides/milky-way.json"
+    },
+    {
+      "id": "star-trails",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "night-sky",
+      "title": "Star trails",
+      "summary": "Stack many 30 s frames into circling stars.",
+      "tags": [
+        "astro",
+        "stars",
+        "interval",
+        "stacking"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. f/2.8, **ISO 800**, **30 s**.",
+            "Switch to **MF** and focus on a bright star in magnified live view.",
+            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "**Shooting 5 › Long exp. noise reduction: Disable** so there's no gap between frames.",
+            "**Shooting 7 › Interval timer › Enable**. Interval **00:00:32**, shots **00** (runs until you stop it).",
+            "Press the shutter fully to start. Press it again to stop.",
+            "Copy the frames to a computer and stack them in StarStaX (free) or Sequator."
+          ],
+          "note": "A shot is skipped if the shutter is longer than the interval, so keep the interval a couple of seconds over 30 s."
+        }
+      },
+      "file": "guides/star-trails.json"
+    },
+    {
+      "id": "meteor-showers",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "night-sky",
+      "title": "Meteor showers",
+      "summary": "Hours of frames to catch a few bright streaks.",
+      "tags": [
+        "astro",
+        "stars",
+        "interval",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. Aperture wide open, **ISO 3200**, shutter from the star calculator (about 17 s at 18 mm).",
+            "Switch to **MF** and focus on a bright star in magnified live view.",
+            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "**Shooting 5 › Long exp. noise reduction: Disable**.",
+            "**Shooting 7 › Interval timer › Enable**. Interval 2 s longer than the shutter, shots **00**.",
+            "Press the shutter fully to start. A full battery lasts a few hours in the cold at most: have the spare ready."
+          ]
+        }
+      },
+      "file": "guides/meteor-showers.json"
+    },
+    {
+      "id": "aurora",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "night-sky",
+      "title": "Northern lights",
+      "summary": "Catch an aurora when the forecast spikes.",
+      "tags": [
+        "aurora",
+        "night",
+        "northern lights"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. Aperture wide open, **ISO 3200**.",
+            "Switch to **MF**. Magnify the live view on a bright star and turn the ring until it's a point.",
+            "Shutter **8 s** to start: 1–4 s for fast curtains, up to 15 s for a faint glow.",
+            "**MENU › Shooting 3 › White balance › K** and set about **3500 K**.",
+            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
+            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "Shoot RAW (**Shooting 1 › Image quality**) and check the result. Adjust shutter first, then ISO."
+          ],
+          "note": "Already saved your Milky Way setup to C1? Turn the dial to C1 and only change the shutter and white balance."
+        }
+      },
+      "file": "guides/aurora.json"
+    },
+    {
+      "id": "moon",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "moon-sun",
+      "title": "The Moon",
+      "summary": "A sharp, detailed Moon with a long lens.",
+      "tags": [
+        "moon",
+        "telephoto",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. f/8, **ISO 100**, 1/125 s.",
+            "**MENU › Shooting 3 › White balance: Daylight**.",
+            "Switch to **MF**. Magnify the live view on the Moon's edge and focus on the craters.",
+            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
+            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
+            "Take a test shot and check the histogram. Turn on **Playback 5 › Highlight alert** to see blown highlights blink.",
+            "Switch to **continuous shooting** in the drive mode menu and take a burst. Keep the sharpest frame."
+          ],
+          "note": "With a 300 mm lens the R10's crop makes it frame like 480 mm, which fills about a third of the frame height with the Moon."
+        }
+      },
+      "file": "guides/moon.json"
+    },
+    {
+      "id": "lunar-eclipse",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "moon-sun",
+      "title": "Lunar eclipse",
+      "summary": "From bright Moon to red 'blood Moon' and back.",
+      "tags": [
+        "eclipse",
+        "moon",
+        "night"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "file": "guides/lunar-eclipse.json"
+    },
+    {
+      "id": "solar-eclipse",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "moon-sun",
+      "title": "Solar eclipse",
+      "summary": "Shoot the sun safely through a solar filter.",
+      "tags": [
+        "eclipse",
+        "sun",
+        "filter"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "file": "guides/solar-eclipse.json"
+    },
+    {
+      "id": "sun-star",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "moon-sun",
+      "title": "Sun star",
+      "summary": "Turn the sun into a sharp star burst.",
+      "tags": [
+        "sunstar",
+        "backlight",
+        "aperture"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to Av**, aperture **f/16**, ISO 100.",
+            "**Shooting 2 › Expo.comp./AEB:** start at **−1** to keep the sky's colour. AEB (bracketing) is on the same screen.",
+            "Hide about half the sun behind an edge and move a few centimetres until the star is strongest.",
+            "Turn on **Playback 5 › Highlight alert** and check what blinks after each shot.",
+            "Keep it brief: the manual warns that pointing the camera at the sun can damage the sensor. Cap the lens between shots."
+          ],
+          "note": "The R10's viewfinder is electronic, so it's safe for your eye, but the sensor still takes the heat."
+        }
+      },
+      "file": "guides/sun-star.json"
+    },
+    {
+      "id": "long-exposure-water",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "landscape",
+      "title": "Silky water",
+      "summary": "Smooth waterfalls and seas with an ND filter.",
+      "tags": [
+        "long exposure",
+        "nd filter",
+        "waterfall"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to M**. ISO 100, f/11.",
+            "Focus without the filter, then switch to **MF** so the camera doesn't hunt in the dark through the ND.",
+            "Turn the shutter until the exposure meter reads 0. Note that shutter speed.",
+            "Screw on the ND filter. Get the new shutter speed from the ND calculator and set it. M goes up to 30 s.",
+            "Longer than 30 s: **Mode dial to B**, then **MENU › Shooting 7 › Bulb timer › Enable** and set the time.",
+            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or a BR-E1 remote).",
+            "Lens IS off on a tripod: the lens switch, or **Shooting 8 › IS mode: Off**.",
+            "Shoot, then check the histogram. Turn on **Playback 5 › Highlight alert** to see blown highlights blink."
+          ],
+          "note": "Shooting 5 › Long exp. noise reduction › Auto cleans exposures of 1 s or longer, but the camera then needs as long again to process."
+        }
+      },
+      "file": "guides/long-exposure-water.json"
+    },
+    {
+      "id": "panorama",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "landscape",
+      "title": "Panorama",
+      "summary": "Stitch several frames into one wide view.",
+      "tags": [
+        "stitch",
+        "wide",
+        "landscape"
+      ],
+      "appliesTo": [
+        "camera",
+        "action",
+        "drone"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Quick way:** Mode dial to **SCN › Panoramic Shot**. Pick the direction, half-press to focus, then hold the shutter fully and sweep at a steady speed until the bar fills. The camera stitches it.",
+            "Quick mode struggles with moving subjects, close objects, high-contrast scenes and big plain areas like sea or sky. Sweep slower on long lenses or in low light.",
+            "**Best quality:** Mode dial to **M**, f/8, ISO 100, and set exposure for the brightest part.",
+            "Fix white balance in **Shooting 4 › White balance** (not Auto), focus, then switch to **MF**.",
+            "Turn the camera to portrait, shoot left to right with a third to a half overlap, and stitch on a computer."
+          ],
+          "note": "SCN Panoramic Shot saves a JPEG only. Use the manual method if you want RAW."
+        },
+        "dji-osmo-action-5-pro": {
+          "status": "unchecked",
+          "note": "DJI lists Photo, Video, Subject Tracking, Slow Motion, Timelapse and Hyperlapse modes, with no panorama. Use these steps instead: lock exposure in PRO, turn on the spot rather than swinging your arm, and stitch on a computer. The wide lens bends straight lines near the edges."
+        },
+        "dji-lito-x1": {
+          "status": "unchecked",
+          "note": "The LITO X1 manual doesn't list a panorama mode, so check the Shooting Modes menu in DJI Fly. Otherwise hover, set exposure in Pro mode and rotate the drone between shots with plenty of overlap."
+        }
+      },
+      "file": "guides/panorama.json"
+    },
+    {
+      "id": "focus-stacking",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "landscape",
+      "title": "Focus stacking",
+      "summary": "Everything sharp, front to back, from several frames.",
+      "tags": [
+        "macro",
+        "landscape",
+        "focus bracketing",
+        "depth of field"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "Tripod, and keep **AF** on: the R10's focus bracketing doesn't work in MF.",
+            "**MENU › Shooting 6 › Focus bracketing › Enable**.",
+            "**Number of shots:** 10–30 to start (2–999 possible). **Focus increment:** take a test run; bigger steps cover more depth with fewer shots.",
+            "**Exposure smoothing: Enable.** **Depth composite: Enable** to merge in camera, and **Crop depth comp.: Enable**.",
+            "Focus on the **nearest** point, press the shutter fully, then let go. The camera shoots toward infinity and stops by itself.",
+            "Check the merged image. The source frames are saved too, for merging on a computer."
+          ],
+          "note": "Flash doesn't work with focus bracketing. Shoot wide and crop afterwards; compositing trims the edges."
+        }
+      },
+      "file": "guides/focus-stacking.json"
+    },
+    {
+      "id": "lightning",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "landscape",
+      "title": "Lightning",
+      "summary": "Long exposures of a distant storm, safely.",
+      "tags": [
+        "storm",
+        "night",
+        "long exposure"
+      ],
+      "appliesTo": [
+        "camera"
+      ],
+      "file": "guides/lightning.json"
+    },
+    {
+      "id": "bounce-flash",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "flash",
+      "title": "Bounce flash",
+      "summary": "Soft, natural light indoors from a ceiling or wall.",
+      "tags": [
+        "speedlite",
+        "flash",
+        "indoors",
+        "portrait"
+      ],
+      "appliesTo": [
+        "flash"
+      ],
+      "devices": {
+        "canon-speedlite-420ex": {
+          "status": "ok",
+          "steps": [
+            "Load **4 AA** batteries of the same type. Slide the foot all the way into the R10's hot shoe and tighten the **locking collar**. The 420EX fits the R10 directly.",
+            "Set the **wireless selector to OFF** and switch it on. The pilot lamp lights when it's ready.",
+            "Camera in **Av or M**. The flash runs E-TTL automatically.",
+            "Hold the bounce release button and tilt the head: **up 60°, 75° or 90°**, **left up to 180°**, **right up to 90°**. The zoom jumps to 50 mm by itself.",
+            "Shoot. The **green confirmation lamp** lights for about 3 s if there was enough light. No green: open the aperture, raise ISO or bounce off something closer.",
+            "Brighter or darker: set flash exposure compensation on the R10 in **Shooting 3 › Flash control** (±2 stops)."
+          ],
+          "note": "Recycling takes up to 7.5 s, so leave a moment between shots."
+        }
+      },
+      "file": "guides/bounce-flash.json"
+    },
+    {
+      "id": "fill-flash",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "flash",
+      "title": "Fill flash in daylight",
+      "summary": "Lift shadows on a backlit face without killing the background.",
+      "tags": [
+        "speedlite",
+        "high-speed sync",
+        "backlight",
+        "portrait"
+      ],
+      "appliesTo": [
+        "flash"
+      ],
+      "devices": {
+        "canon-speedlite-420ex": {
+          "status": "ok",
+          "steps": [
+            "Mount the 420EX on the R10 and switch it on, wireless selector **OFF**.",
+            "R10 in **Av** with a wide aperture. In sun the shutter will want to go above the R10's sync speed (**1/200 s**, or **1/250 s** with Shooting 7 › Shutter mode: Elec. 1st-curtain).",
+            "Flip the 420EX's **high-speed sync (FP) switch** on. It only kicks in when the shutter is faster than the sync speed.",
+            "Make sure **Shooting 7 › Shutter mode** isn't **Electronic**: the R10 can't fire a flash with the electronic shutter.",
+            "Set flash compensation to **−1** in **Shooting 3 › Flash control**.",
+            "Mind the reach: at 1/1000 s and 50 mm the guide number drops to about 8.5, so at f/2.8 the flash reaches about **3 m**."
+          ],
+          "note": "Guide number ÷ aperture = reach in metres at ISO 100. Doubling ISO adds about 40% reach."
+        }
+      },
+      "file": "guides/fill-flash.json"
+    },
+    {
+      "id": "burst-action",
+      "type": "guide",
+      "mode": "photo",
+      "topic": "action",
+      "title": "Burst for fast action",
+      "summary": "Fire a fast sequence and keep the sharpest frame.",
+      "tags": [
+        "burst",
+        "continuous",
+        "sport",
+        "wildlife",
+        "pre-shooting"
+      ],
+      "appliesTo": [
+        "camera",
+        "action"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to Tv**, shutter **1/1000 s** or faster, ISO Auto.",
+            "**AF1 › AF operation: Servo AF** so focus follows the subject.",
+            "**Shooting 7 › Drive mode › High-speed continuous +** (or press the drive button). That's up to 15 fps, or 23 fps with the electronic shutter.",
+            "Half-press to track, then hold the shutter down through the action.",
+            "**Can't time it?** Use **Shooting 6 › RAW burst mode › Enable** with **Pre-shooting: Enable**. Half-press while you wait; when you press fully, it also keeps about 0.5 s from before the press. Frames are 13.6 MP and saved as one roll you extract from."
+          ],
+          "note": "15 fps needs 1/1000 s or faster and a well-charged battery. RAW burst mode resets to Disable when you turn the camera off."
+        },
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe left or right to **Photo** mode.",
+            "Swipe up from the bottom of the screen and set the aspect ratio and **burst rate** (frames per second). Off means a single photo.",
+            "Point and press the **Shutter/Record** button. The camera fires the burst.",
+            "Review in playback and keep the best frame."
+          ],
+          "note": "Available burst rates depend on the aspect ratio you pick."
+        }
+      },
+      "file": "guides/burst-action.json"
+    },
+    {
+      "id": "catch-the-moment",
+      "type": "guide",
+      "mode": "video",
+      "topic": "action",
+      "title": "Catch the moment",
+      "summary": "Save the seconds before you press record.",
+      "tags": [
+        "pre-rec",
+        "loop recording",
+        "highlight",
+        "fishing",
+        "wildlife"
+      ],
+      "appliesTo": [
+        "action",
+        "camera"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe to **Video** (or SuperNight) mode.",
+            "Tap the **upper-left corner** and turn on **Pre-Rec**. Set how many seconds to keep.",
+            "Wait. Nothing is saved yet, so the card doesn't fill up.",
+            "When the moment comes, press **Shutter/Record**. The clip starts from the pre-recorded seconds and carries on.",
+            "Press the **Quick Switch** button while recording to mark a highlight.",
+            "Long wait, like a drive or a day on the water? Use **Loop Recording** instead (same corner). It keeps overwriting the oldest footage."
+          ],
+          "note": "Highlights you mark show up in playback and in DJI Mimo, so you can jump straight to them."
+        },
+        "canon-r10": {
+          "status": "unchecked",
+          "note": "The R10 manual has no pre-record for video. For stills, RAW burst mode with Pre-shooting keeps about 0.5 s from before you press: see Burst for fast action.",
+          "link": "burst-action"
+        }
+      },
+      "file": "guides/catch-the-moment.json"
+    },
+    {
+      "id": "slow-motion",
+      "type": "guide",
+      "mode": "video",
+      "topic": "action",
+      "title": "Slow motion",
+      "summary": "Shoot at a high frame rate, play it back slowed down.",
+      "tags": [
+        "high frame rate",
+        "120fps",
+        "slow mo"
+      ],
+      "appliesTo": [
+        "camera",
+        "action"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to movie**.",
+            "**MENU › Shooting 1 › High Frame Rate › Enable.** It records Full HD at 119.9 fps (or 100 fps in PAL).",
+            "Set the shutter to **1/250 s** in movie manual exposure. ISO goes to 12800.",
+            "Turn on **Shooting 6 › Zebra settings** to see overexposed areas.",
+            "Record. Clips play back at **1/4 speed** straight from the camera."
+          ],
+          "note": "No sound is recorded, and each clip is limited to 30 minutes."
+        },
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Slow Motion**.",
+            "Swipe up and pick **4×** or **8×** slow motion.",
+            "Give it plenty of light: slow motion uses fast shutter speeds.",
+            "Record the action. It plays back slowed straight away.",
+            "**Afterwards, from normal video:** shoot 4K, 2.7K or 1080p 16:9 at **100 fps or more**, then in playback tap the **super slow-motion** icon at the moment you want. It makes a 1080p clip up to 960 fps."
+          ],
+          "note": "Super slow-motion needs a clip at least 3 s long, can't use the first 1.5 s or the last 2 s, and allows up to 6 clips per video."
+        }
+      },
+      "file": "guides/slow-motion.json"
+    },
+    {
+      "id": "steady-action",
+      "type": "guide",
+      "mode": "video",
+      "topic": "action",
+      "title": "Steady action footage",
+      "summary": "Pick the right stabilisation and mount for bikes, helmets and handheld.",
+      "tags": [
+        "eis",
+        "rocksteady",
+        "horizon",
+        "mount",
+        "helmet",
+        "bike"
+      ],
+      "appliesTo": [
+        "action"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe to **Video** mode and tap the **upper-right corner** for the EIS mode.",
+            "**RockSteady** keeps some natural movement. **RockSteady+** is stronger and crops the edges slightly.",
+            "**HorizonBalancing** levels tilts up to ±45°. **HorizonSteady** keeps the horizon level through full 360° rolls, however the camera is mounted.",
+            "Stabilising later in software (Gyroflow etc.)? Set EIS **Off** and view to **Wide** to record gyro data.",
+            "Swipe down for the control menu and use **Orientation Lock** if the image flips.",
+            "Clip in with the quick-release mount and tighten the locking screws. Stick-on bases need 30 minutes before use, and only on clean curved surfaces."
+          ],
+          "note": "Mounts that fit: chest strap, helmet chin, handlebar, suction cup, 1.5 m extension rod, magnetic ball joint."
+        }
+      },
+      "file": "guides/steady-action.json"
+    },
+    {
+      "id": "follow-subject",
+      "type": "guide",
+      "mode": "video",
+      "topic": "action",
+      "title": "Follow a subject",
+      "summary": "Keep a rider, skier or walker centred in the frame.",
+      "tags": [
+        "subject tracking",
+        "activetrack",
+        "focustrack",
+        "follow",
+        "vlog"
+      ],
+      "appliesTo": [
+        "action",
+        "drone"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Subject Tracking**.",
+            "Point the camera at the subject. The video keeps them centred as you move.",
+            "Press **Shutter/Record** to start and stop."
+          ],
+          "note": "Subject Tracking doesn't work with the camera turned vertical. For vertical video, stay horizontal and choose the 9:16 aspect ratio."
+        },
+        "dji-lito-x1": {
+          "status": "ok",
+          "steps": [
+            "Open, unobstructed area with good light. Fly in **N (Normal)** mode.",
+            "Tap the **FocusTrack** icon on the left of the camera view, or drag a box around the subject.",
+            "Choose **ActiveTrack** to follow (people 4–20 m away, vehicles and boats 6–100 m), **Spotlight** to keep the camera on them while you fly, or **POI** to circle them.",
+            "Tap or slide the trace wheel to change the tracking direction. The sticks still adjust height and distance.",
+            "Press **Flight Pause** on the remote at any time to stop and hover."
+          ],
+          "note": "It can't avoid moving people, animals or vehicles. Don't use it near branches, power lines, water, glass or plain white walls, or for subjects faster than 12 m/s. Don't track children."
+        }
+      },
+      "file": "guides/follow-subject.json"
+    },
+    {
+      "id": "underwater-video",
+      "type": "guide",
+      "mode": "video",
+      "topic": "action",
+      "title": "Underwater video",
+      "summary": "Seal checks before, controls during, rinse after.",
+      "tags": [
+        "underwater",
+        "snorkel",
+        "dive",
+        "waterproof",
+        "pool"
+      ],
+      "appliesTo": [
+        "action"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "**Depth:** 20 m on its own, 60 m in the Osmo Action 60 m waterproof case. Not waterproof with the lens hood fitted.",
+            "**Before:** battery and compartment dry and clean, battery door fully closed with **no red marks showing**. USB-C cover and lens cover on tight, seals clean.",
+            "Case? Leave it under water for about 5 minutes first to check it, add an anti-fog insert, and make sure the latch is closed.",
+            "Set the mode and settings on land. **The touchscreens don't work fully submerged.** Start and stop with the **Shutter/Record** button.",
+            "Swipe down and turn on **Screen Lock** so splashes and wet fingers don't change settings.",
+            "Without the case, the Shutter/Record button stops working below 10 m, so start recording before you go deeper.",
+            "Don't jump in at speed holding it; the impact can force water in. No hot springs or chemicals.",
+            "**After:** rinse in tap water (case too, after the sea) and let it air-dry. **No hair dryer**: it ruptures the waterproof membranes. Open the battery door facing down and wipe the red seal."
+          ],
+          "note": "To log depth, turn on control menu › Settings › Depth & Altitude › Diving. It doesn't show depth while the camera is in the waterproof case."
+        }
+      },
+      "file": "guides/underwater-video.json"
+    },
+    {
       "id": "sunset-timelapse",
       "type": "guide",
       "mode": "video",
+      "topic": "timelapse",
       "title": "Sunset time-lapse",
       "summary": "Hundreds of stills turned into a short clip.",
       "tags": [
@@ -190,141 +872,10 @@
       "file": "guides/sunset-timelapse.json"
     },
     {
-      "id": "long-exposure-water",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Silky water",
-      "summary": "Smooth waterfalls and seas with an ND filter.",
-      "tags": [
-        "long exposure",
-        "nd filter",
-        "waterfall"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to M**. ISO 100, f/11.",
-            "Focus without the filter, then switch to **MF** so the camera doesn't hunt in the dark through the ND.",
-            "Turn the shutter until the exposure meter reads 0. Note that shutter speed.",
-            "Screw on the ND filter. Get the new shutter speed from the ND calculator and set it. M goes up to 30 s.",
-            "Longer than 30 s: **Mode dial to B**, then **MENU › Shooting 7 › Bulb timer › Enable** and set the time.",
-            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or a BR-E1 remote).",
-            "Lens IS off on a tripod: the lens switch, or **Shooting 8 › IS mode: Off**.",
-            "Shoot, then check the histogram. Turn on **Playback 5 › Highlight alert** to see blown highlights blink."
-          ],
-          "note": "Shooting 5 › Long exp. noise reduction › Auto cleans exposures of 1 s or longer, but the camera then needs as long again to process."
-        }
-      },
-      "file": "guides/long-exposure-water.json"
-    },
-    {
-      "id": "milky-way",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Milky Way",
-      "summary": "Sharp stars and a bright core on a dark night.",
-      "tags": [
-        "astro",
-        "stars",
-        "night"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to M**. Aperture wide open, **ISO 3200** (the R10 goes to 32000).",
-            "Switch to **MF**. Magnify the live view on a bright star and turn the focus ring until it's the smallest point. **AF5 › Focus guide** can help on nearer subjects.",
-            "Shutter from the star calculator: at 18 mm on the R10's APS-C sensor, about 17 s.",
-            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec**.",
-            "Lens IS off on the tripod. The R10 has no in-body stabiliser, so the lens switch is the one that matters.",
-            "**Shooting 5 › Long exp. noise reduction:** Auto for single frames, Disable if you'll stack several.",
-            "Shoot RAW (**Shooting 1 › Image quality**). Check stars are points, not lines.",
-            "Happy with it? Save everything: **Set-up 5 › Custom shooting mode (C1, C2) › Register settings › C1**. Next time, just turn the dial to C1."
-          ],
-          "note": "Need more than 30 s? Use Mode dial B with Shooting 7 › Bulb timer."
-        }
-      },
-      "file": "guides/milky-way.json"
-    },
-    {
-      "id": "panorama",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Panorama",
-      "summary": "Stitch several frames into one wide view.",
-      "tags": [
-        "stitch",
-        "wide",
-        "landscape"
-      ],
-      "appliesTo": [
-        "camera",
-        "action",
-        "drone"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Quick way:** Mode dial to **SCN › Panoramic Shot**. Pick the direction, half-press to focus, then hold the shutter fully and sweep at a steady speed until the bar fills. The camera stitches it.",
-            "Quick mode struggles with moving subjects, close objects, high-contrast scenes and big plain areas like sea or sky. Sweep slower on long lenses or in low light.",
-            "**Best quality:** Mode dial to **M**, f/8, ISO 100, and set exposure for the brightest part.",
-            "Fix white balance in **Shooting 4 › White balance** (not Auto), focus, then switch to **MF**.",
-            "Turn the camera to portrait, shoot left to right with a third to a half overlap, and stitch on a computer."
-          ],
-          "note": "SCN Panoramic Shot saves a JPEG only. Use the manual method if you want RAW."
-        },
-        "dji-osmo-action-5-pro": {
-          "status": "unchecked",
-          "note": "DJI lists Photo, Video, Subject Tracking, Slow Motion, Timelapse and Hyperlapse modes, with no panorama. Use these steps instead: lock exposure in PRO, turn on the spot rather than swinging your arm, and stitch on a computer. The wide lens bends straight lines near the edges."
-        },
-        "dji-lito-x1": {
-          "status": "unchecked",
-          "note": "The LITO X1 manual doesn't list a panorama mode, so check the Shooting Modes menu in DJI Fly. Otherwise hover, set exposure in Pro mode and rotate the drone between shots with plenty of overlap."
-        }
-      },
-      "file": "guides/panorama.json"
-    },
-    {
-      "id": "sun-star",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Sun star",
-      "summary": "Turn the sun into a sharp star burst.",
-      "tags": [
-        "sunstar",
-        "backlight",
-        "aperture"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to Av**, aperture **f/16**, ISO 100.",
-            "**Shooting 2 › Expo.comp./AEB:** start at **−1** to keep the sky's colour. AEB (bracketing) is on the same screen.",
-            "Hide about half the sun behind an edge and move a few centimetres until the star is strongest.",
-            "Turn on **Playback 5 › Highlight alert** and check what blinks after each shot.",
-            "Keep it brief: the manual warns that pointing the camera at the sun can damage the sensor. Cap the lens between shots."
-          ],
-          "note": "The R10's viewfinder is electronic, so it's safe for your eye, but the sensor still takes the heat."
-        }
-      },
-      "file": "guides/sun-star.json"
-    },
-    {
       "id": "drone-hyperlapse",
       "type": "guide",
       "mode": "video",
+      "topic": "timelapse",
       "title": "Drone hyperlapse",
       "summary": "A moving time-lapse from the air: circle, course lock or waypoints.",
       "tags": [
@@ -357,223 +908,48 @@
       "file": "guides/drone-hyperlapse.json"
     },
     {
-      "id": "bounce-flash",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Bounce flash",
-      "summary": "Soft, natural light indoors from a ceiling or wall.",
-      "tags": [
-        "speedlite",
-        "flash",
-        "indoors",
-        "portrait"
-      ],
-      "appliesTo": [
-        "flash"
-      ],
-      "devices": {
-        "canon-speedlite-420ex": {
-          "status": "ok",
-          "steps": [
-            "Load **4 AA** batteries of the same type. Slide the foot all the way into the R10's hot shoe and tighten the **locking collar**. The 420EX fits the R10 directly.",
-            "Set the **wireless selector to OFF** and switch it on. The pilot lamp lights when it's ready.",
-            "Camera in **Av or M**. The flash runs E-TTL automatically.",
-            "Hold the bounce release button and tilt the head: **up 60°, 75° or 90°**, **left up to 180°**, **right up to 90°**. The zoom jumps to 50 mm by itself.",
-            "Shoot. The **green confirmation lamp** lights for about 3 s if there was enough light. No green: open the aperture, raise ISO or bounce off something closer.",
-            "Brighter or darker: set flash exposure compensation on the R10 in **Shooting 3 › Flash control** (±2 stops)."
-          ],
-          "note": "Recycling takes up to 7.5 s, so leave a moment between shots."
-        }
-      },
-      "file": "guides/bounce-flash.json"
-    },
-    {
-      "id": "fill-flash",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Fill flash in daylight",
-      "summary": "Lift shadows on a backlit face without killing the background.",
-      "tags": [
-        "speedlite",
-        "high-speed sync",
-        "backlight",
-        "portrait"
-      ],
-      "appliesTo": [
-        "flash"
-      ],
-      "devices": {
-        "canon-speedlite-420ex": {
-          "status": "ok",
-          "steps": [
-            "Mount the 420EX on the R10 and switch it on, wireless selector **OFF**.",
-            "R10 in **Av** with a wide aperture. In sun the shutter will want to go above the R10's sync speed (**1/200 s**, or **1/250 s** with Shooting 7 › Shutter mode: Elec. 1st-curtain).",
-            "Flip the 420EX's **high-speed sync (FP) switch** on. It only kicks in when the shutter is faster than the sync speed.",
-            "Make sure **Shooting 7 › Shutter mode** isn't **Electronic**: the R10 can't fire a flash with the electronic shutter.",
-            "Set flash compensation to **−1** in **Shooting 3 › Flash control**.",
-            "Mind the reach: at 1/1000 s and 50 mm the guide number drops to about 8.5, so at f/2.8 the flash reaches about **3 m**."
-          ],
-          "note": "Guide number ÷ aperture = reach in metres at ISO 100. Doubling ISO adds about 40% reach."
-        }
-      },
-      "file": "guides/fill-flash.json"
-    },
-    {
-      "id": "focus-stacking",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Focus stacking",
-      "summary": "Everything sharp, front to back, from several frames.",
-      "tags": [
-        "macro",
-        "landscape",
-        "focus bracketing",
-        "depth of field"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "Tripod, and keep **AF** on: the R10's focus bracketing doesn't work in MF.",
-            "**MENU › Shooting 6 › Focus bracketing › Enable**.",
-            "**Number of shots:** 10–30 to start (2–999 possible). **Focus increment:** take a test run; bigger steps cover more depth with fewer shots.",
-            "**Exposure smoothing: Enable.** **Depth composite: Enable** to merge in camera, and **Crop depth comp.: Enable**.",
-            "Focus on the **nearest** point, press the shutter fully, then let go. The camera shoots toward infinity and stops by itself.",
-            "Check the merged image. The source frames are saved too, for merging on a computer."
-          ],
-          "note": "Flash doesn't work with focus bracketing. Shoot wide and crop afterwards; compositing trims the edges."
-        }
-      },
-      "file": "guides/focus-stacking.json"
-    },
-    {
-      "id": "slow-motion",
+      "id": "moving-hyperlapse",
       "type": "guide",
       "mode": "video",
-      "title": "Slow motion",
-      "summary": "Shoot at a high frame rate, play it back slowed down.",
+      "topic": "timelapse",
+      "title": "Hyperlapse on the move",
+      "summary": "A sped-up clip from a car, bike or walk.",
       "tags": [
-        "high frame rate",
-        "120fps",
-        "slow mo"
+        "hyperlapse",
+        "timelapse",
+        "car",
+        "walking",
+        "action cam"
       ],
       "appliesTo": [
-        "camera",
         "action"
       ],
       "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to movie**.",
-            "**MENU › Shooting 1 › High Frame Rate › Enable.** It records Full HD at 119.9 fps (or 100 fps in PAL).",
-            "Set the shutter to **1/250 s** in movie manual exposure. ISO goes to 12800.",
-            "Turn on **Shooting 6 › Zebra settings** to see overexposed areas.",
-            "Record. Clips play back at **1/4 speed** straight from the camera."
-          ],
-          "note": "No sound is recorded, and each clip is limited to 30 minutes."
-        },
         "dji-osmo-action-5-pro": {
           "status": "ok",
           "steps": [
-            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Slow Motion**.",
-            "Swipe up and pick **4×** or **8×** slow motion.",
-            "Give it plenty of light: slow motion uses fast shutter speeds.",
-            "Record the action. It plays back slowed straight away.",
-            "**Afterwards, from normal video:** shoot 4K, 2.7K or 1080p 16:9 at **100 fps or more**, then in playback tap the **super slow-motion** icon at the moment you want. It makes a 1080p clip up to 960 fps."
+            "Mount it: suction cup in the car, handlebar or chest strap on a bike, or handheld. Tighten the locking screws.",
+            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Hyperlapse**, the mode for a moving camera.",
+            "Swipe up to set the speed-up and resolution options.",
+            "Image icon › **PRO**: lock white balance.",
+            "Turn on **Orientation Lock** and **Screen Lock** in the control menu.",
+            "Press **Shutter/Record** to start and stop."
           ],
-          "note": "Super slow-motion needs a clip at least 3 s long, can't use the first 1.5 s or the last 2 s, and allows up to 6 clips per video."
-        }
-      },
-      "file": "guides/slow-motion.json"
-    },
-    {
-      "id": "burst-action",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Burst for fast action",
-      "summary": "Fire a fast sequence and keep the sharpest frame.",
-      "tags": [
-        "burst",
-        "continuous",
-        "sport",
-        "wildlife",
-        "pre-shooting"
-      ],
-      "appliesTo": [
-        "camera",
-        "action"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to Tv**, shutter **1/1000 s** or faster, ISO Auto.",
-            "**AF1 › AF operation: Servo AF** so focus follows the subject.",
-            "**Shooting 7 › Drive mode › High-speed continuous +** (or press the drive button). That's up to 15 fps, or 23 fps with the electronic shutter.",
-            "Half-press to track, then hold the shutter down through the action.",
-            "**Can't time it?** Use **Shooting 6 › RAW burst mode › Enable** with **Pre-shooting: Enable**. Half-press while you wait; when you press fully, it also keeps about 0.5 s from before the press. Frames are 13.6 MP and saved as one roll you extract from."
-          ],
-          "note": "15 fps needs 1/1000 s or faster and a well-charged battery. RAW burst mode resets to Disable when you turn the camera off."
+          "note": "DJI's support page confirms the mode but not its options. Check the settings screen."
         },
-        "dji-osmo-action-5-pro": {
-          "status": "ok",
-          "steps": [
-            "Swipe left or right to **Photo** mode.",
-            "Swipe up from the bottom of the screen and set the aspect ratio and **burst rate** (frames per second). Off means a single photo.",
-            "Point and press the **Shutter/Record** button. The camera fires the burst.",
-            "Review in playback and keep the best frame."
-          ],
-          "note": "Available burst rates depend on the aspect ratio you pick."
+        "dji-lito-x1": {
+          "status": "unavailable",
+          "note": "For the drone, use Drone hyperlapse.",
+          "link": "drone-hyperlapse"
         }
       },
-      "file": "guides/burst-action.json"
-    },
-    {
-      "id": "catch-the-moment",
-      "type": "guide",
-      "mode": "video",
-      "title": "Catch the moment",
-      "summary": "Save the seconds before you press record.",
-      "tags": [
-        "pre-rec",
-        "loop recording",
-        "highlight",
-        "fishing",
-        "wildlife"
-      ],
-      "appliesTo": [
-        "action",
-        "camera"
-      ],
-      "devices": {
-        "dji-osmo-action-5-pro": {
-          "status": "ok",
-          "steps": [
-            "Swipe to **Video** (or SuperNight) mode.",
-            "Tap the **upper-left corner** and turn on **Pre-Rec**. Set how many seconds to keep.",
-            "Wait. Nothing is saved yet, so the card doesn't fill up.",
-            "When the moment comes, press **Shutter/Record**. The clip starts from the pre-recorded seconds and carries on.",
-            "Press the **Quick Switch** button while recording to mark a highlight.",
-            "Long wait, like a drive or a day on the water? Use **Loop Recording** instead (same corner). It keeps overwriting the oldest footage."
-          ],
-          "note": "Highlights you mark show up in playback and in DJI Mimo, so you can jump straight to them."
-        },
-        "canon-r10": {
-          "status": "unchecked",
-          "note": "The R10 manual has no pre-record for video. For stills, RAW burst mode with Pre-shooting keeps about 0.5 s from before you press: see Burst for fast action.",
-          "link": "burst-action"
-        }
-      },
-      "file": "guides/catch-the-moment.json"
+      "file": "guides/moving-hyperlapse.json"
     },
     {
       "id": "flat-colour",
       "type": "guide",
       "mode": "video",
+      "topic": "colour",
       "title": "Flat colour for grading",
       "summary": "Record a flat, low-contrast image to colour later.",
       "tags": [
@@ -612,323 +988,6 @@
         }
       },
       "file": "guides/flat-colour.json"
-    },
-    {
-      "id": "steady-action",
-      "type": "guide",
-      "mode": "video",
-      "title": "Steady action footage",
-      "summary": "Pick the right stabilisation and mount for bikes, helmets and handheld.",
-      "tags": [
-        "eis",
-        "rocksteady",
-        "horizon",
-        "mount",
-        "helmet",
-        "bike"
-      ],
-      "appliesTo": [
-        "action"
-      ],
-      "devices": {
-        "dji-osmo-action-5-pro": {
-          "status": "ok",
-          "steps": [
-            "Swipe to **Video** mode and tap the **upper-right corner** for the EIS mode.",
-            "**RockSteady** keeps some natural movement. **RockSteady+** is stronger and crops the edges slightly.",
-            "**HorizonBalancing** levels tilts up to ±45°. **HorizonSteady** keeps the horizon level through full 360° rolls, however the camera is mounted.",
-            "Stabilising later in software (Gyroflow etc.)? Set EIS **Off** and view to **Wide** to record gyro data.",
-            "Swipe down for the control menu and use **Orientation Lock** if the image flips.",
-            "Clip in with the quick-release mount and tighten the locking screws. Stick-on bases need 30 minutes before use, and only on clean curved surfaces."
-          ],
-          "note": "Mounts that fit: chest strap, helmet chin, handlebar, suction cup, 1.5 m extension rod, magnetic ball joint."
-        }
-      },
-      "file": "guides/steady-action.json"
-    },
-    {
-      "id": "underwater-video",
-      "type": "guide",
-      "mode": "video",
-      "title": "Underwater video",
-      "summary": "Seal checks before, controls during, rinse after.",
-      "tags": [
-        "underwater",
-        "snorkel",
-        "dive",
-        "waterproof",
-        "pool"
-      ],
-      "appliesTo": [
-        "action"
-      ],
-      "devices": {
-        "dji-osmo-action-5-pro": {
-          "status": "ok",
-          "steps": [
-            "**Depth:** 20 m on its own, 60 m in the Osmo Action 60 m waterproof case. Not waterproof with the lens hood fitted.",
-            "**Before:** battery and compartment dry and clean, battery door fully closed with **no red marks showing**. USB-C cover and lens cover on tight, seals clean.",
-            "Case? Leave it under water for about 5 minutes first to check it, add an anti-fog insert, and make sure the latch is closed.",
-            "Set the mode and settings on land. **The touchscreens don't work fully submerged.** Start and stop with the **Shutter/Record** button.",
-            "Swipe down and turn on **Screen Lock** so splashes and wet fingers don't change settings.",
-            "Without the case, the Shutter/Record button stops working below 10 m, so start recording before you go deeper.",
-            "Don't jump in at speed holding it; the impact can force water in. No hot springs or chemicals.",
-            "**After:** rinse in tap water (case too, after the sea) and let it air-dry. **No hair dryer**: it ruptures the waterproof membranes. Open the battery door facing down and wipe the red seal."
-          ],
-          "note": "To log depth, turn on control menu › Settings › Depth & Altitude › Diving. It doesn't show depth while the camera is in the waterproof case."
-        }
-      },
-      "file": "guides/underwater-video.json"
-    },
-    {
-      "id": "follow-subject",
-      "type": "guide",
-      "mode": "video",
-      "title": "Follow a subject",
-      "summary": "Keep a rider, skier or walker centred in the frame.",
-      "tags": [
-        "subject tracking",
-        "activetrack",
-        "focustrack",
-        "follow",
-        "vlog"
-      ],
-      "appliesTo": [
-        "action",
-        "drone"
-      ],
-      "devices": {
-        "dji-osmo-action-5-pro": {
-          "status": "ok",
-          "steps": [
-            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Subject Tracking**.",
-            "Point the camera at the subject. The video keeps them centred as you move.",
-            "Press **Shutter/Record** to start and stop."
-          ],
-          "note": "Subject Tracking doesn't work with the camera turned vertical. For vertical video, stay horizontal and choose the 9:16 aspect ratio."
-        },
-        "dji-lito-x1": {
-          "status": "ok",
-          "steps": [
-            "Open, unobstructed area with good light. Fly in **N (Normal)** mode.",
-            "Tap the **FocusTrack** icon on the left of the camera view, or drag a box around the subject.",
-            "Choose **ActiveTrack** to follow (people 4–20 m away, vehicles and boats 6–100 m), **Spotlight** to keep the camera on them while you fly, or **POI** to circle them.",
-            "Tap or slide the trace wheel to change the tracking direction. The sticks still adjust height and distance.",
-            "Press **Flight Pause** on the remote at any time to stop and hover."
-          ],
-          "note": "It can't avoid moving people, animals or vehicles. Don't use it near branches, power lines, water, glass or plain white walls, or for subjects faster than 12 m/s. Don't track children."
-        }
-      },
-      "file": "guides/follow-subject.json"
-    },
-    {
-      "id": "moving-hyperlapse",
-      "type": "guide",
-      "mode": "video",
-      "title": "Hyperlapse on the move",
-      "summary": "A sped-up clip from a car, bike or walk.",
-      "tags": [
-        "hyperlapse",
-        "timelapse",
-        "car",
-        "walking",
-        "action cam"
-      ],
-      "appliesTo": [
-        "action"
-      ],
-      "devices": {
-        "dji-osmo-action-5-pro": {
-          "status": "ok",
-          "steps": [
-            "Mount it: suction cup in the car, handlebar or chest strap on a bike, or handheld. Tighten the locking screws.",
-            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Hyperlapse**, the mode for a moving camera.",
-            "Swipe up to set the speed-up and resolution options.",
-            "Image icon › **PRO**: lock white balance.",
-            "Turn on **Orientation Lock** and **Screen Lock** in the control menu.",
-            "Press **Shutter/Record** to start and stop."
-          ],
-          "note": "DJI's support page confirms the mode but not its options. Check the settings screen."
-        },
-        "dji-lito-x1": {
-          "status": "unavailable",
-          "note": "For the drone, use Drone hyperlapse.",
-          "link": "drone-hyperlapse"
-        }
-      },
-      "file": "guides/moving-hyperlapse.json"
-    },
-    {
-      "id": "aurora",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Northern lights",
-      "summary": "Catch an aurora when the forecast spikes.",
-      "tags": [
-        "aurora",
-        "night",
-        "northern lights"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to M**. Aperture wide open, **ISO 3200**.",
-            "Switch to **MF**. Magnify the live view on a bright star and turn the ring until it's a point.",
-            "Shutter **8 s** to start: 1–4 s for fast curtains, up to 15 s for a faint glow.",
-            "**MENU › Shooting 3 › White balance › K** and set about **3500 K**.",
-            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
-            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
-            "Shoot RAW (**Shooting 1 › Image quality**) and check the result. Adjust shutter first, then ISO."
-          ],
-          "note": "Already saved your Milky Way setup to C1? Turn the dial to C1 and only change the shutter and white balance."
-        }
-      },
-      "file": "guides/aurora.json"
-    },
-    {
-      "id": "lightning",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Lightning",
-      "summary": "Long exposures of a distant storm, safely.",
-      "tags": [
-        "storm",
-        "night",
-        "long exposure"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "file": "guides/lightning.json"
-    },
-    {
-      "id": "lunar-eclipse",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Lunar eclipse",
-      "summary": "From bright Moon to red 'blood Moon' and back.",
-      "tags": [
-        "eclipse",
-        "moon",
-        "night"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "file": "guides/lunar-eclipse.json"
-    },
-    {
-      "id": "meteor-showers",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Meteor showers",
-      "summary": "Hours of frames to catch a few bright streaks.",
-      "tags": [
-        "astro",
-        "stars",
-        "interval",
-        "night"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to M**. Aperture wide open, **ISO 3200**, shutter from the star calculator (about 17 s at 18 mm).",
-            "Switch to **MF** and focus on a bright star in magnified live view.",
-            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
-            "**Shooting 5 › Long exp. noise reduction: Disable**.",
-            "**Shooting 7 › Interval timer › Enable**. Interval 2 s longer than the shutter, shots **00**.",
-            "Press the shutter fully to start. A full battery lasts a few hours in the cold at most: have the spare ready."
-          ]
-        }
-      },
-      "file": "guides/meteor-showers.json"
-    },
-    {
-      "id": "moon",
-      "type": "guide",
-      "mode": "photo",
-      "title": "The Moon",
-      "summary": "A sharp, detailed Moon with a long lens.",
-      "tags": [
-        "moon",
-        "telephoto",
-        "night"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to M**. f/8, **ISO 100**, 1/125 s.",
-            "**MENU › Shooting 3 › White balance: Daylight**.",
-            "Switch to **MF**. Magnify the live view on the Moon's edge and focus on the craters.",
-            "**MENU › Shooting 7 › Drive mode › Self-timer: 2 sec** (or the BR-E1 remote).",
-            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
-            "Take a test shot and check the histogram. Turn on **Playback 5 › Highlight alert** to see blown highlights blink.",
-            "Switch to **continuous shooting** in the drive mode menu and take a burst. Keep the sharpest frame."
-          ],
-          "note": "With a 300 mm lens the R10's crop makes it frame like 480 mm, which fills about a third of the frame height with the Moon."
-        }
-      },
-      "file": "guides/moon.json"
-    },
-    {
-      "id": "solar-eclipse",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Solar eclipse",
-      "summary": "Shoot the sun safely through a solar filter.",
-      "tags": [
-        "eclipse",
-        "sun",
-        "filter"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "file": "guides/solar-eclipse.json"
-    },
-    {
-      "id": "star-trails",
-      "type": "guide",
-      "mode": "photo",
-      "title": "Star trails",
-      "summary": "Stack many 30 s frames into circling stars.",
-      "tags": [
-        "astro",
-        "stars",
-        "interval",
-        "stacking"
-      ],
-      "appliesTo": [
-        "camera"
-      ],
-      "devices": {
-        "canon-r10": {
-          "status": "ok",
-          "steps": [
-            "**Mode dial to M**. f/2.8, **ISO 800**, **30 s**.",
-            "Switch to **MF** and focus on a bright star in magnified live view.",
-            "Lens IS off on the tripod: the R10 has no in-body stabiliser, so the lens switch is the one that matters.",
-            "**Shooting 5 › Long exp. noise reduction: Disable** so there's no gap between frames.",
-            "**Shooting 7 › Interval timer › Enable**. Interval **00:00:32**, shots **00** (runs until you stop it).",
-            "Press the shutter fully to start. Press it again to stop.",
-            "Copy the frames to a computer and stack them in StarStaX (free) or Sequator."
-          ],
-          "note": "A shot is skipped if the shutter is longer than the interval, so keep the interval a couple of seconds over 30 s."
-        }
-      },
-      "file": "guides/star-trails.json"
     },
     {
       "id": "backlit",

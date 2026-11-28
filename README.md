@@ -37,6 +37,8 @@ Check for updates** does the same on demand.
 - **Basics** (`content/basics/`): one-screen reference tables and scales.
 - **How-to guides** (`content/guides/`): settings card, kit, general steps, tips,
   plus optional device-specific steps under `devices`.
+  Each guide has a `topic` (one of `topics` in `content/index.json`) and is
+  shown under that heading on the Guides screen.
 - **Lessons** (`content/lessons/`): a condensed card with expandable "more" sections.
 - **Manuals** (`content/manuals/`): per-device quick reference.
 

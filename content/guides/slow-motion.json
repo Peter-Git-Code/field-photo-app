@@ -2,6 +2,7 @@
   "id": "slow-motion",
   "type": "guide",
   "mode": "video",
+  "topic": "action",
   "title": "Slow motion",
   "summary": "Shoot at a high frame rate, play it back slowed down.",
   "tags": [

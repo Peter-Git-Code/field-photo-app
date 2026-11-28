@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.11",
+  "version": "2026-11-28.12",
   "devices": [
     {
       "id": "canon-r10",
@@ -85,6 +85,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "new",
+      "text": "Notes: tap ✎ Note on any screen to jot down a fix, change or idea; About collects them to copy and hand over"
+    },
     {
       "date": "2026-11-28",
       "kind": "new",

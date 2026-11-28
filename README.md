@@ -95,6 +95,13 @@ and keep proof of permission for anything that isn't openly licensed.
 Media isn't part of the offline download. Each file is saved on the phone the
 first time it's shown with signal; until then the page shows a placeholder.
 
+### Notes
+
+The ✎ Note button on every screen saves a quick fix, change or idea with the
+page and section it was written on. Notes stay on that phone (localStorage,
+key `fp:notes`). **About › My notes** lists them, with **Copy all** to paste
+the whole list into a Claude session, and **Delete all** once they're handed over.
+
 ### Tools and basics
 
 Every tool lists the basics behind it under "Learn the basics" (`TOOL_BASICS` in

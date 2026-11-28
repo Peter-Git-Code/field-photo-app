@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "12"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "13"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -191,6 +191,151 @@
       store("lastSync", new Date().toISOString());
       return done;
     });
+  }
+
+  // ---------- notes ----------
+  // Quick notes on fixes, changes and ideas, taken on any screen. Each note keeps
+  // the page and section it was written on. Saved on this phone only; About
+  // collects them so they can be copied and handed over in one go.
+  var NOTE_KINDS = { fix: "Fix", change: "Change", idea: "Idea" };
+  function notes() { return store("notes") || []; }
+  function saveNotes(list) { store("notes", list); updateNoteCount(); }
+
+  // A readable name for the current screen.
+  function pageName() {
+    var parts = (location.hash.replace(/^#\/?/, "") || "home").split("/");
+    var page = parts[0], arg = decodeURIComponent(parts[1] || "");
+    if (page === "item") {
+      var m = findMeta(arg);
+      return m ? (TYPES[m.type] || "Guides") + " › " + m.title : "Guide " + arg;
+    }
+    if (page === "manual") { var d = device(arg); return "Manuals › " + (d ? d.name : arg); }
+    if (page === "manuals") return "Manuals";
+    if (page === "tools") {
+      var t = view.querySelector(".scrollrow .on");
+      return "Tools › " + (t ? t.textContent : arg || "Exposure");
+    }
+    if (page === "about" || page === "updates") return "About";
+    if (page === "kit") return "My kit";
+    return "Guides (home)";
+  }
+
+  // Headings on the current screen, and the one nearest the middle of the view.
+  function pageSections() {
+    var seen = {}, list = [], here = "";
+    view.querySelectorAll("h2, h3, .lab, summary, .fig figcaption").forEach(function (h) {
+      var text = h.textContent.replace(/\s+/g, " ").trim();
+      if (!text || text.length > 80 || seen[text]) return;
+      seen[text] = true; list.push(text);
+      if (h.getBoundingClientRect().top < window.innerHeight * 0.45) here = text;
+    });
+    return { list: list, here: here };
+  }
+
+  function openNote() {
+    if (document.querySelector(".notesheet")) return;
+    var where = pageName(), secs = pageSections(), kind = "fix";
+    var sec = el("select", { id: "nsec" }, el("option", { value: "", text: "Whole page" }),
+      secs.list.map(function (t) { return el("option", { value: t, selected: t === secs.here, text: t }); }));
+    var text = el("textarea", { id: "ntext", rows: "4", placeholder: "What should be fixed, changed or added?" });
+    var kinds = el("div", { class: "chips", role: "radiogroup", "aria-label": "Kind of note" }, Object.keys(NOTE_KINDS).map(function (k) {
+      return el("button", { type: "button", class: "chip" + (k === kind ? " on" : ""), role: "radio", "aria-checked": String(k === kind), "data-k": k,
+        text: NOTE_KINDS[k], onclick: function () {
+          kind = k;
+          kinds.querySelectorAll("button").forEach(function (b) {
+            var on = b.getAttribute("data-k") === k; b.classList.toggle("on", on); b.setAttribute("aria-checked", String(on));
+          });
+        } });
+    }));
+    function close() { sheet.remove(); shade.remove(); window.removeEventListener("hashchange", close); document.removeEventListener("keydown", esc); }
+    function esc(e) { if (e.key === "Escape") close(); }
+    function save() {
+      var t = text.value.trim();
+      if (!t) { text.focus(); return; }
+      var list = notes();
+      list.push({ id: Date.now().toString(36), at: new Date().toISOString(), kind: kind, page: where,
+        section: sec.value, route: location.hash || "#/", text: t });
+      saveNotes(list);
+      close();
+      toast("Note saved · " + list.length + " in About");
+      if (/^#\/about/.test(location.hash)) route();
+    }
+    var shade = el("div", { class: "noteshade", onclick: close });
+    var sheet = el("div", { class: "notesheet card", role: "dialog", "aria-modal": "true", "aria-label": "Add a note" },
+      el("div", { class: "bar", style: "min-height:0" }, el("b", { text: "Note" }),
+        el("a", { href: "#/about", class: "muted", text: notes().length ? "All notes (" + notes().length + ")" : "" })),
+      el("div", { class: "muted", style: "margin:2px 0 8px" }, "On ", el("b", { text: where })),
+      field("nsec", "Section", sec),
+      el("div", { style: "margin-top:8px" }, kinds),
+      el("div", { style: "margin-top:8px" }, text),
+      el("div", { class: "grid2", style: "margin-top:10px" },
+        el("button", { type: "button", class: "btn ghost", style: "min-width:0;width:100%", text: "Cancel", onclick: close }),
+        el("button", { type: "button", class: "btn", style: "min-width:0;width:100%", text: "Save note", onclick: save })));
+    document.body.appendChild(shade);
+    document.body.appendChild(sheet);
+    window.addEventListener("hashchange", close);
+    document.addEventListener("keydown", esc);
+    text.focus();
+  }
+
+  var noteBtn = el("button", { type: "button", class: "notebtn", "aria-label": "Add a note", onclick: openNote },
+    el("span", { "aria-hidden": "true", text: "✎" }), el("span", { text: "Note" }), el("b", { class: "notecount", hidden: true }));
+  document.body.appendChild(noteBtn);
+  function updateNoteCount() {
+    var n = notes().length, c = noteBtn.querySelector(".notecount");
+    c.hidden = !n; c.textContent = String(n);
+  }
+  updateNoteCount();
+
+  // Plain text for handing the notes over.
+  function notesText(list) {
+    var dev = activeDevice();
+    var head = "Field Photo notes (" + list.length + ") · app " + APP_VERSION + " · library " + ((state.index && state.index.version) || "–") +
+      (dev ? " · device " + dev.name : "");
+    return head + "\n\n" + list.map(function (n, i) {
+      return (i + 1) + ". [" + (NOTE_KINDS[n.kind] || "Note") + "] " + n.page + (n.section ? " › " + n.section : "") +
+        "  (" + n.route + ", " + new Date(n.at).toLocaleString() + ")\n   " + n.text.replace(/\n/g, "\n   ");
+    }).join("\n\n") + "\n";
+  }
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+    return new Promise(function (ok, fail) {
+      var ta = el("textarea", { style: "position:fixed;opacity:0" }); ta.value = t; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy") ? ok() : fail(new Error("copy")); } catch (e) { fail(e); } ta.remove();
+    });
+  }
+
+  // The "My notes" block on the About page.
+  function notesSection() {
+    var list = notes();
+    var out = [el("div", { class: "lab", id: "notes", text: "My notes" + (list.length ? " (" + list.length + ")" : "") })];
+    if (!list.length) {
+      out.push(el("p", { class: "muted", text: "Tap ✎ Note on any screen to jot down a fix, change or idea. They collect here, ready to copy and hand over." }));
+      return out;
+    }
+    out.push(list.map(function (n) {
+      return el("div", { class: "row", style: "align-items:flex-start" },
+        el("span", null,
+          el("span", { class: "pill " + (n.kind === "fix" ? "warn" : n.kind === "idea" ? "ok" : "no"), text: NOTE_KINDS[n.kind] || "Note" }),
+          el("span", { class: "muted", text: " " + n.page + (n.section ? " › " + n.section : "") }),
+          el("span", { style: "display:block;white-space:pre-wrap;margin-top:3px", text: n.text })),
+        el("button", { type: "button", class: "chip rowbtn", "aria-label": "Delete this note", text: "✕", onclick: function () {
+          saveNotes(notes().filter(function (x) { return x.id !== n.id; })); route();
+        } }));
+    }));
+    var actions = el("div", { class: "chips", style: "margin-top:10px" },
+      el("button", { type: "button", class: "btn", style: "min-width:0", text: "Copy all", onclick: function () {
+        copyText(notesText(notes())).then(function () { toast("Notes copied. Paste them to Claude."); }, function () { toast("Couldn't copy. Try Share."); });
+      } }),
+      navigator.share ? el("button", { type: "button", class: "btn ghost", style: "min-width:0", text: "Share", onclick: function () {
+        navigator.share({ title: "Field Photo notes", text: notesText(notes()) }).catch(function () {});
+      } }) : null,
+      el("button", { type: "button", class: "btn ghost", style: "min-width:0", text: "Delete all", onclick: function () {
+        if (confirm("Delete all " + notes().length + " notes? Copy them first if you haven't handed them over.")) { saveNotes([]); route(); }
+      } }));
+    out.push(actions);
+    out.push(el("p", { class: "muted", text: "Notes are saved on this phone only. Copy them before clearing the browser's data." }));
+    return out;
   }
 
   // ---------- router ----------
@@ -986,6 +1131,7 @@
         el("div", { class: "muted", text: "Saved on this phone" }),
         el("div", { style: "font-size:20px;font-weight:800", text: count + " guides, basics and lessons · " + (state.index.manuals || []).length + " manuals" }),
         status, btn),
+      notesSection(),
       el("div", { class: "lab", text: "What's new" }),
       (state.index.changes || []).map(function (c) {
         var k = kinds[c.kind] || kinds.updated;

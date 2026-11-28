@@ -28,7 +28,7 @@ body {
   background: var(--bg); color: var(--fg);
   font: 16px/1.45 var(--font);
   -webkit-text-size-adjust: 100%;
-  padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px)); /* nav + note button */
 }
 main {
   max-width: 620px; margin: 0 auto; outline: none;
@@ -185,7 +185,7 @@ details > div { padding-bottom: 10px; }
 .nav a.on { color: var(--acc); font-weight: 800; box-shadow: inset 0 3px 0 var(--acc); }
 
 #toast {
-  position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(112px + env(safe-area-inset-bottom, 0px));
   background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 99px; font-weight: 700; font-size: 14px; z-index: 6;
   max-width: calc(100% - 32px);
 }
@@ -228,3 +228,19 @@ details.group > div { padding-bottom: 4px; }
 .devopt .st { display: inline-block; margin-top: 3px; font-size: 11.5px; font-weight: 800; padding: 1px 7px; border-radius: 99px; }
 .devopt .st.unavailable { background: var(--badbg); color: var(--bad); }
 .devopt .st.unchecked { background: var(--warnbg); color: var(--warn); }
+
+/* Notes: floating button on every screen, and the note panel */
+.notebtn {
+  position: fixed; right: max(12px, env(safe-area-inset-right, 0px)); bottom: calc(60px + env(safe-area-inset-bottom, 0px)); z-index: 5;
+  display: flex; align-items: center; gap: 5px; border: 2px solid var(--acc); background: var(--bg); color: var(--acc);
+  border-radius: 99px; padding: 6px 12px; font-weight: 800; font-size: 14px; cursor: pointer; box-shadow: 0 2px 8px rgb(0 0 0 / .18);
+}
+.notebtn .notecount { background: var(--acc); color: var(--accfg); border-radius: 99px; padding: 0 7px; font-size: 12px; }
+.noteshade { position: fixed; inset: 0; z-index: 7; background: rgb(0 0 0 / .4); }
+.notesheet {
+  position: fixed; z-index: 8; left: 50%; transform: translateX(-50%); top: calc(10px + env(safe-area-inset-top, 0px));
+  width: min(600px, calc(100% - 20px)); max-height: calc(100% - 20px); overflow: auto; border: 2px solid var(--acc);
+}
+.notesheet textarea {
+  width: 100%; padding: 8px; border-radius: 8px; border: 2px solid var(--line); background: var(--bg); font: 16px/1.4 var(--font); color: var(--fg); resize: vertical;
+}

@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.1",
+  "version": "2026-11-28.2",
   "devices": [
     {
       "id": "canon-r10",
@@ -63,7 +63,7 @@
     {
       "date": "2026-11-28",
       "kind": "updated",
-      "text": "Osmo Action 5 Pro manual rewritten for the field; panorama now covers action cams and drones"
+      "text": "Osmo Action 5 Pro manual rewritten for the field, plus screen lock, timecode and lens care; panorama now covers action cams and drones"
     },
     {
       "date": "2026-11-27",
@@ -621,6 +621,7 @@
             "**Before:** battery and compartment dry and clean, battery door fully closed with **no red marks showing**. USB-C cover and lens cover on tight, seals clean.",
             "Case? Leave it under water for about 5 minutes first to check it, add an anti-fog insert, and make sure the latch is closed.",
             "Set the mode and settings on land. **The touchscreens don't work fully submerged.** Start and stop with the **Shutter/Record** button.",
+            "Swipe down and turn on **Screen Lock** so splashes and wet fingers don't change settings.",
             "Without the case, the Shutter/Record button stops working below 10 m, so start recording before you go deeper.",
             "Don't jump in at speed holding it; the impact can force water in. No hot springs or chemicals.",
             "**After:** rinse in tap water (case too, after the sea) and let it air-dry. **No hair dryer**: it ruptures the waterproof membranes. Open the battery door facing down and wipe the red seal."

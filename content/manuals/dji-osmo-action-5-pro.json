@@ -169,7 +169,10 @@
           "items": [
             "Control menu › **Custom Modes**: save a setup (e.g. bike, snorkel, timelapse) and recall it in one tap.",
             "Control menu › **Quick Switch**: choose which modes the button cycles through and turn on **Voice Prompt**, so it announces the mode when it's on a helmet.",
-            "Control menu › **Orientation Lock** stops the picture flipping when mounted."
+            "Control menu › **Orientation Lock** stops the picture flipping when mounted.",
+            "Control menu › **Screen Lock** stops wet hands or a chest mount from changing settings.",
+            "Control menu › **Full Front Screen** shows the whole picture on the front screen for framing yourself when vlogging.",
+            "Control menu › **Brightness** to see the screen in bright sun."
           ]
         }
       ]
@@ -219,6 +222,34 @@
         {
           "t": "p",
           "text": "Control menu › Settings › **Depth & Altitude**: choose Diving or Hiking & Parachuting. DJI Mimo's dashboard can overlay the data on your video."
+        }
+      ]
+    },
+    {
+      "title": "Timecode for multi-camera shoots",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Control menu › Settings › **Timecode**: reset it, or sync to the system time.",
+            "A timecode sync box can plug into the USB-C port to match other cameras.",
+            "**Timecode Display** shows it on screen."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sand, dust and the lens",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Sand in the mic holes or vents: rinse with fresh water while all covers are closed and sealed.",
+            "Clean the lens cover with water, a lens pen, a blower or a lens cloth. No alcohol or cleaning fluids.",
+            "Don't take the lens cover off often: dust gets inside it.",
+            "Keep the quick-release slots free of sand before clipping into a mount.",
+            "Swapping the lens cover? Only when the camera is dry, or the lens fogs."
+          ]
         }
       ]
     },

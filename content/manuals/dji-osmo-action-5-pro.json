@@ -1,28 +1,20 @@
 {
   "device": "dji-osmo-action-5-pro",
   "status": "ready",
-  "summary": "Buttons, stabilisation, colour, slow motion, underwater",
+  "summary": "Controls, modes, stabilisation, colour, underwater",
   "specs": [
     [
       "Waterproof",
       "20 m bare; 60 m in the waterproof case"
     ],
     [
-      "Storage",
-      "microSD or internal"
-    ],
-    [
       "App",
       "DJI Mimo"
-    ],
-    [
-      "Full specs",
-      "dji.com/osmo-action-5-pro/specs"
     ]
   ],
   "sections": [
     {
-      "title": "Buttons and screen",
+      "title": "Buttons and swipes",
       "blocks": [
         {
           "t": "table",
@@ -37,7 +29,7 @@
             ],
             [
               "Shutter: hold while off",
-              "SnapShot: powers on and records instantly"
+              "SnapShot: powers on and records at once"
             ],
             [
               "Quick Switch: hold",
@@ -45,7 +37,7 @@
             ],
             [
               "Quick Switch: press",
-              "Change mode; while recording, mark a highlight"
+              "Next mode; while recording, mark a highlight"
             ],
             [
               "Swipe down",
@@ -57,14 +49,50 @@
             ],
             [
               "Swipe up",
-              "Resolution, frame rate, ratio, timer"
+              "Resolution, frame rate, ratio, timer, burst rate"
+            ],
+            [
+              "Tap image icon › PRO",
+              "Exposure, colour, audio settings"
             ]
           ]
         }
       ]
     },
     {
+      "title": "Photo and burst",
+      "usedIn": [
+        "burst-action"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "text": "In Photo mode swipe up to set the aspect ratio and **burst rate**. Off takes a single photo. Burst rates depend on the ratio."
+        }
+      ]
+    },
+    {
+      "title": "Pre-Rec, loop and highlights",
+      "usedIn": [
+        "catch-the-moment"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "In Video or SuperNight mode, tap the **upper-left corner**.",
+            "**Pre-Rec** keeps the seconds before you press record.",
+            "**Loop Recording** keeps overwriting the oldest footage, dashcam style.",
+            "Press **Quick Switch** while recording, or tap the icon in playback, to mark a highlight."
+          ]
+        }
+      ]
+    },
+    {
       "title": "Stabilisation (EIS)",
+      "usedIn": [
+        "steady-action"
+      ],
       "blocks": [
         {
           "t": "table",
@@ -75,7 +103,7 @@
           "rows": [
             [
               "Off",
-              "Widest view; needed for gyro data"
+              "Widest view; needed for gyro data (with Wide view)"
             ],
             [
               "RockSteady",
@@ -97,39 +125,22 @@
         },
         {
           "t": "p",
-          "text": "Set it from the top-right of the screen in Video or SuperNight mode."
+          "text": "Set it from the **upper-right corner** in Video or SuperNight mode."
         }
       ]
     },
     {
-      "title": "Colour and picture",
+      "title": "Colour",
+      "usedIn": [
+        "flat-colour"
+      ],
       "blocks": [
         {
           "t": "list",
           "items": [
-            "Tap PRO for pro settings.",
-            "Colour: Normal 8-bit, Normal 10-bit, HLG 10-bit, D-Log M 10-bit.",
-            "**D-Log M** keeps the most dynamic range for grading. Turn on Color Recovery to preview normal colours.",
-            "Lock exposure and white balance for video, same as on any camera."
-          ]
-        },
-        {
-          "t": "link",
-          "id": "shutter-180",
-          "text": "Shutter speed for natural motion →"
-        }
-      ]
-    },
-    {
-      "title": "Recording helpers",
-      "blocks": [
-        {
-          "t": "list",
-          "items": [
-            "**Pre-Rec:** keeps the seconds before you press record.",
-            "**Loop recording:** overwrites old footage, like a dashcam.",
-            "**Custom modes** (control menu) save setups.",
-            "**Voice control:** Start Recording, Stop Recording, Take Photo, Shut Down."
+            "Image icon › **PRO** › Colors: Normal 8bit, Normal 10bit, HLG 10bit, D-Log M 10bit.",
+            "**D-Log M** gives the most grading room; turn on **Color Recovery** to preview normal colours.",
+            "Image Adjustment sets texture (sharpness) and noise reduction."
           ]
         }
       ]
@@ -143,25 +154,32 @@
         {
           "t": "list",
           "items": [
-            "Record 4K, 2.7K or 1080p 16:9 at 100 fps or more.",
-            "In playback, stop at the moment and tap the slow-motion icon.",
-            "Creates a 1080p clip up to 960 fps with 4× frame interpolation.",
-            "Up to 6 per video; not in the first 1.5 s or last 2 s."
+            "Record 4K, 2.7K or 1080p 16:9 at **100 fps or more**.",
+            "In playback, stop at the moment and tap the slow-motion icon. You get a 1080p clip up to 960 fps (4× interpolation).",
+            "Up to 6 per video. Not in the first 1.5 s or last 2 s."
           ]
         }
       ]
     },
     {
-      "title": "Underwater",
+      "title": "Custom modes and Quick Switch",
       "blocks": [
         {
           "t": "list",
           "items": [
-            "Battery door closed with **no red marks showing**. USB-C cover and lens cover on tight; seals clean.",
-            "Not waterproof with the lens hood fitted.",
-            "Don't jump into water at speed with it; the impact can force water in.",
-            "Afterwards rinse in tap water and let it air-dry. No hair dryer."
+            "Control menu › **Custom Modes**: save a setup (e.g. bike, snorkel, timelapse) and recall it in one tap.",
+            "Control menu › **Quick Switch**: choose which modes the button cycles through and turn on **Voice Prompt**, so it announces the mode when it's on a helmet.",
+            "Control menu › **Orientation Lock** stops the picture flipping when mounted."
           ]
+        }
+      ]
+    },
+    {
+      "title": "Voice control",
+      "blocks": [
+        {
+          "t": "p",
+          "text": "Control menu › Settings › **Voice Control**. English commands: “Start Recording”, “Stop Recording”, “Take Photo”, “Shut Down”."
         }
       ]
     },
@@ -171,9 +189,47 @@
         {
           "t": "list",
           "items": [
-            "Pairs with up to two DJI wireless mics over Bluetooth.",
+            "Up to two DJI wireless mics over Bluetooth (control menu › Settings › Wireless Microphone). The mic transmitter can also start recording.",
             "**Built-in Mic Audio Backup** saves a separate .wav as a safety copy.",
-            "Wind noise reduction only works on the built-in mic."
+            "**Wind Noise Reduction** (in PRO audio) works on the built-in mic only."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Underwater",
+      "usedIn": [
+        "underwater-video"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "20 m bare, 60 m in the case. Not waterproof with the lens hood.",
+            "Battery door closed with **no red marks**; covers tight; seals clean.",
+            "Touchscreens don't work fully submerged; use the buttons. Without the case the Shutter/Record button stops working below 10 m.",
+            "Rinse in tap water and air-dry. No hair dryer."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Depth and altitude data",
+      "blocks": [
+        {
+          "t": "p",
+          "text": "Control menu › Settings › **Depth & Altitude**: choose Diving or Hiking & Parachuting. DJI Mimo's dashboard can overlay the data on your video."
+        }
+      ]
+    },
+    {
+      "title": "Get clips onto your phone",
+      "blocks": [
+        {
+          "t": "list",
+          "items": [
+            "Connect in DJI Mimo › Playback › download.",
+            "Or USB-C to USB-C cable straight to the phone (USB mode; control menu › Settings › USB Mode if it isn't detected)."
           ]
         }
       ]
@@ -181,6 +237,7 @@
   ],
   "source": {
     "title": "Osmo Action 5 Pro User Manual v1.0",
-    "url": "https://www.dji.com/osmo-action-5-pro/downloads"
+    "url": "https://www.dji.com/osmo-action-5-pro/downloads",
+    "note": "Rewritten in our own words."
   }
 }

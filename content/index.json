@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27.4",
+  "version": "2026-11-28.1",
   "devices": [
     {
       "id": "canon-r10",
@@ -51,10 +51,20 @@
       "device": "dji-osmo-action-5-pro",
       "status": "ready",
       "file": "manuals/dji-osmo-action-5-pro.json",
-      "summary": "Buttons, stabilisation, colour, slow motion, underwater"
+      "summary": "Controls, modes, stabilisation, colour, underwater"
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "new",
+      "text": "Guides: burst, catch the moment, steady action, underwater, flat colour"
+    },
+    {
+      "date": "2026-11-28",
+      "kind": "updated",
+      "text": "Osmo Action 5 Pro manual rewritten for the field; panorama now covers action cams and drones"
+    },
     {
       "date": "2026-11-27",
       "kind": "updated",
@@ -206,7 +216,9 @@
         "landscape"
       ],
       "appliesTo": [
-        "camera"
+        "camera",
+        "action",
+        "drone"
       ],
       "devices": {
         "canon-r10": {
@@ -219,6 +231,14 @@
             "Turn the camera to portrait, shoot left to right with a third to a half overlap, and stitch on a computer."
           ],
           "note": "SCN Panoramic Shot saves a JPEG only. Use the manual method if you want RAW."
+        },
+        "dji-osmo-action-5-pro": {
+          "status": "unchecked",
+          "note": "The Osmo Action 5 Pro manual doesn't list a panorama mode, so check the mode list (swipe left or right). Otherwise use these steps: lock exposure in PRO, turn the camera on the spot rather than swinging your arm, and stitch on a computer. Its wide lens bends straight lines near the edges."
+        },
+        "dji-lito-x1": {
+          "status": "unchecked",
+          "note": "The LITO X1 manual doesn't list a panorama mode, so check the Shooting Modes menu in DJI Fly. Otherwise hover, set exposure in Pro mode and rotate the drone between shots with plenty of overlap."
         }
       },
       "file": "guides/panorama.json"
@@ -313,7 +333,7 @@
             "Shoot. The **green confirmation lamp** lights for about 3 s if there was enough light. No green: open the aperture, raise ISO or bounce off something closer.",
             "Brighter or darker: set flash exposure compensation on the R10 in **Shooting 3 › Flash control** (±2 stops)."
           ],
-          "note": "Alkaline AAs give about 200–1400 flashes and up to 7.5 s recycling. NiMH recharge about twice as fast but give 70–80% of the flashes."
+          "note": "Recycling takes up to 7.5 s, so leave a moment between shots."
         }
       },
       "file": "guides/bounce-flash.json"
@@ -420,6 +440,195 @@
         }
       },
       "file": "guides/slow-motion.json"
+    },
+    {
+      "id": "burst-action",
+      "type": "guide",
+      "mode": "photo",
+      "title": "Burst for fast action",
+      "summary": "Fire a fast sequence and keep the sharpest frame.",
+      "tags": [
+        "burst",
+        "continuous",
+        "sport",
+        "wildlife",
+        "pre-shooting"
+      ],
+      "appliesTo": [
+        "camera",
+        "action"
+      ],
+      "devices": {
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "**Mode dial to Tv**, shutter **1/1000 s** or faster, ISO Auto.",
+            "**AF1 › AF operation: Servo AF** so focus follows the subject.",
+            "**Shooting 7 › Drive mode › High-speed continuous +** (or press the drive button). That's up to 15 fps, or 23 fps with the electronic shutter.",
+            "Half-press to track, then hold the shutter down through the action.",
+            "**Can't time it?** Use **Shooting 6 › RAW burst mode › Enable** with **Pre-shooting: Enable**. Half-press while you wait; when you press fully, it also keeps about 0.5 s from before the press. Frames are 13.6 MP and saved as one roll you extract from."
+          ],
+          "note": "15 fps needs 1/1000 s or faster and a well-charged battery. RAW burst mode resets to Disable when you turn the camera off."
+        },
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe left or right to **Photo** mode.",
+            "Swipe up from the bottom of the screen and set the aspect ratio and **burst rate** (frames per second). Off means a single photo.",
+            "Point and press the **Shutter/Record** button. The camera fires the burst.",
+            "Review in playback and keep the best frame."
+          ],
+          "note": "Available burst rates depend on the aspect ratio you pick."
+        }
+      },
+      "file": "guides/burst-action.json"
+    },
+    {
+      "id": "catch-the-moment",
+      "type": "guide",
+      "mode": "video",
+      "title": "Catch the moment",
+      "summary": "Save the seconds before you press record.",
+      "tags": [
+        "pre-rec",
+        "loop recording",
+        "highlight",
+        "fishing",
+        "wildlife"
+      ],
+      "appliesTo": [
+        "action",
+        "camera"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe to **Video** (or SuperNight) mode.",
+            "Tap the **upper-left corner** and turn on **Pre-Rec**. Set how many seconds to keep.",
+            "Wait. Nothing is saved yet, so the card doesn't fill up.",
+            "When the moment comes, press **Shutter/Record**. The clip starts from the pre-recorded seconds and carries on.",
+            "Press the **Quick Switch** button while recording to mark a highlight.",
+            "Long wait, like a drive or a day on the water? Use **Loop Recording** instead (same corner). It keeps overwriting the oldest footage."
+          ],
+          "note": "Highlights you mark show up in playback and in DJI Mimo, so you can jump straight to them."
+        },
+        "canon-r10": {
+          "status": "unchecked",
+          "note": "The R10 manual has no pre-record for video. For stills, RAW burst mode with Pre-shooting keeps about 0.5 s from before you press: see Burst for fast action.",
+          "link": "burst-action"
+        }
+      },
+      "file": "guides/catch-the-moment.json"
+    },
+    {
+      "id": "flat-colour",
+      "type": "guide",
+      "mode": "video",
+      "title": "Flat colour for grading",
+      "summary": "Record a flat, low-contrast image to colour later.",
+      "tags": [
+        "log",
+        "d-log m",
+        "grading",
+        "picture style",
+        "hlg"
+      ],
+      "appliesTo": [
+        "camera",
+        "action"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Tap the image-settings icon on the camera view, then **PRO**.",
+            "**Colors: D-Log M 10bit** for the most grading room. **HLG 10bit** if you'll watch on an HDR TV without editing.",
+            "Turn on **Color Recovery** to see normal colours on screen while it records flat.",
+            "Lock white balance in PRO, then record.",
+            "Grade the clips later. DJI's website offers a D-Log M conversion LUT (look-up table) to start from."
+          ],
+          "note": "Normal 10bit is a middle ground: normal colours with smoother gradients."
+        },
+        "canon-r10": {
+          "status": "ok",
+          "steps": [
+            "The R10 has no log profile. The flattest options are Picture Styles.",
+            "Mode dial to movie, then **MENU › Shooting 3 › Picture Style › Neutral** (or **Faithful**). Both are low-contrast and meant for editing later.",
+            "Lock white balance in **Shooting 3 › White balance**.",
+            "Turn on **Shooting 6 › Zebra settings** to check highlights.",
+            "Add contrast and saturation back in your editor."
+          ],
+          "note": "For stills, shoot RAW instead: it holds far more than any Picture Style."
+        }
+      },
+      "file": "guides/flat-colour.json"
+    },
+    {
+      "id": "steady-action",
+      "type": "guide",
+      "mode": "video",
+      "title": "Steady action footage",
+      "summary": "Pick the right stabilisation and mount for bikes, helmets and handheld.",
+      "tags": [
+        "eis",
+        "rocksteady",
+        "horizon",
+        "mount",
+        "helmet",
+        "bike"
+      ],
+      "appliesTo": [
+        "action"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe to **Video** mode and tap the **upper-right corner** for the EIS mode.",
+            "**RockSteady** keeps some natural movement. **RockSteady+** is stronger and crops the edges slightly.",
+            "**HorizonBalancing** levels tilts up to ±45°. **HorizonSteady** keeps the horizon level through full 360° rolls, however the camera is mounted.",
+            "Stabilising later in software (Gyroflow etc.)? Set EIS **Off** and view to **Wide** to record gyro data.",
+            "Swipe down for the control menu and use **Orientation Lock** if the image flips.",
+            "Clip in with the quick-release mount and tighten the locking screws. Stick-on bases need 30 minutes before use, and only on clean curved surfaces."
+          ],
+          "note": "Mounts that fit: chest strap, helmet chin, handlebar, suction cup, 1.5 m extension rod, magnetic ball joint."
+        }
+      },
+      "file": "guides/steady-action.json"
+    },
+    {
+      "id": "underwater-video",
+      "type": "guide",
+      "mode": "video",
+      "title": "Underwater video",
+      "summary": "Seal checks before, controls during, rinse after.",
+      "tags": [
+        "underwater",
+        "snorkel",
+        "dive",
+        "waterproof",
+        "pool"
+      ],
+      "appliesTo": [
+        "action"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "**Depth:** 20 m on its own, 60 m in the Osmo Action 60 m waterproof case. Not waterproof with the lens hood fitted.",
+            "**Before:** battery and compartment dry and clean, battery door fully closed with **no red marks showing**. USB-C cover and lens cover on tight, seals clean.",
+            "Case? Leave it under water for about 5 minutes first to check it, add an anti-fog insert, and make sure the latch is closed.",
+            "Set the mode and settings on land. **The touchscreens don't work fully submerged.** Start and stop with the **Shutter/Record** button.",
+            "Without the case, the Shutter/Record button stops working below 10 m, so start recording before you go deeper.",
+            "Don't jump in at speed holding it; the impact can force water in. No hot springs or chemicals.",
+            "**After:** rinse in tap water (case too, after the sea) and let it air-dry. **No hair dryer**: it ruptures the waterproof membranes. Open the battery door facing down and wipe the red seal."
+          ],
+          "note": "To log depth, turn on control menu › Settings › Depth & Altitude › Diving. DJI Mimo can show it on the video."
+        }
+      },
+      "file": "guides/underwater-video.json"
     },
     {
       "id": "backlit",

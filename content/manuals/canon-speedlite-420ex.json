@@ -12,24 +12,12 @@
       "24–105 mm, automatic"
     ],
     [
-      "Power",
-      "4 × AA (alkaline, NiMH or lithium)"
-    ],
-    [
-      "Flashes",
-      "About 200–1400 on alkaline"
-    ],
-    [
       "Recycle",
       "0.1–7.5 s on alkaline"
     ],
     [
       "Sleep",
       "Off after 90 s idle; tap test button to wake"
-    ],
-    [
-      "Weight",
-      "300 g without batteries"
     ]
   ],
   "sections": [
@@ -166,20 +154,6 @@
         {
           "t": "p",
           "text": "Set the wireless selector to **SLAVE** to use it off camera. It can't trigger other flashes itself: it needs an E-TTL wireless master on the camera, such as an ST-E2 or a 550EX. Match the channel to the master. Coverage locks at 24 mm as a slave."
-        }
-      ]
-    },
-    {
-      "title": "Batteries",
-      "blocks": [
-        {
-          "t": "list",
-          "items": [
-            "Use 4 new batteries of the same type and change all 4 together.",
-            "NiMH: about 70–80% of the flashes, but recharges about twice as fast.",
-            "In the cold, keep a spare set warm in a pocket.",
-            "Take the batteries out for long storage."
-          ]
         }
       ]
     }

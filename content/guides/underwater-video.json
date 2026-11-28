@@ -1,0 +1,71 @@
+{
+  "id": "underwater-video",
+  "type": "guide",
+  "mode": "video",
+  "title": "Underwater video",
+  "summary": "Seal checks before, controls during, rinse after.",
+  "tags": [
+    "underwater",
+    "snorkel",
+    "dive",
+    "waterproof",
+    "pool"
+  ],
+  "appliesTo": [
+    "action"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Depth",
+          "Check limit"
+        ],
+        [
+          "Start",
+          "Before you go in"
+        ],
+        [
+          "Controls",
+          "Buttons only"
+        ],
+        [
+          "Light",
+          "Shallow, sunny"
+        ],
+        [
+          "Mode",
+          "Video"
+        ],
+        [
+          "After",
+          "Rinse, air-dry"
+        ]
+      ],
+      "note": "Touchscreens don't work fully under water. Set everything up first."
+    }
+  ],
+  "steps": [
+    "Check every seal and door is clean and closed.",
+    "Set mode and settings on dry land, then start recording before you go under.",
+    "Stay shallow: colours and light fade quickly with depth.",
+    "Get close to the subject; water softens everything far away.",
+    "Rinse in fresh water afterwards and let it dry."
+  ],
+  "devices": {
+    "dji-osmo-action-5-pro": {
+      "status": "ok",
+      "steps": [
+        "**Depth:** 20 m on its own, 60 m in the Osmo Action 60 m waterproof case. Not waterproof with the lens hood fitted.",
+        "**Before:** battery and compartment dry and clean, battery door fully closed with **no red marks showing**. USB-C cover and lens cover on tight, seals clean.",
+        "Case? Leave it under water for about 5 minutes first to check it, add an anti-fog insert, and make sure the latch is closed.",
+        "Set the mode and settings on land. **The touchscreens don't work fully submerged.** Start and stop with the **Shutter/Record** button.",
+        "Without the case, the Shutter/Record button stops working below 10 m, so start recording before you go deeper.",
+        "Don't jump in at speed holding it; the impact can force water in. No hot springs or chemicals.",
+        "**After:** rinse in tap water (case too, after the sea) and let it air-dry. **No hair dryer**: it ruptures the waterproof membranes. Open the battery door facing down and wipe the red seal."
+      ],
+      "note": "To log depth, turn on control menu › Settings › Depth & Altitude › Diving. DJI Mimo can show it on the video."
+    }
+  }
+}

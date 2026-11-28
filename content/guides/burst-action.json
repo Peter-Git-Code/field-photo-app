@@ -1,0 +1,94 @@
+{
+  "id": "burst-action",
+  "type": "guide",
+  "mode": "photo",
+  "title": "Burst for fast action",
+  "summary": "Fire a fast sequence and keep the sharpest frame.",
+  "tags": [
+    "burst",
+    "continuous",
+    "sport",
+    "wildlife",
+    "pre-shooting"
+  ],
+  "appliesTo": [
+    "camera",
+    "action"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mode",
+          "Tv or M"
+        ],
+        [
+          "Shutter",
+          "1/1000 s+"
+        ],
+        [
+          "ISO",
+          "Auto"
+        ],
+        [
+          "Focus",
+          "Continuous"
+        ],
+        [
+          "Drive",
+          "Fastest burst"
+        ],
+        [
+          "Format",
+          "JPEG or RAW"
+        ]
+      ],
+      "note": "Start the burst just before the moment, not on it."
+    },
+    {
+      "t": "link",
+      "id": "shutter-speed",
+      "text": "Shutter speeds for moving subjects →"
+    }
+  ],
+  "steps": [
+    "Set a fast shutter (1/1000 s or faster) so each frame is sharp.",
+    "Use continuous autofocus so focus follows the subject.",
+    "Switch the drive mode to the fastest burst.",
+    "Half-press to track the subject, then hold the shutter through the action.",
+    "Pick the best frame afterwards; delete the rest."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Short bursts clear the buffer faster than one long one.",
+        "A fast card keeps the camera ready for the next burst."
+      ]
+    }
+  ],
+  "devices": {
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "**Mode dial to Tv**, shutter **1/1000 s** or faster, ISO Auto.",
+        "**AF1 › AF operation: Servo AF** so focus follows the subject.",
+        "**Shooting 7 › Drive mode › High-speed continuous +** (or press the drive button). That's up to 15 fps, or 23 fps with the electronic shutter.",
+        "Half-press to track, then hold the shutter down through the action.",
+        "**Can't time it?** Use **Shooting 6 › RAW burst mode › Enable** with **Pre-shooting: Enable**. Half-press while you wait; when you press fully, it also keeps about 0.5 s from before the press. Frames are 13.6 MP and saved as one roll you extract from."
+      ],
+      "note": "15 fps needs 1/1000 s or faster and a well-charged battery. RAW burst mode resets to Disable when you turn the camera off."
+    },
+    "dji-osmo-action-5-pro": {
+      "status": "ok",
+      "steps": [
+        "Swipe left or right to **Photo** mode.",
+        "Swipe up from the bottom of the screen and set the aspect ratio and **burst rate** (frames per second). Off means a single photo.",
+        "Point and press the **Shutter/Record** button. The camera fires the burst.",
+        "Review in playback and keep the best frame."
+      ],
+      "note": "Available burst rates depend on the aspect ratio you pick."
+    }
+  }
+}

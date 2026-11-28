@@ -1,0 +1,80 @@
+{
+  "id": "steady-action",
+  "type": "guide",
+  "mode": "video",
+  "title": "Steady action footage",
+  "summary": "Pick the right stabilisation and mount for bikes, helmets and handheld.",
+  "tags": [
+    "eis",
+    "rocksteady",
+    "horizon",
+    "mount",
+    "helmet",
+    "bike"
+  ],
+  "appliesTo": [
+    "action"
+  ],
+  "blocks": [
+    {
+      "t": "table",
+      "head": [
+        "Situation",
+        "Stabilisation",
+        "Mount"
+      ],
+      "rows": [
+        [
+          "Walking, vlogging",
+          "RockSteady",
+          "Hand or extension rod"
+        ],
+        [
+          "Mountain bike, running",
+          "RockSteady+",
+          "Chest strap"
+        ],
+        [
+          "Helmet, may tilt",
+          "HorizonBalancing",
+          "Helmet chin mount"
+        ],
+        [
+          "Rolls and flips",
+          "HorizonSteady",
+          "Helmet or board"
+        ],
+        [
+          "Widest view; stabilise later",
+          "Off + Wide view",
+          "Any"
+        ]
+      ]
+    },
+    {
+      "t": "link",
+      "id": "shutter-180",
+      "text": "Shutter speed for natural motion →"
+    }
+  ],
+  "steps": [
+    "Pick the stabilisation mode for the activity.",
+    "Mount the camera low and firm, close to your body's centre.",
+    "Lock the orientation so the picture doesn't flip.",
+    "Do a short test and play it back before the main run."
+  ],
+  "devices": {
+    "dji-osmo-action-5-pro": {
+      "status": "ok",
+      "steps": [
+        "Swipe to **Video** mode and tap the **upper-right corner** for the EIS mode.",
+        "**RockSteady** keeps some natural movement. **RockSteady+** is stronger and crops the edges slightly.",
+        "**HorizonBalancing** levels tilts up to ±45°. **HorizonSteady** keeps the horizon level through full 360° rolls, however the camera is mounted.",
+        "Stabilising later in software (Gyroflow etc.)? Set EIS **Off** and view to **Wide** to record gyro data.",
+        "Swipe down for the control menu and use **Orientation Lock** if the image flips.",
+        "Clip in with the quick-release mount and tighten the locking screws. Stick-on bases need 30 minutes before use, and only on clean curved surfaces."
+      ],
+      "note": "Mounts that fit: chest strap, helmet chin, handlebar, suction cup, 1.5 m extension rod, magnetic ball joint."
+    }
+  }
+}

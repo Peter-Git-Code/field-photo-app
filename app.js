@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "5"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "6"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -237,11 +237,14 @@
           }));
         } else {
           add(body, el("div", { class: "tiles" }, group.map(function (i) {
-            var s = support(i, deviceFor(i));
+            var fit = deviceFor(i), s = support(i, fit);
+            // Guide written for another device in the kit: say which one, not "your device".
+            var other = s && dev && fit && fit.id !== dev.id;
+            var label = !s ? null : other ? ["For " + fit.name, "no"] : SUPPORT_LABEL[s.status];
             return el("a", { class: "tile", href: "#/item/" + i.id },
               el("b", { text: i.title }),
               el("span", { class: "muted", text: i.summary }),
-              s ? el("span", { class: "pill " + SUPPORT_LABEL[s.status][1], text: SUPPORT_LABEL[s.status][0] }) : null);
+              label ? el("span", { class: "pill " + label[1], text: label[0] }) : null);
           })));
         }
       });

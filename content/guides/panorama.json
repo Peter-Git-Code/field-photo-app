@@ -10,7 +10,9 @@
     "landscape"
   ],
   "appliesTo": [
-    "camera"
+    "camera",
+    "action",
+    "drone"
   ],
   "blocks": [
     {
@@ -79,6 +81,14 @@
         "Turn the camera to portrait, shoot left to right with a third to a half overlap, and stitch on a computer."
       ],
       "note": "SCN Panoramic Shot saves a JPEG only. Use the manual method if you want RAW."
+    },
+    "dji-osmo-action-5-pro": {
+      "status": "unchecked",
+      "note": "The Osmo Action 5 Pro manual doesn't list a panorama mode, so check the mode list (swipe left or right). Otherwise use these steps: lock exposure in PRO, turn the camera on the spot rather than swinging your arm, and stitch on a computer. Its wide lens bends straight lines near the edges."
+    },
+    "dji-lito-x1": {
+      "status": "unchecked",
+      "note": "The LITO X1 manual doesn't list a panorama mode, so check the Shooting Modes menu in DJI Fly. Otherwise hover, set exposure in Pro mode and rotate the drone between shots with plenty of overlap."
     }
   }
 }

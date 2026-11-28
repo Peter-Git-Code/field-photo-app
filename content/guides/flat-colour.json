@@ -1,0 +1,62 @@
+{
+  "id": "flat-colour",
+  "type": "guide",
+  "mode": "video",
+  "title": "Flat colour for grading",
+  "summary": "Record a flat, low-contrast image to colour later.",
+  "tags": [
+    "log",
+    "d-log m",
+    "grading",
+    "picture style",
+    "hlg"
+  ],
+  "appliesTo": [
+    "camera",
+    "action"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "A flat profile keeps more detail in bright skies and dark shadows, but looks washed-out until you colour it in an editor. Skip it if you want clips ready to share straight away."
+    },
+    {
+      "t": "list",
+      "items": [
+        "Expose a little bright, but don't clip the sky.",
+        "Lock white balance so every clip matches.",
+        "10-bit, if your camera has it, grades more smoothly."
+      ]
+    }
+  ],
+  "steps": [
+    "Choose your camera's flattest colour profile.",
+    "Set white balance manually.",
+    "Check highlights with zebras or the histogram.",
+    "Colour the clips in your editor (DaVinci Resolve, Premiere, LumaFusion)."
+  ],
+  "devices": {
+    "dji-osmo-action-5-pro": {
+      "status": "ok",
+      "steps": [
+        "Tap the image-settings icon on the camera view, then **PRO**.",
+        "**Colors: D-Log M 10bit** for the most grading room. **HLG 10bit** if you'll watch on an HDR TV without editing.",
+        "Turn on **Color Recovery** to see normal colours on screen while it records flat.",
+        "Lock white balance in PRO, then record.",
+        "Grade the clips later. DJI's website offers a D-Log M conversion LUT (look-up table) to start from."
+      ],
+      "note": "Normal 10bit is a middle ground: normal colours with smoother gradients."
+    },
+    "canon-r10": {
+      "status": "ok",
+      "steps": [
+        "The R10 has no log profile. The flattest options are Picture Styles.",
+        "Mode dial to movie, then **MENU › Shooting 3 › Picture Style › Neutral** (or **Faithful**). Both are low-contrast and meant for editing later.",
+        "Lock white balance in **Shooting 3 › White balance**.",
+        "Turn on **Shooting 6 › Zebra settings** to check highlights.",
+        "Add contrast and saturation back in your editor."
+      ],
+      "note": "For stills, shoot RAW instead: it holds far more than any Picture Style."
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "catch-the-moment",
+  "type": "guide",
+  "mode": "video",
+  "title": "Catch the moment",
+  "summary": "Save the seconds before you press record.",
+  "tags": [
+    "pre-rec",
+    "loop recording",
+    "highlight",
+    "fishing",
+    "wildlife"
+  ],
+  "appliesTo": [
+    "action",
+    "camera"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "For things you can't predict, such as a fish taking the bait, a bird landing or a trick on the bike, let the camera keep a rolling buffer so pressing record late still catches it."
+    }
+  ],
+  "steps": [
+    "Frame and mount the camera where the action will happen.",
+    "Turn on pre-recording or loop recording if your camera has it.",
+    "When something happens, press record. The seconds before are kept.",
+    "Mark the best moments while recording so they're easy to find later."
+  ],
+  "devices": {
+    "dji-osmo-action-5-pro": {
+      "status": "ok",
+      "steps": [
+        "Swipe to **Video** (or SuperNight) mode.",
+        "Tap the **upper-left corner** and turn on **Pre-Rec**. Set how many seconds to keep.",
+        "Wait. Nothing is saved yet, so the card doesn't fill up.",
+        "When the moment comes, press **Shutter/Record**. The clip starts from the pre-recorded seconds and carries on.",
+        "Press the **Quick Switch** button while recording to mark a highlight.",
+        "Long wait, like a drive or a day on the water? Use **Loop Recording** instead (same corner). It keeps overwriting the oldest footage."
+      ],
+      "note": "Highlights you mark show up in playback and in DJI Mimo, so you can jump straight to them."
+    },
+    "canon-r10": {
+      "status": "unchecked",
+      "note": "The R10 manual has no pre-record for video. For stills, RAW burst mode with Pre-shooting keeps about 0.5 s from before you press: see Burst for fast action.",
+      "link": "burst-action"
+    }
+  }
+}

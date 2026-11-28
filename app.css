@@ -117,6 +117,11 @@ label.f { display: block; font-size: 12px; font-weight: 800; text-transform: upp
   color: var(--mut); text-align: center; font-size: 14px; margin: 4px 0 8px;
 }
 .media b { font-size: 26px; color: var(--fg); }
+.shot { margin: 4px 0 8px; }
+.shot img, .shot video { display: block; width: 100%; height: auto; max-height: 70vh; object-fit: contain;
+  border-radius: 14px; background: var(--card); }
+.shot figcaption { font-size: 13px; color: var(--mut); margin-top: 6px; }
+.shot figcaption a { color: inherit; }
 .scale { overflow-x: auto; }
 .scale ol { display: flex; list-style: none; margin: 0; padding: 0; gap: 4px; min-width: max-content; }
 .scale li { background: var(--card); border-radius: 8px; padding: 8px 9px; font-weight: 800; font-variant-numeric: tabular-nums; }

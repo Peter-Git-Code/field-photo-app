@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "6"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "7"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -315,15 +315,34 @@
     });
   }
 
+  // Sample photo or clip from media/. Saved on the phone once viewed with
+  // signal; before that it shows a placeholder offline.
   function mediaSlot(it) {
-    if (it.media && it.media.src) {
-      return it.media.kind === "video"
-        ? el("video", { class: "media", src: it.media.src, controls: true, playsinline: true, preload: "metadata" })
-        : el("img", { class: "media", src: it.media.src, alt: it.media.alt || "" });
+    var m = it.media;
+    if (!m || !m.src) return mediaPlaceholder(it.mode === "video" ? "clip" : "photo", "Placeholder until a sample shot is added");
+    var video = m.kind === "video";
+    var fig = el("figure", { class: "shot" });
+    var size = m.width && m.height ? { width: m.width, height: m.height } : {};
+    function failed() {
+      fig.replaceWith(mediaPlaceholder(video ? "clip" : "photo", "Needs signal the first time it's shown"));
     }
-    return el("div", { class: "media", role: "img", "aria-label": "Sample placeholder" },
-      el("b", { text: "▶" }), el("span", { text: "Sample " + (it.mode === "video" ? "clip" : "photo") }),
-      el("span", { text: "Placeholder until your own shot is added" }));
+    var node = video
+      ? el("video", Object.assign({ src: m.src, poster: m.poster, controls: true, playsinline: true, muted: true,
+          loop: true, preload: "metadata", "aria-label": m.alt, onerror: failed }, size))
+      : el("img", Object.assign({ src: m.src, alt: m.alt || "", decoding: "async", onerror: failed }, size));
+    if (video) node.muted = true; // the attribute alone isn't enough on some browsers
+    add(fig, node);
+    var c = m.credit;
+    if (c && c.name) {
+      add(fig, el("figcaption", null, (video ? "Clip: " : "Photo: "),
+        c.url ? el("a", { href: c.url, target: "_blank", rel: "noopener", text: c.name }) : c.name,
+        c.license ? " · " + c.license : ""));
+    }
+    return fig;
+  }
+  function mediaPlaceholder(kind, line) {
+    return el("div", { class: "media", role: "img", "aria-label": "Sample " + kind + " placeholder" },
+      el("b", { text: "▶" }), el("span", { text: "Sample " + kind }), el("span", { text: line }));
   }
 
   var chosenDevice = null, chosenFor = null;
@@ -896,7 +915,7 @@
         "**Computer:** open it in Edge or Chrome › install icon in the address bar.",
         "Open it once with signal and wait for “Library saved for offline”. Test it in flight mode."]]),
       how("How to add new content", [
-        "Start a Claude Code session with the **field-photo-app** repository and send what you have: a manual PDF, a guide or ebook, a video transcript, or your own photos and clips.",
+        "Start a Claude Code session with the **field-photo-app** repository and send what you have: a manual PDF, a guide or ebook, a video transcript, or photos and clips (your own, or someone else's with their permission and a credit).",
         "Say what you want, for example: “Add a night-sky guide for the R10” or “Add the Osmo's underwater tips”.",
         "Claude writes it in short, plain steps, links the device steps to your kit and credits the source."]),
       how("How to push an update", [

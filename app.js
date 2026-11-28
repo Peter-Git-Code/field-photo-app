@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "8"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "9"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -628,8 +628,11 @@
     var sh = el("select", { id: "eqs" }, SHUTTERS.map(function (t) { return el("option", { value: t, selected: t === 1 / 125, text: fmtShutter(t) }); }));
     var ap = numSelect("eqa", APERTURES, 8, function (v) { return "f/" + v; });
     var iso = numSelect("eqi", ISOS, 100);
-    var iso2 = numSelect("eqi2", ISOS, 100);
+    // Step 2 starts at "Same ISO" and follows step 1 until a different ISO is picked.
+    var iso2 = el("select", { id: "eqi2" }, el("option", { value: "same", selected: true, text: "Same ISO" }),
+      ISOS.map(function (v) { return el("option", { value: v, text: "ISO " + v }); }));
     var body = el("tbody");
+    var explain = el("p", { class: "muted", style: "margin:6px 0 0" });
     function use(t) {
       if (t < 1 / 4000) return ["Too fast for the shutter", "no"];
       if (t > 30) return ["Over 30 s: Bulb", "warn"];
@@ -640,20 +643,29 @@
       return ["Freezes action", "ok"];
     }
     function calc() {
-      var ev = Math.log2((+ap.value * +ap.value) / +sh.value) - Math.log2(+iso.value / 100);
+      var from = +iso.value, to = iso2.value === "same" ? from : +iso2.value;
+      var ev = Math.log2((+ap.value * +ap.value) / +sh.value) - Math.log2(from / 100);
+      var stops = Math.log2(to / from);
+      explain.textContent = stops === 0
+        ? "Every row is as bright as your shot, at ISO " + from + "."
+        : "ISO " + to + " is " + Math.abs(stops) + " stop" + (Math.abs(stops) === 1 ? "" : "s") + (stops > 0 ? " brighter" : " darker") +
+          " than ISO " + from + ", so each shutter is " + Math.abs(stops) + " stop" + (Math.abs(stops) === 1 ? "" : "s") + (stops > 0 ? " faster." : " slower.") +
+          (stops > 0 ? " More noise." : " Less noise.");
       body.innerHTML = "";
       APERTURES.forEach(function (N) {
-        var t = (N * N) / Math.pow(2, ev + Math.log2(+iso2.value / 100));
+        var t = (N * N) / Math.pow(2, ev + Math.log2(to / 100));
         var u = use(t);
-        add(body, el("tr", { class: N === +ap.value && iso.value === iso2.value ? "hl" : "" },
+        add(body, el("tr", { class: N === +ap.value ? "hl" : "" },
           el("td", { text: "f/" + N }), el("td", { text: fmtShutter(t) }), el("td", null, el("span", { class: "pill " + u[1], text: u[0] }))));
       });
     }
     [sh, ap, iso, iso2].forEach(function (s) { s.addEventListener("change", calc); });
     add(box, [
-      el("p", { class: "muted", text: "Enter an exposure that looks right. These give the same brightness." }),
+      el("div", { class: "lab", text: "1 · A shot that looks right" }),
       el("div", { class: "grid3" }, field("eqs", "Shutter", sh), field("eqa", "Aperture", ap), field("eqi", "ISO", iso)),
-      el("div", { style: "margin-top:8px;max-width:50%" }, field("eqi2", "Show at ISO", iso2)),
+      el("div", { class: "lab", style: "margin-top:14px", text: "2 · Same brightness at" }),
+      el("div", { style: "max-width:50%" }, iso2),
+      explain,
       el("div", { class: "tablewrap" }, el("table", null,
         el("thead", null, el("tr", null, el("th", { text: "Aperture" }), el("th", { text: "Shutter" }), el("th", { text: "Good for" }))), body))
     ]);

@@ -33,6 +33,11 @@
         "On a Canon, press **INFO** in playback until the histogram shows, and turn on the highlight alert.",
         "Shooting RAW, push exposure right without touching the wall: cleaner shadows."
       ]
+    },
+    {
+      "t": "tool",
+      "tool": "exposure",
+      "text": "Work out the exposure"
     }
   ],
   "source": {

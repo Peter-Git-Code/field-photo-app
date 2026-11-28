@@ -1,0 +1,99 @@
+{
+  "id": "flash-range",
+  "type": "basic",
+  "mode": "photo",
+  "title": "Flash range and guide numbers",
+  "summary": "How far a flash reaches, and what changes it.",
+  "tags": [
+    "flash",
+    "guide number",
+    "speedlite"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "A flash's **guide number** (GN) is its power: distance in metres × aperture, at ISO 100. Divide it by your aperture to get how far it lights a subject properly."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Aperture",
+        "GN 12 (built-in)",
+        "GN 40 (speedlite)"
+      ],
+      "rows": [
+        [
+          "f/2.8",
+          "4.3 m",
+          "14 m"
+        ],
+        [
+          "f/4",
+          "3 m",
+          "10 m"
+        ],
+        [
+          "f/5.6",
+          "2.1 m",
+          "7 m"
+        ],
+        [
+          "f/8",
+          "1.5 m",
+          "5 m"
+        ]
+      ]
+    },
+    {
+      "t": "table",
+      "head": [
+        "Change",
+        "Reach"
+      ],
+      "rows": [
+        [
+          "ISO doubled (100 → 200)",
+          "× 1.4"
+        ],
+        [
+          "ISO × 4 (100 → 400)",
+          "× 2"
+        ],
+        [
+          "Flash head zoomed in",
+          "Further, narrower beam"
+        ],
+        [
+          "High-speed sync (HSS)",
+          "Much less, often under half"
+        ],
+        [
+          "Bounced off a ceiling",
+          "Much less: about 2–3 stops lost"
+        ]
+      ]
+    },
+    {
+      "t": "note",
+      "tone": "warn",
+      "text": "Above the camera's **sync speed** (about 1/200 s) normal flash leaves a dark band in the frame. Use HSS, or slow the shutter."
+    },
+    {
+      "t": "tips",
+      "items": [
+        "The shutter speed barely changes flash brightness; it changes how bright the **background** is.",
+        "Guide numbers on the box are often for the longest zoom setting. Wide zoom means less reach."
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "flash",
+      "text": "Work out your flash's reach"
+    },
+    {
+      "t": "link",
+      "id": "bounce-flash",
+      "text": "Guide: bounce flash"
+    }
+  ]
+}

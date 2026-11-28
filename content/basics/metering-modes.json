@@ -44,6 +44,11 @@
       "t": "link",
       "id": "backlit",
       "text": "Subject in front of the sun? Read the backlit lesson →"
+    },
+    {
+      "t": "tool",
+      "tool": "exposure",
+      "text": "Work out the exposure"
     }
   ],
   "source": {

@@ -69,6 +69,11 @@
       "t": "tool",
       "tool": "exposure",
       "text": "Work it out in the exposure calculator"
+    },
+    {
+      "t": "tool",
+      "tool": "equiv",
+      "text": "See equivalent exposures"
     }
   ],
   "source": {

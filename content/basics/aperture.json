@@ -70,6 +70,16 @@
       "t": "link",
       "id": "depth-of-field",
       "text": "More on depth of field →"
+    },
+    {
+      "t": "tool",
+      "tool": "equiv",
+      "text": "See equivalent exposures"
+    },
+    {
+      "t": "tool",
+      "tool": "dof",
+      "text": "Work out depth of field"
     }
   ],
   "source": {

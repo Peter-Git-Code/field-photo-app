@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var APP_VERSION = "9"; // keep in step with SHELL_VERSION in sw.js
+  var APP_VERSION = "10"; // keep in step with SHELL_VERSION in sw.js
   var view = document.getElementById("view");
   var CONTENT = "content/";
   var TYPES = { basic: "Basics", guide: "How-to guides", lesson: "Lessons" };
@@ -604,6 +604,16 @@
     }));
   }
 
+  // Tool -> the basics that explain it. Keep in step with the "tool" blocks in content/basics.
+  var TOOL_BASICS = {
+    exposure: ["exposure-triangle", "metering-modes", "histogram", "nd-filters"],
+    equiv: ["exposure-triangle", "aperture", "shutter-speed", "iso"],
+    dof: ["depth-of-field", "aperture", "focal-length"],
+    flash: ["flash-range", "pop-up-flash"],
+    nd: ["nd-filters", "shutter-speed"],
+    timelapse: ["timelapse-basics", "light-phases"],
+    stars: ["star-shutter", "focal-length", "low-light"]
+  };
   function renderTools(tab) {
     var tabs = [["exposure", "Exposure"], ["equiv", "Equivalents"], ["dof", "Depth of field"], ["flash", "Flash range"],
       ["nd", "ND filter"], ["timelapse", "Time-lapse"], ["stars", "Stars"]];
@@ -613,7 +623,18 @@
       }))]);
     var box = el("div", { style: "margin-top:10px" });
     add(view, box);
-    ({ exposure: toolExposure, equiv: toolEquiv, dof: toolDOF, flash: toolFlash, nd: toolND, timelapse: toolTimelapse, stars: toolStars }[tab] || toolExposure)(box);
+    var tool = { exposure: toolExposure, equiv: toolEquiv, dof: toolDOF, flash: toolFlash, nd: toolND, timelapse: toolTimelapse, stars: toolStars }[tab] ? tab : "exposure";
+    ({ exposure: toolExposure, equiv: toolEquiv, dof: toolDOF, flash: toolFlash, nd: toolND, timelapse: toolTimelapse, stars: toolStars }[tool])(box);
+    // The basics behind each tool. Items missing from the library are skipped.
+    var learn = (TOOL_BASICS[tool] || []).map(findMeta).filter(Boolean);
+    if (learn.length) {
+      add(view, [el("div", { class: "lab", style: "margin-top:18px", text: "Learn the basics" }),
+        learn.map(function (i) {
+          return el("a", { class: "row", href: "#/item/" + i.id },
+            el("span", null, el("b", { text: i.title }), el("span", { class: "muted", text: i.summary })),
+            el("span", { class: "muted rowbtn", "aria-hidden": "true", text: "›" }));
+        })]);
+    }
     var on = view.querySelector(".scrollrow .on");
     if (on && on.scrollIntoView) on.scrollIntoView({ block: "nearest", inline: "center" });
   }

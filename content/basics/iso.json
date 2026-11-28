@@ -58,6 +58,11 @@
       "t": "note",
       "tone": "no",
       "text": "This table is for natural light, not flash."
+    },
+    {
+      "t": "tool",
+      "tool": "equiv",
+      "text": "See what a higher ISO buys you"
     }
   ],
   "source": {

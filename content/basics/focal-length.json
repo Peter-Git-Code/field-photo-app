@@ -54,6 +54,16 @@
       "src": "figures/focal-frames.svg",
       "alt": "One landscape with nested frames showing what 24, 50, 85 and 200 mm capture, and 24 mm on APS-C framing like 38 mm",
       "caption": "The Canon R10's APS-C sensor crops every lens like the dashed frame."
+    },
+    {
+      "t": "tool",
+      "tool": "dof",
+      "text": "Work out depth of field"
+    },
+    {
+      "t": "tool",
+      "tool": "stars",
+      "text": "Longest shutter for stars at this focal length"
     }
   ],
   "source": {

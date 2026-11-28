@@ -93,6 +93,12 @@ and keep proof of permission for anything that isn't openly licensed.
 Media isn't part of the offline download. Each file is saved on the phone the
 first time it's shown with signal; until then the page shows a placeholder.
 
+### Tools and basics
+
+Every tool lists the basics behind it under "Learn the basics" (`TOOL_BASICS` in
+`app.js`), and those basics link back with a `tool` block. Adding a tool means
+adding at least one basic for it; `tools/check_content.py` fails otherwise.
+
 ### Diagrams
 
 Diagrams are our own SVG drawings in `content/figures/`, used with a `figure` block:

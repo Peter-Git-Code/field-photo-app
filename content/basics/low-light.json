@@ -68,6 +68,16 @@
       "t": "link",
       "id": "milky-way",
       "text": "Shooting stars? Open the Milky Way guide →"
+    },
+    {
+      "t": "tool",
+      "tool": "exposure",
+      "text": "Work out the exposure"
+    },
+    {
+      "t": "tool",
+      "tool": "stars",
+      "text": "Longest shutter for stars"
     }
   ],
   "source": {

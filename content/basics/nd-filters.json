@@ -1,0 +1,107 @@
+{
+  "id": "nd-filters",
+  "type": "basic",
+  "mode": "both",
+  "title": "ND filters",
+  "summary": "Sunglasses for the lens: slower shutter in bright light.",
+  "tags": [
+    "nd filter",
+    "long exposure",
+    "video"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "A neutral density (ND) filter darkens everything evenly, without changing colour. Each stop of ND doubles the shutter time you need."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Name",
+        "Density",
+        "Stops",
+        "1/125 s becomes"
+      ],
+      "rows": [
+        [
+          "ND2",
+          "0.3",
+          "1",
+          "1/60 s"
+        ],
+        [
+          "ND4",
+          "0.6",
+          "2",
+          "1/30 s"
+        ],
+        [
+          "ND8",
+          "0.9",
+          "3",
+          "1/15 s"
+        ],
+        [
+          "ND64",
+          "1.8",
+          "6",
+          "1/2 s"
+        ],
+        [
+          "ND1000",
+          "3.0",
+          "10",
+          "8 s"
+        ]
+      ]
+    },
+    {
+      "t": "table",
+      "head": [
+        "Use",
+        "Typical filter"
+      ],
+      "rows": [
+        [
+          "Wide aperture in full sun (portraits)",
+          "ND4–ND8"
+        ],
+        [
+          "Video at the 180° shutter",
+          "ND8–ND64 or variable"
+        ],
+        [
+          "Silky waterfall in daylight",
+          "ND64"
+        ],
+        [
+          "Streaky clouds, empty streets",
+          "ND1000"
+        ]
+      ]
+    },
+    {
+      "t": "list",
+      "items": [
+        "Compose and focus **before** fitting a strong filter: the view gets very dark.",
+        "Strong NDs can add a colour cast. Shoot RAW, or set a custom white balance through the filter.",
+        "Variable NDs show a dark X across wide-angle shots at their strongest end."
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "nd",
+      "text": "Work out the shutter with a filter"
+    },
+    {
+      "t": "link",
+      "id": "long-exposure-water",
+      "text": "Guide: silky water"
+    },
+    {
+      "t": "link",
+      "id": "shutter-180",
+      "text": "Lesson: the 180° shutter rule"
+    }
+  ]
+}

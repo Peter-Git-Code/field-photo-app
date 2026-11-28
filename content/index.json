@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.7",
+  "version": "2026-11-28.8",
   "devices": [
     {
       "id": "canon-r10",
@@ -55,6 +55,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "new",
+      "text": "Basics: flash range, ND filters, time-lapse maths, the 500 rule. Every tool now links to its basics, and basics link to their tools"
+    },
     {
       "date": "2026-11-28",
       "kind": "updated",
@@ -1171,6 +1176,58 @@
         "sunrise"
       ],
       "file": "basics/light-phases.json"
+    },
+    {
+      "id": "flash-range",
+      "type": "basic",
+      "mode": "photo",
+      "title": "Flash range and guide numbers",
+      "summary": "How far a flash reaches, and what changes it.",
+      "tags": [
+        "flash",
+        "guide number",
+        "speedlite"
+      ],
+      "file": "basics/flash-range.json"
+    },
+    {
+      "id": "nd-filters",
+      "type": "basic",
+      "mode": "both",
+      "title": "ND filters",
+      "summary": "Sunglasses for the lens: slower shutter in bright light.",
+      "tags": [
+        "nd filter",
+        "long exposure",
+        "video"
+      ],
+      "file": "basics/nd-filters.json"
+    },
+    {
+      "id": "star-shutter",
+      "type": "basic",
+      "mode": "photo",
+      "title": "Sharp stars: the 500 rule",
+      "summary": "The longest shutter before stars turn into lines.",
+      "tags": [
+        "astro",
+        "stars",
+        "500 rule"
+      ],
+      "file": "basics/star-shutter.json"
+    },
+    {
+      "id": "timelapse-basics",
+      "type": "basic",
+      "mode": "video",
+      "title": "Time-lapse maths",
+      "summary": "Interval, number of shots and how long to wait.",
+      "tags": [
+        "timelapse",
+        "interval",
+        "frames"
+      ],
+      "file": "basics/timelapse-basics.json"
     }
   ]
 }

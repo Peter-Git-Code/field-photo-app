@@ -23,6 +23,11 @@
       "t": "note",
       "tone": "no",
       "text": "The built-in flash runs off the camera battery, so it's weak and only reaches a few metres."
+    },
+    {
+      "t": "tool",
+      "tool": "flash",
+      "text": "Work out flash reach"
     }
   ],
   "source": {

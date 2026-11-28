@@ -1,0 +1,86 @@
+{
+  "id": "star-shutter",
+  "type": "basic",
+  "mode": "photo",
+  "title": "Sharp stars: the 500 rule",
+  "summary": "The longest shutter before stars turn into lines.",
+  "tags": [
+    "astro",
+    "stars",
+    "500 rule"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "The Earth turns, so stars drift across the frame. Leave the shutter open too long and points become short lines. The 500 rule gives the limit:"
+    },
+    {
+      "t": "note",
+      "tone": "ok",
+      "text": "**Longest shutter (s) = 500 ÷ (focal length × crop factor)**"
+    },
+    {
+      "t": "table",
+      "head": [
+        "Lens",
+        "Full frame",
+        "APS-C Canon (×1.6)"
+      ],
+      "rows": [
+        [
+          "10 mm",
+          "50 s → use 30 s",
+          "31 s → use 30 s"
+        ],
+        [
+          "14 mm",
+          "36 s → use 30 s",
+          "22 s"
+        ],
+        [
+          "18 mm",
+          "28 s",
+          "17 s"
+        ],
+        [
+          "24 mm",
+          "21 s",
+          "13 s"
+        ],
+        [
+          "35 mm",
+          "14 s",
+          "9 s"
+        ],
+        [
+          "50 mm",
+          "10 s",
+          "6 s"
+        ]
+      ]
+    },
+    {
+      "t": "list",
+      "items": [
+        "**High-resolution cameras** show trailing sooner. Use 300 instead of 500 for pin-sharp stars.",
+        "Stars near the pole star move least; stars over the equator move most.",
+        "Over 30 s needs Bulb mode. If you can't get enough light under the limit, raise ISO or use a wider aperture."
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "stars",
+      "text": "Work out your longest shutter"
+    },
+    {
+      "t": "link",
+      "id": "milky-way",
+      "text": "Guide: Milky Way"
+    },
+    {
+      "t": "link",
+      "id": "star-trails",
+      "text": "Want trails on purpose? Star trails guide"
+    }
+  ]
+}

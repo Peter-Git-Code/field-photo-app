@@ -1,0 +1,74 @@
+{
+  "id": "timelapse-basics",
+  "type": "basic",
+  "mode": "video",
+  "title": "Time-lapse maths",
+  "summary": "Interval, number of shots and how long to wait.",
+  "tags": [
+    "timelapse",
+    "interval",
+    "frames"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "Each photo becomes one frame of the video. Two sums plan any time-lapse:"
+    },
+    {
+      "t": "list",
+      "items": [
+        "**Shots = clip length × frame rate.** A 10 s clip at 30 fps needs 300 shots.",
+        "**Shooting time = shots × interval.** 300 shots every 3 s takes 15 minutes."
+      ]
+    },
+    {
+      "t": "table",
+      "head": [
+        "Subject",
+        "Interval",
+        "10 s clip takes"
+      ],
+      "rows": [
+        [
+          "Fast clouds, traffic",
+          "1–2 s",
+          "5–10 min"
+        ],
+        [
+          "Sunset, slow clouds",
+          "3–5 s",
+          "15–25 min"
+        ],
+        [
+          "Stars turning",
+          "15–30 s",
+          "75–150 min"
+        ],
+        [
+          "Plants, building work",
+          "minutes",
+          "hours to days"
+        ]
+      ]
+    },
+    {
+      "t": "list",
+      "items": [
+        "**Lock everything:** manual exposure, white balance and focus, or the video flickers and shifts colour.",
+        "The interval must be longer than the shutter plus a second or two to save the shot.",
+        "Smoother motion: a shutter of about half the interval blurs movement slightly. An ND filter helps in daylight.",
+        "Check battery and card space first. Hundreds of RAW files fill a card fast."
+      ]
+    },
+    {
+      "t": "tool",
+      "tool": "timelapse",
+      "text": "Work out shots and time"
+    },
+    {
+      "t": "link",
+      "id": "sunset-timelapse",
+      "text": "Guide: sunset time-lapse"
+    }
+  ]
+}

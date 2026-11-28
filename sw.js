@@ -4,7 +4,7 @@
    to the saved copy, so the library always opens offline.
    Media (media/*): saved the first time it's shown, then served from the
    phone. File names carry a content hash, so a replaced photo gets a new name. */
-var SHELL_VERSION = "shell-v9";
+var SHELL_VERSION = "shell-v10";
 var CONTENT_CACHE = "content";
 var MEDIA_CACHE = "media";
 var SHELL = [

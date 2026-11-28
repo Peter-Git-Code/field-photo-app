@@ -86,6 +86,11 @@
       "items": [
         "Easiest blurred background: longest focal length, widest aperture, step close, and keep the background far behind."
       ]
+    },
+    {
+      "t": "tool",
+      "tool": "dof",
+      "text": "Work out depth of field"
     }
   ],
   "source": {

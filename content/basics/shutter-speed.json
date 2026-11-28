@@ -63,6 +63,16 @@
       "t": "note",
       "tone": "no",
       "text": "For video, shutter speed follows the frame rate. See the lesson on the 180° shutter rule."
+    },
+    {
+      "t": "tool",
+      "tool": "equiv",
+      "text": "See equivalent exposures"
+    },
+    {
+      "t": "tool",
+      "tool": "nd",
+      "text": "Slow it down with an ND filter"
     }
   ],
   "source": {

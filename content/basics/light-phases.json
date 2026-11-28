@@ -62,6 +62,11 @@
         "Use an app such as PhotoPills or Sun Surveyor, or timeanddate.com, for exact times where you are.",
         "Arrive 30 minutes early. The best colour often comes just after the sun has gone."
       ]
+    },
+    {
+      "t": "tool",
+      "tool": "timelapse",
+      "text": "Plan a sunset time-lapse"
     }
   ],
   "source": {

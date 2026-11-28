@@ -138,6 +138,20 @@ if MEDIA.exists():
         if f.is_file() and f.name != "README.md" and rel not in used_media:
             err(f"{rel} isn't used by any item. Delete it or add it to an item's media.")
 
+# Every tool's "Learn the basics" list (TOOL_BASICS in app.js) must point at real basics,
+# and every tool must have at least one.
+import re
+app = (REPO / "app.js").read_text()
+m = re.search(r"var TOOL_BASICS = \{(.*?)\};", app, re.S)
+tb = {k: re.findall(r'"([a-z0-9-]+)"', v) for k, v in re.findall(r"(\w+): \[([^\]]*)\]", m.group(1))} if m else {}
+basic_ids = {i["id"] for i in index["items"] if i["type"] == "basic"}
+for tool in TOOLS:
+    if not tb.get(tool):
+        err(f"tool {tool} has no basics in TOOL_BASICS (app.js)")
+    for bid in tb.get(tool, []):
+        if bid not in basic_ids:
+            err(f"TOOL_BASICS {tool} -> {bid!r} isn't a basic in the library")
+
 for f in (ROOT / "figures").glob("*.svg"):
     rel = "figures/" + f.name
     if rel not in used_figures:

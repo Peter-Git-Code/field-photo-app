@@ -58,5 +58,17 @@
       ],
       "note": "For stills, shoot RAW instead: it holds far more than any Picture Style."
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/flat-colour.2efdb1.jpg",
+    "width": 1280,
+    "height": 853,
+    "alt": "Hot air balloon over a lake, left half flat and grey as recorded, right half graded with full colour",
+    "credit": {
+      "name": "Bonnie Moreland (flat/graded split made for this app)",
+      "url": "https://commons.wikimedia.org/wiki/File:Hot_Air_Balloon_over_Lake.jpg",
+      "license": "CC0"
+    }
   }
 }

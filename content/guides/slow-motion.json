@@ -88,5 +88,17 @@
       ],
       "note": "Super slow-motion needs a clip at least 3 s long, can't use the first 1.5 s or the last 2 s, and allows up to 6 clips per video."
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/slow-motion.f58740.jpg",
+    "width": 1280,
+    "height": 960,
+    "alt": "Water drop splash frozen mid-air with a crown of droplets",
+    "credit": {
+      "name": "Dietmar Rabich",
+      "url": "https://commons.wikimedia.org/wiki/File:Wassertropfen_--_2021_--_8065.jpg",
+      "license": "CC BY-SA 4.0"
+    }
   }
 }

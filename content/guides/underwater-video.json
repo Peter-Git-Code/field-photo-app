@@ -68,5 +68,17 @@
       ],
       "note": "To log depth, turn on control menu › Settings › Depth & Altitude › Diving. It doesn't show depth while the camera is in the waterproof case."
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/underwater-video.822941.jpg",
+    "width": 1280,
+    "height": 853,
+    "alt": "Titan triggerfish swimming over a coral reef",
+    "credit": {
+      "name": "Diego Delso",
+      "url": "https://commons.wikimedia.org/wiki/File:Pez_ballesta_tit%C3%A1n_(Balistoides_viridescens),_Nosy_Sakatia,_Madagascar,_2025-09-18,_DD_61.jpg",
+      "license": "CC BY-SA 4.0"
+    }
   }
 }

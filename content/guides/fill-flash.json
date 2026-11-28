@@ -77,5 +77,17 @@
       ],
       "note": "Guide number ÷ aperture = reach in metres at ISO 100. Doubling ISO adds about 40% reach."
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/fill-flash.054912.jpg",
+    "width": 1280,
+    "height": 960,
+    "alt": "Hummingbird in flight lit by fill flash",
+    "credit": {
+      "name": "Russ",
+      "url": "https://commons.wikimedia.org/wiki/File:Ruby-throated_hummingbird,_fill_flash_(35739238093).jpg",
+      "license": "CC BY 2.0"
+    }
   }
 }

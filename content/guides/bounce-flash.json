@@ -83,5 +83,17 @@
       ],
       "note": "Recycling takes up to 7.5 s, so leave a moment between shots."
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/bounce-flash.8d72ce.jpg",
+    "width": 1280,
+    "height": 1078,
+    "alt": "Flash head shown tilting up and swivelling sideways for bouncing",
+    "credit": {
+      "name": "SkywalkerPL",
+      "url": "https://commons.wikimedia.org/wiki/File:Quick_Shift_Bounce_of_Sony_HVL-58AM.jpg",
+      "license": "CC BY 3.0"
+    }
   }
 }

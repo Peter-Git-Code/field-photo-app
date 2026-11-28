@@ -48,5 +48,17 @@
       ],
       "note": "It can't avoid moving people, animals or vehicles. Don't use it near branches, power lines, water, glass or plain white walls, or for subjects faster than 12 m/s. Don't track children."
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/follow-subject.0e883f.jpg",
+    "width": 1280,
+    "height": 853,
+    "alt": "Skier carving a turn on a groomed slope",
+    "credit": {
+      "name": "woodypino",
+      "url": "https://commons.wikimedia.org/wiki/File:Austrian_Skier_Demonstrating_Correct_carving_form.jpg",
+      "license": "CC0"
+    }
   }
 }

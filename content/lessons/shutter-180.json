@@ -64,5 +64,17 @@
         "Shooting slow motion? Base the shutter on the recording frame rate, not the playback rate."
       ]
     }
-  ]
+  ],
+  "media": {
+    "kind": "photo",
+    "src": "media/shutter-180.36a095.jpg",
+    "width": 1280,
+    "height": 960,
+    "alt": "Cyclist sharp against a background blurred by panning",
+    "credit": {
+      "name": "Sascha Kohlmann",
+      "url": "https://commons.wikimedia.org/wiki/File:Man_On_Bike_Night_(98372045).jpeg",
+      "license": "CC BY-SA 3.0"
+    }
+  }
 }

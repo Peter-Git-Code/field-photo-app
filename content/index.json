@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.5",
+  "version": "2026-11-28.6",
   "devices": [
     {
       "id": "canon-r10",
@@ -55,6 +55,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "updated",
+      "text": "Photos on every guide and lesson; meteor showers now shows real meteor trails"
+    },
     {
       "date": "2026-11-28",
       "kind": "new",

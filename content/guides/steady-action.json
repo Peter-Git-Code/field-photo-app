@@ -76,5 +76,17 @@
       ],
       "note": "Mounts that fit: chest strap, helmet chin, handlebar, suction cup, 1.5 m extension rod, magnetic ball joint."
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/steady-action.264a23.jpg",
+    "width": 1280,
+    "height": 853,
+    "alt": "Mountain bikers riding a trail through alpine meadows",
+    "credit": {
+      "name": "Christian David",
+      "url": "https://commons.wikimedia.org/wiki/File:Mountain_bikers_on_a_trail_near_Col_de_Bretaye,_Villars-sur-Ollon,_Ollon,_Vaud.jpg",
+      "license": "CC BY-SA 4.0"
+    }
   }
 }

@@ -90,5 +90,17 @@
       ],
       "note": "Available burst rates depend on the aspect ratio you pick."
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/burst-action.c10f1d.jpg",
+    "width": 1280,
+    "height": 853,
+    "alt": "Motocross rider in mid-air over a dirt jump",
+    "credit": {
+      "name": "kallerna",
+      "url": "https://commons.wikimedia.org/wiki/File:Motocross_in_Yyteri_2010_-_1.jpg",
+      "license": "CC BY-SA 3.0"
+    }
   }
 }

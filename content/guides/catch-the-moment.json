@@ -45,5 +45,17 @@
       "note": "The R10 manual has no pre-record for video. For stills, RAW burst mode with Pre-shooting keeps about 0.5 s from before you press: see Burst for fast action.",
       "link": "burst-action"
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/catch-the-moment.798613.jpg",
+    "width": 1280,
+    "height": 819,
+    "alt": "Snowboarder upside down mid-trick in front of a tall building",
+    "credit": {
+      "name": "Letartean",
+      "url": "https://commons.wikimedia.org/wiki/File:Big_air_Qu%C3%A9bec_2011(3).jpg",
+      "license": "CC BY 3.0"
+    }
   }
 }

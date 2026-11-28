@@ -85,5 +85,17 @@
       "note": "For the drone, use Drone hyperlapse.",
       "link": "drone-hyperlapse"
     }
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/moving-hyperlapse.d9eaef.jpg",
+    "width": 1280,
+    "height": 932,
+    "alt": "Streaks of headlights and tail lights on a motorway at dusk",
+    "credit": {
+      "name": "Norbert Nagel",
+      "url": "https://commons.wikimedia.org/wiki/File:A5_with_Frankfurt_airport_on_the_horizon_-_Autobahn_A5_mit_Flughafen_Frankfurt_am_Horizont_-_02.jpg",
+      "license": "CC BY-SA 3.0"
+    }
   }
 }

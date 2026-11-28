@@ -131,5 +131,17 @@
     "author": "Simon d'Entremont",
     "url": "https://simondentremont.com",
     "note": "Condensed and rewritten in our own words. The original photos are not copied."
+  },
+  "media": {
+    "kind": "photo",
+    "src": "media/backlit.5291bd.jpg",
+    "width": 1280,
+    "height": 1600,
+    "alt": "Woman standing with her back to a low sun, hair and dress glowing at the edges",
+    "credit": {
+      "name": "Tobias ToMar Maier",
+      "url": "https://commons.wikimedia.org/wiki/File:Golden_hour_to_sunset_-_2019-08-27_19-19a_-_modelled_by_Marina_Daschner.jpg",
+      "license": "CC BY-SA 3.0"
+    }
   }
 }

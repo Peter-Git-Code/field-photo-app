@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.8",
+  "version": "2026-11-28.9",
   "devices": [
     {
       "id": "canon-r10",
@@ -55,6 +55,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "updated",
+      "text": "White balance: Kelvin value for each preset, scene starting points, and which devices take K"
+    },
     {
       "date": "2026-11-28",
       "kind": "new",
@@ -1010,7 +1015,7 @@
       "type": "basic",
       "mode": "both",
       "title": "White balance",
-      "summary": "Pick the preset that matches the light.",
+      "summary": "Pick the preset, or the Kelvin value, that matches the light.",
       "tags": [
         "colour",
         "kelvin",

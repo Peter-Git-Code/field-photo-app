@@ -3,7 +3,7 @@
   "type": "basic",
   "mode": "both",
   "title": "White balance",
-  "summary": "Pick the preset that matches the light.",
+  "summary": "Pick the preset, or the Kelvin value, that matches the light.",
   "tags": [
     "colour",
     "kelvin",
@@ -14,61 +14,134 @@
       "t": "table",
       "head": [
         "Preset",
+        "About",
         "Use for",
         "Effect"
       ],
       "rows": [
         [
           "Auto (AWB)",
+          "–",
           "Snapshots",
           "Can shift between shots"
         ],
         [
           "Daylight",
+          "5200 K",
           "Direct sun",
           "Neutral in sun"
         ],
         [
           "Cloudy",
+          "6000 K",
           "Overcast days",
           "Warms the image"
         ],
         [
           "Shade",
+          "7000 K",
           "Open shade",
           "Warms more than Cloudy"
         ],
         [
           "Tungsten",
-          "Household bulbs, candles",
+          "3200 K",
+          "Household bulbs",
           "Cools the image"
         ],
         [
           "Fluorescent",
+          "4000 K",
           "Tube lights",
           "Removes the green cast"
         ],
         [
           "Flash",
+          "5500–6000 K",
           "Flash photos",
           "Warms skin tones"
         ],
         [
           "Kelvin (K)",
-          "Set by hand, 2500–10000 K",
+          "2500–10000 K",
+          "Set by hand",
           "Full control"
         ],
         [
           "Custom",
+          "–",
           "Measured off a white or grey card",
           "Most accurate"
         ]
       ]
     },
     {
+      "t": "note",
+      "tone": "warn",
+      "text": "The K number is the colour of the **light**, not of the photo. Set a **lower** K and the photo turns **bluer**; set a **higher** K and it turns **warmer**."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Scene",
+        "Try"
+      ],
+      "rows": [
+        [
+          "Candles, fire",
+          "2500 K (warmer than this can't be corrected)"
+        ],
+        [
+          "Night sky, Milky Way",
+          "3800–4200 K"
+        ],
+        [
+          "Aurora",
+          "3500 K"
+        ],
+        [
+          "Blue hour, city lights",
+          "3200–4000 K"
+        ],
+        [
+          "Sunset (keep it warm)",
+          "5500–6500 K"
+        ]
+      ]
+    },
+    {
+      "t": "h",
+      "text": "On your devices"
+    },
+    {
+      "t": "table",
+      "head": [
+        "Device",
+        "Kelvin?",
+        "Where"
+      ],
+      "rows": [
+        [
+          "Canon EOS R10",
+          "Yes, 2500–10000 K in 100 K steps",
+          "**MENU › Shooting 3 › White balance › K**"
+        ],
+        [
+          "DJI Osmo Action 5 Pro",
+          "White balance can be locked in **PRO**",
+          "Image settings › PRO. Our manual doesn't list the K range: check the screen."
+        ],
+        [
+          "DJI LITO X1",
+          "Not covered in our manual",
+          "Check the camera settings in the DJI app."
+        ]
+      ]
+    },
+    {
       "t": "tips",
       "items": [
-        "For time-lapse and video, never leave it on Auto. Lock a preset so colours don't flicker between frames.",
+        "For time-lapse and video, never leave it on Auto. Lock a preset or K value so colours don't flicker between frames.",
         "Shooting RAW? You can change white balance later with no loss."
       ]
     }

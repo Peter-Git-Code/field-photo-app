@@ -10,7 +10,8 @@
     "sunset"
   ],
   "appliesTo": [
-    "camera"
+    "camera",
+    "action"
   ],
   "blocks": [
     {
@@ -94,8 +95,16 @@
       "note": "The R10 builds the MP4 itself at 29.97 or 25 fps. No sound, no image stabilisation, and the flash won't fire. Turning the Mode dial cancels the setup. Want the stills instead? Shooting 7 › Interval timer keeps each frame, but stops at 99 shots unless you set 00 (no limit)."
     },
     "dji-osmo-action-5-pro": {
-      "status": "unchecked",
-      "note": "The Osmo Action 5 Pro manual doesn't describe a time-lapse mode. Swipe left or right on the screen to see if your firmware has one. General steps shown."
+      "status": "ok",
+      "steps": [
+        "Mount the Osmo somewhere solid: a tripod, a wall, a car dashboard. It must not move for a time-lapse.",
+        "Power on (hold **Quick Switch**), then swipe left or right across the **middle of the screen** to open the mode list and choose **Timelapse**.",
+        "Swipe up from the bottom to set the timelapse options (interval, length, resolution).",
+        "Tap the image-settings icon › **PRO** and lock **white balance** and exposure so the colour doesn't shift as the sun sets.",
+        "Swipe down for the control menu and turn on **Screen Lock** so nothing gets changed by accident.",
+        "Press **Shutter/Record** to start, and again to stop."
+      ],
+      "note": "DJI's support page confirms Timelapse (camera still) and Hyperlapse (camera moving) but doesn't list the interval options. The settings screen shows what's available."
     },
     "dji-lito-x1": {
       "status": "unavailable",

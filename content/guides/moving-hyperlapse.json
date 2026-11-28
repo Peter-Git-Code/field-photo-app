@@ -1,0 +1,89 @@
+{
+  "id": "moving-hyperlapse",
+  "type": "guide",
+  "mode": "video",
+  "title": "Hyperlapse on the move",
+  "summary": "A sped-up clip from a car, bike or walk.",
+  "tags": [
+    "hyperlapse",
+    "timelapse",
+    "car",
+    "walking",
+    "action cam"
+  ],
+  "appliesTo": [
+    "action"
+  ],
+  "blocks": [
+    {
+      "t": "settings",
+      "items": [
+        [
+          "Mount",
+          "Car, bike, chest"
+        ],
+        [
+          "Mode",
+          "Hyperlapse"
+        ],
+        [
+          "White bal.",
+          "Locked"
+        ],
+        [
+          "Route",
+          "Steady speed"
+        ],
+        [
+          "Length",
+          "10+ min"
+        ],
+        [
+          "Light",
+          "Daylight"
+        ]
+      ],
+      "note": "Long, steady journeys make the smoothest result."
+    },
+    {
+      "t": "link",
+      "id": "drone-hyperlapse",
+      "text": "Flying instead? See Drone hyperlapse →"
+    }
+  ],
+  "steps": [
+    "Mount the camera firmly facing the way you're travelling.",
+    "Pick a route with things passing: traffic, trees, lights.",
+    "Lock white balance so colours don't jump.",
+    "Start recording and keep a steady speed.",
+    "Trim the start and end later."
+  ],
+  "after": [
+    {
+      "t": "tips",
+      "items": [
+        "Inside a car: lens close to the windscreen to cut reflections, and clean the glass.",
+        "Walking: hold it at chest height and walk smoothly."
+      ]
+    }
+  ],
+  "devices": {
+    "dji-osmo-action-5-pro": {
+      "status": "ok",
+      "steps": [
+        "Mount it: suction cup in the car, handlebar or chest strap on a bike, or handheld. Tighten the locking screws.",
+        "Swipe left or right across the **middle of the screen** to open the mode list and choose **Hyperlapse**, the mode for a moving camera.",
+        "Swipe up to set the speed-up and resolution options.",
+        "Image icon › **PRO**: lock white balance.",
+        "Turn on **Orientation Lock** and **Screen Lock** in the control menu.",
+        "Press **Shutter/Record** to start and stop."
+      ],
+      "note": "DJI's support page confirms the mode but not its options. Check the settings screen."
+    },
+    "dji-lito-x1": {
+      "status": "unavailable",
+      "note": "For the drone, use Drone hyperlapse.",
+      "link": "drone-hyperlapse"
+    }
+  }
+}

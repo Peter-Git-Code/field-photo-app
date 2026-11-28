@@ -60,6 +60,58 @@
       ]
     },
     {
+      "title": "Shooting modes",
+      "usedIn": [
+        "sunset-timelapse",
+        "moving-hyperlapse",
+        "slow-motion",
+        "follow-subject"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "text": "Swipe left or right across the **middle of the screen** to open the mode list. **Quick Switch** pressed once flips between Photo and Video."
+        },
+        {
+          "t": "table",
+          "head": [
+            "Mode",
+            "Use"
+          ],
+          "rows": [
+            [
+              "Photo",
+              "Single shots or burst"
+            ],
+            [
+              "Video",
+              "Normal recording; EIS, Pre-Rec and loop live here"
+            ],
+            [
+              "Subject Tracking",
+              "Keeps one subject centred; horizontal only (use 9:16 for vertical)"
+            ],
+            [
+              "Slow Motion",
+              "4× or 8× slow motion"
+            ],
+            [
+              "Timelapse",
+              "Camera fixed in place"
+            ],
+            [
+              "Hyperlapse",
+              "Camera moving: car, bike, handheld"
+            ],
+            [
+              "SuperNight",
+              "Low-light video"
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "title": "Photo and burst",
       "usedIn": [
         "burst-action"
@@ -154,9 +206,10 @@
         {
           "t": "list",
           "items": [
-            "Record 4K, 2.7K or 1080p 16:9 at **100 fps or more**.",
+            "Record 4K, 2.7K or 1080p 16:9 at **100 fps or more**, at least 3 s long.",
             "In playback, stop at the moment and tap the slow-motion icon. You get a 1080p clip up to 960 fps (4× interpolation).",
-            "Up to 6 per video. Not in the first 1.5 s or last 2 s."
+            "Up to 6 per video. Not in the first 1.5 s or last 2 s.",
+            "For slow motion while shooting, use the **Slow Motion** mode (4× or 8×) instead."
           ]
         }
       ]
@@ -221,7 +274,7 @@
       "blocks": [
         {
           "t": "p",
-          "text": "Control menu › Settings › **Depth & Altitude**: choose Diving or Hiking & Parachuting. DJI Mimo's dashboard can overlay the data on your video."
+          "text": "Control menu › Settings › **Depth & Altitude**: choose Diving or Hiking & Parachuting. Depth isn't shown in the waterproof case. DJI Mimo's dashboard can overlay depth, altitude, speed and route on your video, and import data from Apple Health, Garmin Connect or .fit files."
         }
       ]
     },
@@ -267,8 +320,8 @@
     }
   ],
   "source": {
-    "title": "Osmo Action 5 Pro User Manual v1.0",
-    "url": "https://www.dji.com/osmo-action-5-pro/downloads",
+    "title": "Osmo Action 5 Pro User Manual v1.0 and DJI Support guide",
+    "url": "https://support.dji.com/help/content?customId=en-us03400011286&spaceId=34&re=US&lang=en",
     "note": "Rewritten in our own words."
   }
 }

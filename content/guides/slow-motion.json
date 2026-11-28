@@ -80,13 +80,13 @@
     "dji-osmo-action-5-pro": {
       "status": "ok",
       "steps": [
-        "Swipe up from the bottom of the screen and set **4K, 2.7K or 1080p at 16:9 and 100 fps or higher**.",
-        "Record the action.",
-        "Play the clip back and stop at the moment you want.",
-        "Tap the **super slow-motion** icon. The camera makes a 1080p clip slowed down with 4× frame interpolation (up to 960 fps).",
-        "Tap Preview to check it. Add up to 6 slow-motion clips per video."
+        "Swipe left or right across the **middle of the screen** to open the mode list and choose **Slow Motion**.",
+        "Swipe up and pick **4×** or **8×** slow motion.",
+        "Give it plenty of light: slow motion uses fast shutter speeds.",
+        "Record the action. It plays back slowed straight away.",
+        "**Afterwards, from normal video:** shoot 4K, 2.7K or 1080p 16:9 at **100 fps or more**, then in playback tap the **super slow-motion** icon at the moment you want. It makes a 1080p clip up to 960 fps."
       ],
-      "note": "It can't use the first 1.5 s or the last 2 s of a clip, so start recording early and stop late."
+      "note": "Super slow-motion needs a clip at least 3 s long, can't use the first 1.5 s or the last 2 s, and allows up to 6 clips per video."
     }
   }
 }

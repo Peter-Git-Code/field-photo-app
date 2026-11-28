@@ -84,7 +84,7 @@
     },
     "dji-osmo-action-5-pro": {
       "status": "unchecked",
-      "note": "The Osmo Action 5 Pro manual doesn't list a panorama mode, so check the mode list (swipe left or right). Otherwise use these steps: lock exposure in PRO, turn the camera on the spot rather than swinging your arm, and stitch on a computer. Its wide lens bends straight lines near the edges."
+      "note": "DJI lists Photo, Video, Subject Tracking, Slow Motion, Timelapse and Hyperlapse modes, with no panorama. Use these steps instead: lock exposure in PRO, turn on the spot rather than swinging your arm, and stitch on a computer. The wide lens bends straight lines near the edges."
     },
     "dji-lito-x1": {
       "status": "unchecked",

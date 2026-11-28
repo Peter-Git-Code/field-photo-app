@@ -1,0 +1,52 @@
+{
+  "id": "follow-subject",
+  "type": "guide",
+  "mode": "video",
+  "title": "Follow a subject",
+  "summary": "Keep a rider, skier or walker centred in the frame.",
+  "tags": [
+    "subject tracking",
+    "activetrack",
+    "focustrack",
+    "follow",
+    "vlog"
+  ],
+  "appliesTo": [
+    "action",
+    "drone"
+  ],
+  "blocks": [
+    {
+      "t": "p",
+      "text": "Tracking keeps one person or vehicle in the middle of the frame while you move. It works best with a clear subject against a plain background and in good light."
+    }
+  ],
+  "steps": [
+    "Pick one clear subject that stands out from the background.",
+    "Start tracking before the action begins.",
+    "Keep the subject reasonably close and in view.",
+    "Watch your surroundings: tracking won't steer you around obstacles."
+  ],
+  "devices": {
+    "dji-osmo-action-5-pro": {
+      "status": "ok",
+      "steps": [
+        "Swipe left or right across the **middle of the screen** to open the mode list and choose **Subject Tracking**.",
+        "Point the camera at the subject. The video keeps them centred as you move.",
+        "Press **Shutter/Record** to start and stop."
+      ],
+      "note": "Subject Tracking doesn't work with the camera turned vertical. For vertical video, stay horizontal and choose the 9:16 aspect ratio."
+    },
+    "dji-lito-x1": {
+      "status": "ok",
+      "steps": [
+        "Open, unobstructed area with good light. Fly in **N (Normal)** mode.",
+        "Tap the **FocusTrack** icon on the left of the camera view, or drag a box around the subject.",
+        "Choose **ActiveTrack** to follow (people 4–20 m away, vehicles and boats 6–100 m), **Spotlight** to keep the camera on them while you fly, or **POI** to circle them.",
+        "Tap or slide the trace wheel to change the tracking direction. The sticks still adjust height and distance.",
+        "Press **Flight Pause** on the remote at any time to stop and hover."
+      ],
+      "note": "It can't avoid moving people, animals or vehicles. Don't use it near branches, power lines, water, glass or plain white walls, or for subjects faster than 12 m/s. Don't track children."
+    }
+  }
+}

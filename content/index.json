@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.2",
+  "version": "2026-11-28.3",
   "devices": [
     {
       "id": "canon-r10",
@@ -58,6 +58,11 @@
     {
       "date": "2026-11-28",
       "kind": "new",
+      "text": "Guides: hyperlapse on the move, follow a subject; Osmo time-lapse and slow-motion steps"
+    },
+    {
+      "date": "2026-11-28",
+      "kind": "new",
       "text": "Guides: burst, catch the moment, steady action, underwater, flat colour"
     },
     {
@@ -109,7 +114,8 @@
         "sunset"
       ],
       "appliesTo": [
-        "camera"
+        "camera",
+        "action"
       ],
       "devices": {
         "canon-r10": {
@@ -129,8 +135,16 @@
           "note": "The R10 builds the MP4 itself at 29.97 or 25 fps. No sound, no image stabilisation, and the flash won't fire. Turning the Mode dial cancels the setup. Want the stills instead? Shooting 7 › Interval timer keeps each frame, but stops at 99 shots unless you set 00 (no limit)."
         },
         "dji-osmo-action-5-pro": {
-          "status": "unchecked",
-          "note": "The Osmo Action 5 Pro manual doesn't describe a time-lapse mode. Swipe left or right on the screen to see if your firmware has one. General steps shown."
+          "status": "ok",
+          "steps": [
+            "Mount the Osmo somewhere solid: a tripod, a wall, a car dashboard. It must not move for a time-lapse.",
+            "Power on (hold **Quick Switch**), then swipe left or right across the **middle of the screen** to open the mode list and choose **Timelapse**.",
+            "Swipe up from the bottom to set the timelapse options (interval, length, resolution).",
+            "Tap the image-settings icon › **PRO** and lock **white balance** and exposure so the colour doesn't shift as the sun sets.",
+            "Swipe down for the control menu and turn on **Screen Lock** so nothing gets changed by accident.",
+            "Press **Shutter/Record** to start, and again to stop."
+          ],
+          "note": "DJI's support page confirms Timelapse (camera still) and Hyperlapse (camera moving) but doesn't list the interval options. The settings screen shows what's available."
         },
         "dji-lito-x1": {
           "status": "unavailable",
@@ -234,7 +248,7 @@
         },
         "dji-osmo-action-5-pro": {
           "status": "unchecked",
-          "note": "The Osmo Action 5 Pro manual doesn't list a panorama mode, so check the mode list (swipe left or right). Otherwise use these steps: lock exposure in PRO, turn the camera on the spot rather than swinging your arm, and stitch on a computer. Its wide lens bends straight lines near the edges."
+          "note": "DJI lists Photo, Video, Subject Tracking, Slow Motion, Timelapse and Hyperlapse modes, with no panorama. Use these steps instead: lock exposure in PRO, turn on the spot rather than swinging your arm, and stitch on a computer. The wide lens bends straight lines near the edges."
         },
         "dji-lito-x1": {
           "status": "unchecked",
@@ -430,13 +444,13 @@
         "dji-osmo-action-5-pro": {
           "status": "ok",
           "steps": [
-            "Swipe up from the bottom of the screen and set **4K, 2.7K or 1080p at 16:9 and 100 fps or higher**.",
-            "Record the action.",
-            "Play the clip back and stop at the moment you want.",
-            "Tap the **super slow-motion** icon. The camera makes a 1080p clip slowed down with 4× frame interpolation (up to 960 fps).",
-            "Tap Preview to check it. Add up to 6 slow-motion clips per video."
+            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Slow Motion**.",
+            "Swipe up and pick **4×** or **8×** slow motion.",
+            "Give it plenty of light: slow motion uses fast shutter speeds.",
+            "Record the action. It plays back slowed straight away.",
+            "**Afterwards, from normal video:** shoot 4K, 2.7K or 1080p 16:9 at **100 fps or more**, then in playback tap the **super slow-motion** icon at the moment you want. It makes a 1080p clip up to 960 fps."
           ],
-          "note": "It can't use the first 1.5 s or the last 2 s of a clip, so start recording early and stop late."
+          "note": "Super slow-motion needs a clip at least 3 s long, can't use the first 1.5 s or the last 2 s, and allows up to 6 clips per video."
         }
       },
       "file": "guides/slow-motion.json"
@@ -626,10 +640,88 @@
             "Don't jump in at speed holding it; the impact can force water in. No hot springs or chemicals.",
             "**After:** rinse in tap water (case too, after the sea) and let it air-dry. **No hair dryer**: it ruptures the waterproof membranes. Open the battery door facing down and wipe the red seal."
           ],
-          "note": "To log depth, turn on control menu › Settings › Depth & Altitude › Diving. DJI Mimo can show it on the video."
+          "note": "To log depth, turn on control menu › Settings › Depth & Altitude › Diving. It doesn't show depth while the camera is in the waterproof case."
         }
       },
       "file": "guides/underwater-video.json"
+    },
+    {
+      "id": "follow-subject",
+      "type": "guide",
+      "mode": "video",
+      "title": "Follow a subject",
+      "summary": "Keep a rider, skier or walker centred in the frame.",
+      "tags": [
+        "subject tracking",
+        "activetrack",
+        "focustrack",
+        "follow",
+        "vlog"
+      ],
+      "appliesTo": [
+        "action",
+        "drone"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Subject Tracking**.",
+            "Point the camera at the subject. The video keeps them centred as you move.",
+            "Press **Shutter/Record** to start and stop."
+          ],
+          "note": "Subject Tracking doesn't work with the camera turned vertical. For vertical video, stay horizontal and choose the 9:16 aspect ratio."
+        },
+        "dji-lito-x1": {
+          "status": "ok",
+          "steps": [
+            "Open, unobstructed area with good light. Fly in **N (Normal)** mode.",
+            "Tap the **FocusTrack** icon on the left of the camera view, or drag a box around the subject.",
+            "Choose **ActiveTrack** to follow (people 4–20 m away, vehicles and boats 6–100 m), **Spotlight** to keep the camera on them while you fly, or **POI** to circle them.",
+            "Tap or slide the trace wheel to change the tracking direction. The sticks still adjust height and distance.",
+            "Press **Flight Pause** on the remote at any time to stop and hover."
+          ],
+          "note": "It can't avoid moving people, animals or vehicles. Don't use it near branches, power lines, water, glass or plain white walls, or for subjects faster than 12 m/s. Don't track children."
+        }
+      },
+      "file": "guides/follow-subject.json"
+    },
+    {
+      "id": "moving-hyperlapse",
+      "type": "guide",
+      "mode": "video",
+      "title": "Hyperlapse on the move",
+      "summary": "A sped-up clip from a car, bike or walk.",
+      "tags": [
+        "hyperlapse",
+        "timelapse",
+        "car",
+        "walking",
+        "action cam"
+      ],
+      "appliesTo": [
+        "action"
+      ],
+      "devices": {
+        "dji-osmo-action-5-pro": {
+          "status": "ok",
+          "steps": [
+            "Mount it: suction cup in the car, handlebar or chest strap on a bike, or handheld. Tighten the locking screws.",
+            "Swipe left or right across the **middle of the screen** to open the mode list and choose **Hyperlapse**, the mode for a moving camera.",
+            "Swipe up to set the speed-up and resolution options.",
+            "Image icon › **PRO**: lock white balance.",
+            "Turn on **Orientation Lock** and **Screen Lock** in the control menu.",
+            "Press **Shutter/Record** to start and stop."
+          ],
+          "note": "DJI's support page confirms the mode but not its options. Check the settings screen."
+        },
+        "dji-lito-x1": {
+          "status": "unavailable",
+          "note": "For the drone, use Drone hyperlapse.",
+          "link": "drone-hyperlapse"
+        }
+      },
+      "file": "guides/moving-hyperlapse.json"
     },
     {
       "id": "backlit",

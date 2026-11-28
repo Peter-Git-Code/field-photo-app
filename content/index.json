@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-28.6",
+  "version": "2026-11-28.7",
   "devices": [
     {
       "id": "canon-r10",
@@ -55,6 +55,11 @@
     }
   ],
   "changes": [
+    {
+      "date": "2026-11-28",
+      "kind": "updated",
+      "text": "Diagrams: exposure triangle, and focal length angle of view and framing"
+    },
     {
       "date": "2026-11-28",
       "kind": "updated",

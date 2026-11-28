@@ -11,6 +11,11 @@
   ],
   "blocks": [
     {
+      "t": "figure",
+      "src": "figures/focal-fov.svg",
+      "alt": "Nested wedges from a camera: 14 mm covers 104 degrees, 24 mm 74, 50 mm 40, 85 mm 24 and 200 mm 10 degrees"
+    },
+    {
       "t": "table",
       "head": [
         "Full-frame mm",
@@ -43,6 +48,12 @@
     {
       "t": "p",
       "text": "On an APS-C camera like the Canon R10, multiply by **1.6** to get the full-frame view: an 18 mm lens frames like 29 mm."
+    },
+    {
+      "t": "figure",
+      "src": "figures/focal-frames.svg",
+      "alt": "One landscape with nested frames showing what 24, 50, 85 and 200 mm capture, and 24 mm on APS-C framing like 38 mm",
+      "caption": "The Canon R10's APS-C sensor crops every lens like the dashed frame."
     }
   ],
   "source": {

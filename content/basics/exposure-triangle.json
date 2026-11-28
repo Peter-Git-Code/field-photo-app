@@ -19,6 +19,12 @@
       "alt": "Shutter, aperture and ISO stop scales lined up, brighter to the left, darker to the right"
     },
     {
+      "t": "figure",
+      "src": "figures/exposure-triangle.svg",
+      "alt": "Triangle with aperture at the top, shutter bottom left and ISO bottom right, each with its side effect and range",
+      "caption": "Each corner sets brightness and has a side effect: depth of field, motion blur or noise."
+    },
+    {
       "t": "table",
       "head": [
         "Setting",
